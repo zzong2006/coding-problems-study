@@ -17,8 +17,8 @@ public class expressionOfSet_pb1717 {
 		N = Integer.parseInt(input[0]); 
 		M = Integer.parseInt(input[1]); 
 
-		int [] children = new int [N];
-		parents = new int [N];
+		int [] children = new int [N+1];
+		parents = new int [N+1];
 		for (int i = 0; i < children.length; i++) {
 			parents[i] = i;
 			children[i] = i;
@@ -48,7 +48,7 @@ public class expressionOfSet_pb1717 {
 		int x = Find(a);		// find parents
 		int y = Find(b); 
 		if(x != y) {
-			parents[b] = x;
+			parents[y] = x;
 		}
 	}
 	
