@@ -20,7 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c146444-f3e5-4a1b-8c8a-7907c7074b52" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/failureRate/failureRate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/installPillar/installPillar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tupleProblem/tupleProblem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Moving_pb11048/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Moving_pb11048/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Music.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Music.class" afterDir="false" />
@@ -48,7 +49,6 @@
       <change beforePath="$PROJECT_DIR$/bin/friendsFourBlock$Solution.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/friendsFourBlock$Solution.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/friendsFourBlock.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/friendsFourBlock.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/givingARank_pb2012/givingARank_pb2012.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/givingARank_pb2012/givingARank_pb2012.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/givingARank_pb2012/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bin/givingARank_pb2012/input.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/guitarist_pb1495/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/guitarist_pb1495/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/justThatSong.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/justThatSong.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/keylogger_pb5397/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/keylogger_pb5397/Main.class" afterDir="false" />
@@ -57,7 +57,6 @@
       <change beforePath="$PROJECT_DIR$/bin/lcs_pb9251/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/lcs_pb9251/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/littleFriends.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/littleFriends.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/makingZero_pb7490/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/makingZero_pb7490/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/minHeap_pb1927/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bin/minHeap_pb1927/input.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/minHeap_pb1927/minHeap_pb1927.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/minHeap_pb1927/minHeap_pb1927.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/most_long_subsequences_pb11053/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/most_long_subsequences_pb11053/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/mostbiggestSquare_pb1915/mostbiggestSquare_pb1915.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/mostbiggestSquare_pb1915/mostbiggestSquare_pb1915.class" afterDir="false" />
@@ -74,7 +73,6 @@
       <change beforePath="$PROJECT_DIR$/bin/printerQueue_1966/queue.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/printerQueue_1966/queue.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/robotCleaner_pb14503/Robot.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/robotCleaner_pb14503/Robot.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/robotCleaner_pb14503/RobotCleaner_pb14503.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/robotCleaner_pb14503/RobotCleaner_pb14503.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/robotCleaner_pb14503/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bin/robotCleaner_pb14503/input.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/secretMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/secretMap.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/sha256_pb10930/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/sha256_pb10930/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/sortInside_pb1427/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/sortInside_pb1427/Main.class" afterDir="false" />
@@ -123,28 +121,28 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
-  <component name="RunManager" selected="Application.failureRate">
-    <configuration name="autoComplete" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="autoComplete" />
-      <module name="coding_problems" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="coloringBook" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="coloringBook" />
-      <module name="coding_problems" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.installPillar">
     <configuration name="failureRate" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="failureRate.failureRate" />
       <module name="coding_problems" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="failureRate.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="installPillar" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="installPillar.installPillar" />
+      <module name="coding_problems" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="installPillar.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -172,13 +170,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="tupleProblem" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="tupleProblem.tupleProblem" />
+      <module name="coding_problems" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tupleProblem.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.installPillar" />
+        <item itemvalue="Application.tupleProblem" />
         <item itemvalue="Application.failureRate" />
         <item itemvalue="Application.stringCompression" />
         <item itemvalue="Application.movingBlock" />
-        <item itemvalue="Application.coloringBook" />
-        <item itemvalue="Application.autoComplete" />
       </list>
     </recent_temporary>
   </component>
@@ -214,63 +225,85 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" key="#Intentions/0.0.1920.1040@0.0.1920.1040" timestamp="1598799483968" />
-    <state x="612" y="186" key="#com.intellij.ide.util.MemberChooser" timestamp="1598879747549">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser" timestamp="1598892231907">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="612" y="186" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1598879747549" />
+    <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598892231907" />
     <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1598800773710" />
     <state x="505" y="274" key="#org.jetbrains.debugger.memory.view.InstancesWindow" timestamp="1598796284707">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="505" y="274" key="#org.jetbrains.debugger.memory.view.InstancesWindow/0.0.1920.1040@0.0.1920.1040" timestamp="1598796284707" />
-    <state x="1131" y="264" key="#xdebugger.evaluate" timestamp="1598796459801">
+    <state x="694" y="444" key="#xdebugger.evaluate" timestamp="1598885819783">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="694" y="444" key="#xdebugger.evaluate/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598885819783" />
     <state x="1131" y="264" key="#xdebugger.evaluate/0.0.1920.1040@0.0.1920.1040" timestamp="1598796459801" />
     <state width="417" height="466" key="DebuggerActiveHint" timestamp="1598796566719">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="417" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1598796566719" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1598880577114">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1598897691977">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1598880577114" />
+    <state width="1877" height="347" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1598893538211" />
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598897691977" />
     <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1598803994714" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1598880577113">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="281" key="GridCell.Tab.0.center" timestamp="1598897691977">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1598880577113" />
+    <state width="1877" height="347" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1598893538211" />
+    <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598897691977" />
     <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1598803994714" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1598880577113">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="281" key="GridCell.Tab.0.left" timestamp="1598897691976">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1598880577113" />
+    <state width="1877" height="347" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1598893538211" />
+    <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598897691976" />
     <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1598803994714" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1598880577113">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="281" key="GridCell.Tab.0.right" timestamp="1598897691977">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1598880577113" />
+    <state width="1877" height="347" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1598893538211" />
+    <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598897691977" />
     <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1598803994714" />
-    <state width="1493" height="242" key="GridCell.Tab.1.bottom" timestamp="1598880306031">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="662" key="GridCell.Tab.1.bottom" timestamp="1598894427311">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="242" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1598880306031" />
+    <state width="1877" height="347" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1598893538212" />
+    <state width="1877" height="662" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598894427311" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1598803815115" />
-    <state width="1493" height="242" key="GridCell.Tab.1.center" timestamp="1598880306030">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="662" key="GridCell.Tab.1.center" timestamp="1598894427311">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="242" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1598880306030" />
+    <state width="1877" height="347" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1598893538212" />
+    <state width="1877" height="662" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598894427311" />
     <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1598803815115" />
-    <state width="1493" height="242" key="GridCell.Tab.1.left" timestamp="1598880306030">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="662" key="GridCell.Tab.1.left" timestamp="1598894427311">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="242" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1598880306030" />
+    <state width="1877" height="347" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1598893538211" />
+    <state width="1877" height="662" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598894427311" />
     <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1598803815114" />
-    <state width="1493" height="242" key="GridCell.Tab.1.right" timestamp="1598880306030">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="662" key="GridCell.Tab.1.right" timestamp="1598894427311">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="242" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1598880306030" />
+    <state width="1877" height="347" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1598893538212" />
+    <state width="1877" height="662" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598894427311" />
     <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1598803815115" />
+    <state x="461" y="164" key="SettingsEditor" timestamp="1598882295560">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598882295560" />
     <state x="667" y="252" width="586" height="536" key="find.popup" timestamp="1598795396402">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -279,10 +312,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="189" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1598879019250" />
-    <state x="498" y="178" width="672" height="538" key="search.everywhere.popup" timestamp="1598878754179">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="623" y="225" width="840" height="680" key="search.everywhere.popup" timestamp="1598892248451">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="498" y="178" width="672" height="538" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1598878754179" />
+    <state x="623" y="225" width="840" height="680" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598892248451" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1598800771542" />
   </component>
   <component name="XDebuggerManager">
@@ -294,9 +328,9 @@
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/failureRate/failureRate.java</url>
-          <line>36</line>
-          <option name="timeStamp" value="6" />
+          <url>file://$PROJECT_DIR$/src/tupleProblem/tupleProblem.java</url>
+          <line>60</line>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
