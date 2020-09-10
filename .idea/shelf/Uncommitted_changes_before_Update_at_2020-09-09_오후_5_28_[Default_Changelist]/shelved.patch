@@ -1,0 +1,369 @@
+Index: src/Carpet/Carpet.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/Carpet/Carpet.java	(date 1599638655256)
++++ src/Carpet/Carpet.java	(date 1599638655256)
+@@ -0,0 +1,43 @@
++package Carpet;
++
++//iter    Iterate (for each..in)
++//        itin    Iterate (for..in)
++//        itli    Iterate over a List
++//        itar    Iterate elements of array
++//        ritar   Iterate elements of array in reverse order
++//        sout  System.out.println
++public class Carpet {
++    public static void main(String[] args) {
++        Solution a = new Solution();
++        int [] s = a.solution(8,1);
++        for (int i : s) {
++            System.out.println("i = " + i);
++        }
++    }
++}
++class Solution {
++    public int[] solution(int brown, int yellow) {
++        int[] answer = new int [2];
++        String someText = "This code can be on a single line " +
++                "or it can be on multiple lines " +
++                "and you can type and hit Enter and get the + sign " +
++                "inserted automatically";
++        int width = 2;
++        int height = 2;
++        do{
++            height += 1;
++            if((brown + yellow) % height != 0){
++                width = (brown + yellow) / height;
++                continue;
++            } else {
++                width = (brown + yellow) / height;
++                if(height * 2 + width * 2 - 4 == brown){
++                    answer[0] = width ; answer[1] = height;
++                    break;
++                }
++            }
++        }while(width >= height);
++
++        return answer;
++    }
++}
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"BranchesTreeState\">\r\n    <expand>\r\n      <path>\r\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"LOCAL_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n      </path>\r\n      <path>\r\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"REMOTE_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n      </path>\r\n      <path>\r\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"REMOTE_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"GROUP_NODE:origin\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n      </path>\r\n    </expand>\r\n    <select />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"8c146444-f3e5-4a1b-8c8a-7907c7074b52\" name=\"Default Changelist\" comment=\"\">\r\n      <change afterPath=\"$PROJECT_DIR$/src/installPillar/installPillar.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/tupleProblem/tupleProblem.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/Moving_pb11048/Main.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/Moving_pb11048/Main.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/Music.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/Music.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/Solution.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/Solution.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/Time.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/Time.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/addHousingNumber_pb2667/Pointer.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/addHousingNumber_pb2667/Pointer.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/addHousingNumber_pb2667/addHousingNumber_pb2667.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/addHousingNumber_pb2667/addHousingNumber_pb2667.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/addingParenthesis_pb16637/addingParenthesis_pb16637.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/addingParenthesis_pb16637/addingParenthesis_pb16637.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/autoComplete.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/autoComplete.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/ballEscape_pb13460/Main.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/ballEscape_pb13460/Main.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/ballEscape_pb13460/Pointer.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/ballEscape_pb13460/Pointer.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/ballEscape_pb13460/Situation.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/ballEscape_pb13460/Situation.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/blackjack/Main.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/blackjack/Main.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/booster_pb15955/Main.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/booster_pb15955/Main.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/coloringBook.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/coloringBook.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/compression.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/compression.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/connectedComponent_pb11724/connectedComponent_pb11724.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/connectedComponent_pb11724/connectedComponent_pb11724.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/cripure_pb19550/Main.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/cripure_pb19550/Main.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/cripure_pb19550/Pointer.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/cripure_pb19550/Pointer.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/dictionary.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/dictionary.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/expressionOfSet_pb1717/expressionOfSet_pb1717.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/expressionOfSet_pb1717/expressionOfSet_pb1717.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/fileName.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/fileName.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/findNumber_pb1920/Main.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/findNumber_pb1920/Main.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/friendNetwork_pb4195/Main.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/friendNetwork_pb4195/Main.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/friendsFourBlock$Solution.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/friendsFourBlock$Solution.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/friendsFourBlock.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/friendsFourBlock.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/givingARank_pb2012/givingARank_pb2012.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/givingARank_pb2012/givingARank_pb2012.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/guitarist_pb1495/Main.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/guitarist_pb1495/Main.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/justThatSong.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/justThatSong.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/keylogger_pb5397/Main.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/keylogger_pb5397/Main.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/keylogger_pb5397/stack.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/keylogger_pb5397/stack.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/lcs2_pb9252/lcs2_pb9252.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/lcs2_pb9252/lcs2_pb9252.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/lcs_pb9251/Main.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/lcs_pb9251/Main.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/littleFriends.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/littleFriends.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/makingZero_pb7490/Main.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/makingZero_pb7490/Main.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/minHeap_pb1927/minHeap_pb1927.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/minHeap_pb1927/minHeap_pb1927.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/most_long_subsequences_pb11053/Main.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/most_long_subsequences_pb11053/Main.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/mostbiggestSquare_pb1915/mostbiggestSquare_pb1915.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/mostbiggestSquare_pb1915/mostbiggestSquare_pb1915.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/nBaseGame.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/nBaseGame.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/nPersonk.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/nPersonk.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/normalknapsack_pb12865/Main.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/normalknapsack_pb12865/Main.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/nqueen_pb9663/Main.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/nqueen_pb9663/Main.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/nqueen_pb9663/Pointer.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/nqueen_pb9663/Pointer.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/numberboardJump_bp2210/Main.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/numberboardJump_bp2210/Main.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/pb1874/Main.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/pb1874/Main.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/pb1874/stack.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/pb1874/stack.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/practice.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/practice.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/printerQueue_1966/Main.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/printerQueue_1966/Main.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/printerQueue_1966/queue.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/printerQueue_1966/queue.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/robotCleaner_pb14503/Robot.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/robotCleaner_pb14503/Robot.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/robotCleaner_pb14503/RobotCleaner_pb14503.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/robotCleaner_pb14503/RobotCleaner_pb14503.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/secretMap.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/secretMap.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/sha256_pb10930/Main.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/sha256_pb10930/Main.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/sortInside_pb1427/Main.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/sortInside_pb1427/Main.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/sortingFileName.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/sortingFileName.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/sorting_pb2750/Main.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/sorting_pb2750/Main.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/tile01_pb1904/Main.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/tile01_pb1904/Main.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/treeHeightWide_pb2250/Main.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/treeHeightWide_pb2250/Main.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/treeHeightWide_pb2250/Tree.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/treeHeightWide_pb2250/Tree.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/treeTour_pb1991/Main.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/treeTour_pb1991/Main.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/treeTour_pb1991/Tree.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/treeTour_pb1991/Tree.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/virus_pb2606/virus_pb2606.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/virus_pb2606/virus_pb2606.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/wordstudy_pb1157/Main.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/wordstudy_pb1157/Main.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/zcurve_pb1074/Main.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/zcurve_pb1074/Main.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/zcurve_pb1074/XYCoords.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/zcurve_pb1074/XYCoords.class\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"mavenHome\" value=\"C:\\Program Files\\JetBrains\\IntelliJ IDEA Community Edition 2020.2\\plugins\\maven\\lib\\maven3\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1gmd9drLkr7pOWN4wXKdL6Y67BE\" />\r\n  <component name=\"ProjectLevelVcsManager\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$\" />\r\n    <property name=\"settings.editor.selected.configurable\" value=\"editor.preferences.fonts.default\" />\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Application.installPillar\">\r\n    <configuration name=\"failureRate\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"failureRate.failureRate\" />\r\n      <module name=\"coding_problems\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"failureRate.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"installPillar\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"installPillar.installPillar\" />\r\n      <module name=\"coding_problems\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"installPillar.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"movingBlock\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"movingBlock\" />\r\n      <module name=\"coding_problems\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"stringCompression\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"stringCompression.stringCompression\" />\r\n      <module name=\"coding_problems\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"stringCompression.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"tupleProblem\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"tupleProblem.tupleProblem\" />\r\n      <module name=\"coding_problems\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"tupleProblem.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.installPillar\" />\r\n        <item itemvalue=\"Application.tupleProblem\" />\r\n        <item itemvalue=\"Application.failureRate\" />\r\n        <item itemvalue=\"Application.stringCompression\" />\r\n        <item itemvalue=\"Application.movingBlock\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"8c146444-f3e5-4a1b-8c8a-7907c7074b52\" name=\"Default Changelist\" comment=\"\" />\r\n      <created>1598723558731</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1598723558731</updated>\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\r\n  </component>\r\n  <component name=\"WindowStateProjectService\">\r\n    <state x=\"651\" y=\"228\" key=\"#Customize_Data_Views\" timestamp=\"1598796293529\">\r\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\r\n    </state>\r\n    <state x=\"651\" y=\"228\" key=\"#Customize_Data_Views/0.0.1920.1040@0.0.1920.1040\" timestamp=\"1598796293529\" />\r\n    <state x=\"552\" y=\"178\" key=\"#Intentions\" timestamp=\"1598799483968\">\r\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\r\n    </state>\r\n    <state x=\"552\" y=\"178\" key=\"#Intentions/0.0.1920.1040@0.0.1920.1040\" timestamp=\"1598799483968\" />\r\n    <state x=\"765\" y=\"235\" key=\"#com.intellij.ide.util.MemberChooser\" timestamp=\"1598892231907\">\r\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\r\n    </state>\r\n    <state x=\"612\" y=\"186\" key=\"#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824\" timestamp=\"1598879747549\" />\r\n    <state x=\"765\" y=\"235\" key=\"#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040\" timestamp=\"1598892231907\" />\r\n    <state x=\"765\" y=\"235\" key=\"#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040\" timestamp=\"1598800773710\" />\r\n    <state x=\"505\" y=\"274\" key=\"#org.jetbrains.debugger.memory.view.InstancesWindow\" timestamp=\"1598796284707\">\r\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\r\n    </state>\r\n    <state x=\"505\" y=\"274\" key=\"#org.jetbrains.debugger.memory.view.InstancesWindow/0.0.1920.1040@0.0.1920.1040\" timestamp=\"1598796284707\" />\r\n    <state x=\"694\" y=\"444\" key=\"#xdebugger.evaluate\" timestamp=\"1598885819783\">\r\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\r\n    </state>\r\n    <state x=\"694\" y=\"444\" key=\"#xdebugger.evaluate/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040\" timestamp=\"1598885819783\" />\r\n    <state x=\"1131\" y=\"264\" key=\"#xdebugger.evaluate/0.0.1920.1040@0.0.1920.1040\" timestamp=\"1598796459801\" />\r\n    <state width=\"417\" height=\"466\" key=\"DebuggerActiveHint\" timestamp=\"1598796566719\">\r\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\r\n    </state>\r\n    <state width=\"417\" height=\"466\" key=\"DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040\" timestamp=\"1598796566719\" />\r\n    <state width=\"1877\" height=\"281\" key=\"GridCell.Tab.0.bottom\" timestamp=\"1598897691977\">\r\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\r\n    </state>\r\n    <state width=\"1493\" height=\"210\" key=\"GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824\" timestamp=\"1598880577114\" />\r\n    <state width=\"1877\" height=\"347\" key=\"GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040\" timestamp=\"1598893538211\" />\r\n    <state width=\"1877\" height=\"281\" key=\"GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040\" timestamp=\"1598897691977\" />\r\n    <state width=\"1877\" height=\"282\" key=\"GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040\" timestamp=\"1598803994714\" />\r\n    <state width=\"1877\" height=\"281\" key=\"GridCell.Tab.0.center\" timestamp=\"1598897691977\">\r\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\r\n    </state>\r\n    <state width=\"1493\" height=\"210\" key=\"GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824\" timestamp=\"1598880577113\" />\r\n    <state width=\"1877\" height=\"347\" key=\"GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040\" timestamp=\"1598893538211\" />\r\n    <state width=\"1877\" height=\"281\" key=\"GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040\" timestamp=\"1598897691977\" />\r\n    <state width=\"1877\" height=\"282\" key=\"GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040\" timestamp=\"1598803994714\" />\r\n    <state width=\"1877\" height=\"281\" key=\"GridCell.Tab.0.left\" timestamp=\"1598897691976\">\r\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\r\n    </state>\r\n    <state width=\"1493\" height=\"210\" key=\"GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824\" timestamp=\"1598880577113\" />\r\n    <state width=\"1877\" height=\"347\" key=\"GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040\" timestamp=\"1598893538211\" />\r\n    <state width=\"1877\" height=\"281\" key=\"GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040\" timestamp=\"1598897691976\" />\r\n    <state width=\"1877\" height=\"282\" key=\"GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040\" timestamp=\"1598803994714\" />\r\n    <state width=\"1877\" height=\"281\" key=\"GridCell.Tab.0.right\" timestamp=\"1598897691977\">\r\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\r\n    </state>\r\n    <state width=\"1493\" height=\"210\" key=\"GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824\" timestamp=\"1598880577113\" />\r\n    <state width=\"1877\" height=\"347\" key=\"GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040\" timestamp=\"1598893538211\" />\r\n    <state width=\"1877\" height=\"281\" key=\"GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040\" timestamp=\"1598897691977\" />\r\n    <state width=\"1877\" height=\"282\" key=\"GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040\" timestamp=\"1598803994714\" />\r\n    <state width=\"1877\" height=\"662\" key=\"GridCell.Tab.1.bottom\" timestamp=\"1598894427311\">\r\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\r\n    </state>\r\n    <state width=\"1493\" height=\"242\" key=\"GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824\" timestamp=\"1598880306031\" />\r\n    <state width=\"1877\" height=\"347\" key=\"GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040\" timestamp=\"1598893538212\" />\r\n    <state width=\"1877\" height=\"662\" key=\"GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040\" timestamp=\"1598894427311\" />\r\n    <state width=\"1877\" height=\"348\" key=\"GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040\" timestamp=\"1598803815115\" />\r\n    <state width=\"1877\" height=\"662\" key=\"GridCell.Tab.1.center\" timestamp=\"1598894427311\">\r\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\r\n    </state>\r\n    <state width=\"1493\" height=\"242\" key=\"GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824\" timestamp=\"1598880306030\" />\r\n    <state width=\"1877\" height=\"347\" key=\"GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040\" timestamp=\"1598893538212\" />\r\n    <state width=\"1877\" height=\"662\" key=\"GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040\" timestamp=\"1598894427311\" />\r\n    <state width=\"1877\" height=\"348\" key=\"GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040\" timestamp=\"1598803815115\" />\r\n    <state width=\"1877\" height=\"662\" key=\"GridCell.Tab.1.left\" timestamp=\"1598894427311\">\r\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\r\n    </state>\r\n    <state width=\"1493\" height=\"242\" key=\"GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824\" timestamp=\"1598880306030\" />\r\n    <state width=\"1877\" height=\"347\" key=\"GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040\" timestamp=\"1598893538211\" />\r\n    <state width=\"1877\" height=\"662\" key=\"GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040\" timestamp=\"1598894427311\" />\r\n    <state width=\"1877\" height=\"348\" key=\"GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040\" timestamp=\"1598803815114\" />\r\n    <state width=\"1877\" height=\"662\" key=\"GridCell.Tab.1.right\" timestamp=\"1598894427311\">\r\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\r\n    </state>\r\n    <state width=\"1493\" height=\"242\" key=\"GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824\" timestamp=\"1598880306030\" />\r\n    <state width=\"1877\" height=\"347\" key=\"GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040\" timestamp=\"1598893538212\" />\r\n    <state width=\"1877\" height=\"662\" key=\"GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040\" timestamp=\"1598894427311\" />\r\n    <state width=\"1877\" height=\"348\" key=\"GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040\" timestamp=\"1598803815115\" />\r\n    <state x=\"461\" y=\"164\" key=\"SettingsEditor\" timestamp=\"1598882295560\">\r\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\r\n    </state>\r\n    <state x=\"461\" y=\"164\" key=\"SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040\" timestamp=\"1598882295560\" />\r\n    <state x=\"667\" y=\"252\" width=\"586\" height=\"536\" key=\"find.popup\" timestamp=\"1598795396402\">\r\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\r\n    </state>\r\n    <state x=\"667\" y=\"252\" width=\"586\" height=\"536\" key=\"find.popup/0.0.1920.1040@0.0.1920.1040\" timestamp=\"1598795396402\" />\r\n    <state x=\"425\" y=\"189\" key=\"run.anything.popup\" timestamp=\"1598879019250\">\r\n      <screen x=\"0\" y=\"0\" width=\"1536\" height=\"824\" />\r\n    </state>\r\n    <state x=\"425\" y=\"189\" key=\"run.anything.popup/0.0.1536.824@0.0.1536.824\" timestamp=\"1598879019250\" />\r\n    <state x=\"623\" y=\"225\" width=\"840\" height=\"680\" key=\"search.everywhere.popup\" timestamp=\"1598892248451\">\r\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\r\n    </state>\r\n    <state x=\"498\" y=\"178\" width=\"672\" height=\"538\" key=\"search.everywhere.popup/0.0.1536.824@0.0.1536.824\" timestamp=\"1598878754179\" />\r\n    <state x=\"623\" y=\"225\" width=\"840\" height=\"680\" key=\"search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040\" timestamp=\"1598892248451\" />\r\n    <state x=\"623\" y=\"225\" width=\"672\" height=\"678\" key=\"search.everywhere.popup/0.0.1920.1040@0.0.1920.1040\" timestamp=\"1598800771542\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/movingBlock.java</url>\r\n          <line>40</line>\r\n          <option name=\"timeStamp\" value=\"5\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/tupleProblem/tupleProblem.java</url>\r\n          <line>60</line>\r\n          <option name=\"timeStamp\" value=\"16\" />\r\n        </line-breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n    <watches-manager>\r\n      <configuration name=\"Application\">\r\n        <watch expression=\"longPos[0][0]\" />\r\n      </configuration>\r\n    </watches-manager>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/workspace.xml	(revision 14b3efcadb4b8df0c1da18ef38bdb756cd655101)
++++ .idea/workspace.xml	(date 1599639848531)
+@@ -20,73 +20,9 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="8c146444-f3e5-4a1b-8c8a-7907c7074b52" name="Default Changelist" comment="">
+-      <change afterPath="$PROJECT_DIR$/src/installPillar/installPillar.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/tupleProblem/tupleProblem.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/Carpet/Carpet.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/ExpressN/ExpressN.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/Moving_pb11048/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Moving_pb11048/Main.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/Music.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Music.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/Solution.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Solution.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/Time.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Time.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/addHousingNumber_pb2667/Pointer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/addHousingNumber_pb2667/Pointer.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/addHousingNumber_pb2667/addHousingNumber_pb2667.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/addHousingNumber_pb2667/addHousingNumber_pb2667.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/addingParenthesis_pb16637/addingParenthesis_pb16637.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/addingParenthesis_pb16637/addingParenthesis_pb16637.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/autoComplete.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/autoComplete.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/ballEscape_pb13460/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ballEscape_pb13460/Main.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/ballEscape_pb13460/Pointer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ballEscape_pb13460/Pointer.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/ballEscape_pb13460/Situation.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ballEscape_pb13460/Situation.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/blackjack/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/blackjack/Main.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/booster_pb15955/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/booster_pb15955/Main.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/coloringBook.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/coloringBook.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/compression.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/compression.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/connectedComponent_pb11724/connectedComponent_pb11724.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/connectedComponent_pb11724/connectedComponent_pb11724.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/cripure_pb19550/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/cripure_pb19550/Main.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/cripure_pb19550/Pointer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/cripure_pb19550/Pointer.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/dictionary.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/dictionary.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/expressionOfSet_pb1717/expressionOfSet_pb1717.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/expressionOfSet_pb1717/expressionOfSet_pb1717.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/fileName.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/fileName.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/findNumber_pb1920/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/findNumber_pb1920/Main.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/friendNetwork_pb4195/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/friendNetwork_pb4195/Main.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/friendsFourBlock$Solution.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/friendsFourBlock$Solution.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/friendsFourBlock.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/friendsFourBlock.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/givingARank_pb2012/givingARank_pb2012.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/givingARank_pb2012/givingARank_pb2012.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/guitarist_pb1495/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/guitarist_pb1495/Main.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/justThatSong.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/justThatSong.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/keylogger_pb5397/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/keylogger_pb5397/Main.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/keylogger_pb5397/stack.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/keylogger_pb5397/stack.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/lcs2_pb9252/lcs2_pb9252.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/lcs2_pb9252/lcs2_pb9252.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/lcs_pb9251/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/lcs_pb9251/Main.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/littleFriends.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/littleFriends.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/makingZero_pb7490/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/makingZero_pb7490/Main.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/minHeap_pb1927/minHeap_pb1927.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/minHeap_pb1927/minHeap_pb1927.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/most_long_subsequences_pb11053/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/most_long_subsequences_pb11053/Main.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/mostbiggestSquare_pb1915/mostbiggestSquare_pb1915.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/mostbiggestSquare_pb1915/mostbiggestSquare_pb1915.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/nBaseGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/nBaseGame.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/nPersonk.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/nPersonk.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/normalknapsack_pb12865/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/normalknapsack_pb12865/Main.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/nqueen_pb9663/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/nqueen_pb9663/Main.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/nqueen_pb9663/Pointer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/nqueen_pb9663/Pointer.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/numberboardJump_bp2210/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/numberboardJump_bp2210/Main.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/pb1874/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/pb1874/Main.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/pb1874/stack.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/pb1874/stack.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/practice.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/practice.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/printerQueue_1966/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/printerQueue_1966/Main.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/printerQueue_1966/queue.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/printerQueue_1966/queue.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/robotCleaner_pb14503/Robot.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/robotCleaner_pb14503/Robot.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/robotCleaner_pb14503/RobotCleaner_pb14503.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/robotCleaner_pb14503/RobotCleaner_pb14503.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/secretMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/secretMap.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/sha256_pb10930/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/sha256_pb10930/Main.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/sortInside_pb1427/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/sortInside_pb1427/Main.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/sortingFileName.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/sortingFileName.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/sorting_pb2750/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/sorting_pb2750/Main.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/tile01_pb1904/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/tile01_pb1904/Main.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/treeHeightWide_pb2250/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/treeHeightWide_pb2250/Main.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/treeHeightWide_pb2250/Tree.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/treeHeightWide_pb2250/Tree.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/treeTour_pb1991/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/treeTour_pb1991/Main.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/treeTour_pb1991/Tree.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/treeTour_pb1991/Tree.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/virus_pb2606/virus_pb2606.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/virus_pb2606/virus_pb2606.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/wordstudy_pb1157/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/wordstudy_pb1157/Main.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/zcurve_pb1074/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/zcurve_pb1074/Main.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bin/zcurve_pb1074/XYCoords.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/zcurve_pb1074/XYCoords.class" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -121,9 +57,25 @@
+   <component name="PropertiesComponent">
+     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
++    <property name="project.structure.last.edited" value="Project" />
++    <property name="project.structure.proportion" value="0.0" />
++    <property name="project.structure.side.proportion" value="0.0" />
+     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+   </component>
+-  <component name="RunManager" selected="Application.installPillar">
++  <component name="RunManager" selected="Application.Carpet">
++    <configuration name="Carpet" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="Carpet.Carpet" />
++      <module name="coding_problems" />
++      <extension name="coverage">
++        <pattern>
++          <option name="PATTERN" value="Carpet.*" />
++          <option name="ENABLED" value="true" />
++        </pattern>
++      </extension>
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
+     <configuration name="failureRate" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+       <option name="MAIN_CLASS_NAME" value="failureRate.failureRate" />
+       <module name="coding_problems" />
+@@ -146,13 +98,6 @@
+           <option name="ENABLED" value="true" />
+         </pattern>
+       </extension>
+-      <method v="2">
+-        <option name="Make" enabled="true" />
+-      </method>
+-    </configuration>
+-    <configuration name="movingBlock" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="movingBlock" />
+-      <module name="coding_problems" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+@@ -185,11 +130,11 @@
+     </configuration>
+     <recent_temporary>
+       <list>
++        <item itemvalue="Application.Carpet" />
+         <item itemvalue="Application.installPillar" />
+         <item itemvalue="Application.tupleProblem" />
+         <item itemvalue="Application.failureRate" />
+         <item itemvalue="Application.stringCompression" />
+-        <item itemvalue="Application.movingBlock" />
+       </list>
+     </recent_temporary>
+   </component>
+@@ -225,6 +170,10 @@
+       <screen x="0" y="0" width="1920" height="1040" />
+     </state>
+     <state x="552" y="178" key="#Intentions/0.0.1920.1040@0.0.1920.1040" timestamp="1598799483968" />
++    <state x="440" y="94" key="#Project_Structure" timestamp="1598936276142">
++      <screen x="0" y="0" width="1920" height="1040" />
++    </state>
++    <state x="440" y="94" key="#Project_Structure/0.0.1920.1040/-1920.5.1920.1040@0.0.1920.1040" timestamp="1598936276142" />
+     <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser" timestamp="1598892231907">
+       <screen x="0" y="0" width="1920" height="1040" />
+     </state>
+@@ -244,33 +193,41 @@
+       <screen x="0" y="0" width="1920" height="1040" />
+     </state>
+     <state width="417" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1598796566719" />
+-    <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1598897691977">
+-      <screen x="0" y="0" width="1920" height="1040" />
++    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1599638656984">
++      <screen x="-1920" y="5" width="1920" height="1040" />
+     </state>
+     <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1598880577114" />
+     <state width="1877" height="347" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1598893538211" />
+     <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598897691977" />
++    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.5.1920.1040@-1920.5.1920.1040" timestamp="1599638656984" />
++    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.5.1920.1040@0.0.1920.1040" timestamp="1599637893855" />
+     <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1598803994714" />
+-    <state width="1877" height="281" key="GridCell.Tab.0.center" timestamp="1598897691977">
+-      <screen x="0" y="0" width="1920" height="1040" />
++    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1599638656984">
++      <screen x="-1920" y="5" width="1920" height="1040" />
+     </state>
+     <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1598880577113" />
+     <state width="1877" height="347" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1598893538211" />
+     <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598897691977" />
++    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.5.1920.1040@-1920.5.1920.1040" timestamp="1599638656984" />
++    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.5.1920.1040@0.0.1920.1040" timestamp="1599637893854" />
+     <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1598803994714" />
+-    <state width="1877" height="281" key="GridCell.Tab.0.left" timestamp="1598897691976">
+-      <screen x="0" y="0" width="1920" height="1040" />
++    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1599638656984">
++      <screen x="-1920" y="5" width="1920" height="1040" />
+     </state>
+     <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1598880577113" />
+     <state width="1877" height="347" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1598893538211" />
+     <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598897691976" />
++    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.5.1920.1040@-1920.5.1920.1040" timestamp="1599638656984" />
++    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.5.1920.1040@0.0.1920.1040" timestamp="1599637893854" />
+     <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1598803994714" />
+-    <state width="1877" height="281" key="GridCell.Tab.0.right" timestamp="1598897691977">
+-      <screen x="0" y="0" width="1920" height="1040" />
++    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1599638656984">
++      <screen x="-1920" y="5" width="1920" height="1040" />
+     </state>
+     <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1598880577113" />
+     <state width="1877" height="347" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1598893538211" />
+     <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598897691977" />
++    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.5.1920.1040@-1920.5.1920.1040" timestamp="1599638656984" />
++    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.5.1920.1040@0.0.1920.1040" timestamp="1599637893854" />
+     <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1598803994714" />
+     <state width="1877" height="662" key="GridCell.Tab.1.bottom" timestamp="1598894427311">
+       <screen x="0" y="0" width="1920" height="1040" />
+@@ -300,10 +257,15 @@
+     <state width="1877" height="347" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1598893538212" />
+     <state width="1877" height="662" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598894427311" />
+     <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1598803815115" />
+-    <state x="461" y="164" key="SettingsEditor" timestamp="1598882295560">
+-      <screen x="0" y="0" width="1920" height="1040" />
++    <state x="-1459" y="169" key="SettingsEditor" timestamp="1598936643253">
++      <screen x="-1920" y="5" width="1920" height="1040" />
+     </state>
+     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598882295560" />
++    <state x="-1459" y="169" key="SettingsEditor/0.0.1920.1040/-1920.5.1920.1040@-1920.5.1920.1040" timestamp="1598936643253" />
++    <state x="-1145" y="438" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1598980132820">
++      <screen x="-1920" y="5" width="1920" height="1040" />
++    </state>
++    <state x="-1145" y="438" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/-1920.5.1920.1040@-1920.5.1920.1040" timestamp="1598980132820" />
+     <state x="667" y="252" width="586" height="536" key="find.popup" timestamp="1598795396402">
+       <screen x="0" y="0" width="1920" height="1040" />
+     </state>
+@@ -312,11 +274,12 @@
+       <screen x="0" y="0" width="1536" height="824" />
+     </state>
+     <state x="425" y="189" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1598879019250" />
+-    <state x="623" y="225" width="840" height="680" key="search.everywhere.popup" timestamp="1598892248451">
+-      <screen x="0" y="0" width="1920" height="1040" />
++    <state x="-1297" y="230" width="840" height="680" key="search.everywhere.popup" timestamp="1599639838870">
++      <screen x="-1920" y="5" width="1920" height="1040" />
+     </state>
+     <state x="498" y="178" width="672" height="538" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1598878754179" />
+     <state x="623" y="225" width="840" height="680" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598892248451" />
++    <state x="-1297" y="230" width="840" height="680" key="search.everywhere.popup/0.0.1920.1040/-1920.5.1920.1040@-1920.5.1920.1040" timestamp="1599639838870" />
+     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1598800771542" />
+   </component>
+   <component name="XDebuggerManager">
+Index: src/ExpressN/ExpressN.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/ExpressN/ExpressN.java	(date 1599640053860)
++++ src/ExpressN/ExpressN.java	(date 1599640053860)
+@@ -0,0 +1,75 @@
++package ExpressN;
++
++import java.util.ArrayDeque;
++import java.util.Arrays;
++import java.util.Deque;
++
++public class ExpressN {
++    public static void main(String[] args) {
++        Solution a = new Solution();
++        int k = a.solution(5, 12);
++        System.out.println("k = " + k);
++    }
++}
++
++class Solution {
++    public int solution(int N, int number) {
++        int [] dp = new int[32001];
++        Deque<Integer> que = new ArrayDeque<>();
++        Arrays.fill(dp, Integer.MAX_VALUE);
++
++        dp[N]  = 1;
++        dp[N * 11]  = 2;
++        dp[N * 111]  = 3;
++        dp[N * 1111]  = 4;
++        boolean changed = true;
++        que.add(N); que.add(N * 11); que.add(N * 111); que.add(N * 1111);
++
++        while(!que.isEmpty()){
++            int val = que.poll();
++            // minus
++            int start = val - N;
++            while(start >= 0){
++                if(dp[start] > dp[start + N] + 1){
++                    dp[start] = dp[start + N] + 1;
++                    que.add(start);
++                }
++                start -= N;
++            }
++            // plus
++            start = val + N;
++            while(start < dp.length){
++                if(dp[start] > dp[start - N] + 1){
++                    dp[start] = dp[start - N] + 1;
++                    que.add(start);
++                }
++                start += N;
++            }
++
++            // multiply
++            start = val + N;
++            while(start < dp.length){
++                if(dp[start] > dp[start - N] + 1){
++                    dp[start] = dp[start - N] + 1;
++                    que.add(start);
++                }
++                start += N;
++            }
++
++            // division
++            start = val + N;
++            while(start < dp.length){
++                if(dp[start] > dp[start - N] + 1){
++                    dp[start] = dp[start - N] + 1;
++                    que.add(start);
++                }
++                start += N;
++            }
++        }
++        if(dp[number] > 8)
++            return -1;
++        else{
++            return dp[number];
++        }
++    }
++}
+\ No newline at end of file
