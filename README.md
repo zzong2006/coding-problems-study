@@ -11,3 +11,8 @@
 1. [문자열 압축 (프로그래머즈)](https://programmers.co.kr/learn/courses/30/lessons/60057)
     * 굳이 String을 만들 필요 없이 개수만 계산하면 되는 것임 
     * Git Link
+    
+* 공부해야할 자료구조 또는 알고리즘
+1. Segmentation Tree
+2. Trie
+3. Union-Find (복습)
