@@ -11,7 +11,10 @@
 1. [문자열 압축 (프로그래머즈)](https://programmers.co.kr/learn/courses/30/lessons/60057)
     * 굳이 String을 만들 필요 없이 개수만 계산하면 되는 것임 
     * Git Link
-    
+   
+2. [숫자 카드2 (백준)] (https://www.acmicpc.net/problem/10816)
+    * 분할 정복 어려워..
+
 * 공부해야할 자료구조 또는 알고리즘
 1. Segmentation Tree
 2. Trie
