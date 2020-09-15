@@ -13,8 +13,18 @@
     * Git Link
    
 2. [숫자 카드2 (백준)] (https://www.acmicpc.net/problem/10816)
-    * 분할 정복 어려워..
-
+    * lower_bound 또는 upper_bound 구현
+    * python 으로 시도했는데 TO로 실패함. bisect library 이용해서 풀음.
+    
+3. [한윤정이 이탈리아에 가서 아이스크림을 사먹는데 (백준)] (https://www.acmicpc.net/problem/2422)
+    * 핵심은 배열을 활용하는 것 
+        * 금지 조합은 2가지인데, 선택 조합은 3가지
+        * 여기서는 선택 조합 보다는 금지 조합에 대한 배열을 만들고, 선택 조합을 금지 조합에 대입시켜보는 것이 맞다.
+        * 예) (1,2,3) -> (1,2), (2,3), (1,3) 확인
+    * python lib의 itertools combinations는 시간이 너무 오래걸림
+    * 다중 for문으로 푸는것이 훨씬 빠름 (약 3배정도)
+    
+    
 * 공부해야할 자료구조 또는 알고리즘
 1. Segmentation Tree
 2. Trie
