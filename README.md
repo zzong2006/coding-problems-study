@@ -23,8 +23,15 @@
         * 예) (1,2,3) -> (1,2), (2,3), (1,3) 확인
     * python lib의 itertools combinations는 시간이 너무 오래걸림
     * 다중 for문으로 푸는것이 훨씬 빠름 (약 3배정도)
-    
-    
+
+* Interval 관련 문제    
+    1. [디스크 컨트롤러](https://programmers.co.kr/learn/courses/30/lessons/42627)
+        * heap을 어떻게 사용하는가?
+        * greedy이긴 한데 무엇을 greedy 할지 -> 방식이 잘못됬음
+    2. [단속카메라](https://programmers.co.kr/learn/courses/30/lessons/42884)
+        * 정확성은 옳았으나, 효율적이지 못했음
+        * 이것도 greedy
+
 * 공부해야할 자료구조 또는 알고리즘
 1. Segmentation Tree
 2. Trie
