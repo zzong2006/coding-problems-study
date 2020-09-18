@@ -24,6 +24,12 @@
     * python lib의 itertools combinations는 시간이 너무 오래걸림
     * 다중 for문으로 푸는것이 훨씬 빠름 (약 3배정도)
 
+4. [경주로 건설](https://programmers.co.kr/learn/courses/30/lessons/67259?language=python3)
+    * bfs 로 해결하는 것인데, 테스트 케이스가 부족하여서 조금 쉬운 문제가 되버림 (하지만 난 못풀었음)
+    * 핵심은 dp도 적절히 섞어줘서 가지치기를 진행하는 것
+    * python에서의 상하좌우 이동은 tuple로 해결하는 것이 좋다는 것을 깨달음
+    * python에서의 queue는 list 보다는 collections의 deque를 사용하는 것이 좋다는 것을 깨달음
+
 * Interval 관련 문제    
     1. [디스크 컨트롤러](https://programmers.co.kr/learn/courses/30/lessons/42627)
         * heap을 어떻게 사용하는가?
