@@ -24,12 +24,24 @@
     * python lib의 itertools combinations는 시간이 너무 오래걸림
     * 다중 for문으로 푸는것이 훨씬 빠름 (약 3배정도)
 
-4. [경주로 건설](https://programmers.co.kr/learn/courses/30/lessons/67259?language=python3)
+4. [경주로 건설 (프로그래머즈)](https://programmers.co.kr/learn/courses/30/lessons/67259?language=python3)
     * bfs 로 해결하는 것인데, 테스트 케이스가 부족하여서 조금 쉬운 문제가 되버림 (하지만 난 못풀었음)
     * 핵심은 dp도 적절히 섞어줘서 가지치기를 진행하는 것
     * python에서의 상하좌우 이동은 tuple로 해결하는 것이 좋다는 것을 깨달음
     * python에서의 queue는 list 보다는 collections의 deque를 사용하는 것이 좋다는 것을 깨달음
-
+5. [자와 각도기](https://www.acmicpc.net/problem/2916)
+    <details>
+        <summary>자세히</summary>
+        
+    
+        * queue를 이용한 bfs를 쓰면 속도가 늦다
+            * 배열과 재귀를 이용한 dfs가 빠름
+        * 잡설
+            * 풀긴 풀었는데, 힌트를 너무 많이 봤다
+            * *자*는 쓰지 않음
+            * 각도의 개념을 이해하는게 중요했음
+    </details>
+    
 * Interval 관련 문제    
     1. [디스크 컨트롤러](https://programmers.co.kr/learn/courses/30/lessons/42627)
         * heap을 어떻게 사용하는가?
@@ -42,7 +54,7 @@
 1. Segmentation Tree
     * [구간 합 구하기](https://www.acmicpc.net/problem/2042)
         * 처음 구현해봄 (트리 생성, 수정, 구간 합)
-        * python3 를 사용했는데 시간초과가 자꾸 발생함 -> sys.readline().split() 으로 해결
+        * python3 를 사용했는데 시간초과가 자꾸 발생함 -> `sys.readline().split()` 으로 해결
             * 참고 : https://www.acmicpc.net/problem/15552
 2. Trie
 3. Union-Find (복습)
