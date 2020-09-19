@@ -40,5 +40,9 @@
 
 * 공부해야할 자료구조 또는 알고리즘
 1. Segmentation Tree
+    * [구간 합 구하기](https://www.acmicpc.net/problem/2042)
+        * 처음 구현해봄 (트리 생성, 수정, 구간 합)
+        * python3 를 사용했는데 시간초과가 자꾸 발생함 -> sys.readline().split() 으로 해결
+            * 참고 : https://www.acmicpc.net/problem/15552
 2. Trie
 3. Union-Find (복습)
