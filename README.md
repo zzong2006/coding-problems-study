@@ -29,18 +29,20 @@
     * 핵심은 dp도 적절히 섞어줘서 가지치기를 진행하는 것
     * python에서의 상하좌우 이동은 tuple로 해결하는 것이 좋다는 것을 깨달음
     * python에서의 queue는 list 보다는 collections의 deque를 사용하는 것이 좋다는 것을 깨달음
+
 5. [자와 각도기](https://www.acmicpc.net/problem/2916)
-    <details>
-        <summary>자세히</summary>
-        
+    * queue를 이용한 bfs를 쓰면 속도가 늦다
+        * 배열과 재귀를 이용한 dfs가 빠름
+    * 잡설
+        * 풀긴 풀었는데, 힌트를 너무 많이 봤다
+        * *자*는 쓰지 않음
+        * 각도의 개념을 이해하는게 중요했음
+
+6. [Maximum Sum Obtained of Any Permutation](https://leetcode.com/problems/maximum-sum-obtained-of-any-permutation/)
+    * 주어진 여러개의 구간들 중 가장 많이 중첩된 순위를 한꺼번에 계산하는법
+        * 핵심 : `시작 구간`에는 `1` 그리고 `마지막 구간 + 1` 에는 `-1` 을 놓고 **굴린다**..!
+        * 정말 천재적인 발상이다....
     
-        * queue를 이용한 bfs를 쓰면 속도가 늦다
-            * 배열과 재귀를 이용한 dfs가 빠름
-        * 잡설
-            * 풀긴 풀었는데, 힌트를 너무 많이 봤다
-            * *자*는 쓰지 않음
-            * 각도의 개념을 이해하는게 중요했음
-    </details>
     
 * Interval 관련 문제    
     1. [디스크 컨트롤러](https://programmers.co.kr/learn/courses/30/lessons/42627)

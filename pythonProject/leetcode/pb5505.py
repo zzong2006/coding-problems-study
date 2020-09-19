@@ -1,16 +1,17 @@
 # 5505. Maximum Sum Obtained of Any Permutation
+
 from typing import List
 from itertools import permutations
 
-
 class Solution:
     def maxSumRangeQuery(self, nums: List[int], requests: List[List[int]]) -> int:
-        maximum = 0
         vals = [0] * len(nums)
         for start, end in requests:
-            vals[1:3] += 1
-            for x in range(start, end + 1):
-                vals[x] += 1
+            vals[start] += 1
+            vals[end + 1] -= 1
+        for i in range(1, len(vals)):
+            vals[i] += vals[i - 1]
+
         nums.sort(reverse=True)
         vals.sort(reverse=True)
         total = 0
@@ -22,6 +23,6 @@ class Solution:
 
 
 a = Solution()
-print(a.maxSumRangeQuery([1, 2, 3, 4, 5], [[1, 3], [0, 1]]))
+print(a.maxSumRangeQuery([1, 2, 3, 4, 5], [[1, 3]]))
 print(a.maxSumRangeQuery([1, 2, 3, 4, 5], [[1, 3], [0, 1]]))
 print(a.maxSumRangeQuery([1, 2, 3, 4, 5, 10], [[0, 2], [1, 3], [1, 1]]))
