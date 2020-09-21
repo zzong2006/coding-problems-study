@@ -52,7 +52,14 @@
         
 9. [Maximum Non Negative Product in a Matrix](https://leetcode.com/contest/weekly-contest-207/problems/maximum-non-negative-product-in-a-matrix/)
     * 두개의 dp 배열을 활용해야 하는 문제 (창의적이다)    
-    
+
+10. [징검다리 건너기](https://programmers.co.kr/learn/courses/30/lessons/64062)
+    * 두가지 해결 방법이 있는 문제
+        * Sliding window Maximum 활용 (나는 이 방법을 썼다.. 이해하는데 오래걸렸다)
+        * 이진 탐색하면서 일일이 check
+         
+         
+         
 * Interval 관련 문제    
     1. [디스크 컨트롤러](https://programmers.co.kr/learn/courses/30/lessons/42627)
         * heap을 어떻게 사용하는가?
