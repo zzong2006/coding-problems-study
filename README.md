@@ -37,12 +37,21 @@
         * 풀긴 풀었는데, 힌트를 너무 많이 봤다
         * *자*는 쓰지 않음
         * 각도의 개념을 이해하는게 중요했음
+        
+6. [사탕 게임](https://www.acmicpc.net/problem/3085) 
+    * 구현은 어렵지 않았는데, 경우의 수가 핵심이었다.
 
-6. [Maximum Sum Obtained of Any Permutation](https://leetcode.com/problems/maximum-sum-obtained-of-any-permutation/)
+7. [Maximum Sum Obtained of Any Permutation (leetcode)](https://leetcode.com/problems/maximum-sum-obtained-of-any-permutation/)
     * 주어진 여러개의 구간들 중 가장 많이 중첩된 순위를 한꺼번에 계산하는법
         * 핵심 : `시작 구간`에는 `1` 그리고 `마지막 구간 + 1` 에는 `-1` 을 놓고 **굴린다**..!
         * 정말 천재적인 발상이다....
-    
+        
+8. [Split a String Into the Max Number of Unique Substrings](https://leetcode.com/contest/weekly-contest-207/problems/split-a-string-into-the-max-number-of-unique-substrings/)
+    * 풀긴 풀었는데 재귀로 풀었다가 TLE 나버린 case
+        *   Backtracking 솔루션을 보니 훨씬 깔끔했다. 다만 이해하긴 좀 어려웠음.   
+        
+9. [Maximum Non Negative Product in a Matrix](https://leetcode.com/contest/weekly-contest-207/problems/maximum-non-negative-product-in-a-matrix/)
+    * 두개의 dp 배열을 활용해야 하는 문제 (창의적이다)    
     
 * Interval 관련 문제    
     1. [디스크 컨트롤러](https://programmers.co.kr/learn/courses/30/lessons/42627)
