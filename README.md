@@ -4,7 +4,7 @@
   * 코드(이하 솔루션)는 `src` 폴더에서 확인하실 수 있습니다.
     * 백준 문제에 대한 솔루션은 문제 닉네임과 문제 번호가 함께 표기되어 있습니다.
     * 프로그래머즈 문제에 대한 솔루션은 문제 닉네임만 표기되어 있습니다. 이 repository 내에서 따로 분류해야 할 것 같습니다.
-    * 모든 솔루션에 대한 언어는 java 입니다.
+    * 모든 솔루션에 대한 언어는 java 및 python 입니다.
 
 
 * 다시 풀어보았으면 좋을 법한 문제들
@@ -39,7 +39,8 @@
         * 각도의 개념을 이해하는게 중요했음
         
 6. [사탕 게임](https://www.acmicpc.net/problem/3085) 
-    * 구현은 어렵지 않았는데, 경우의 수가 핵심이었다.
+    * 구현은 어렵지 않았는데, 경우의 수가 핵심이었다. 
+        * 사탕끼리 바꾼 행,열 만 고려해야되는게 아니라, 이미 바꾼 상태에서도 얻을 수 있는 최대값이 다른 어디엔가 존재한다.
 
 7. [Maximum Sum Obtained of Any Permutation (leetcode)](https://leetcode.com/problems/maximum-sum-obtained-of-any-permutation/)
     * 주어진 여러개의 구간들 중 가장 많이 중첩된 순위를 한꺼번에 계산하는법
@@ -52,14 +53,37 @@
         
 9. [Maximum Non Negative Product in a Matrix](https://leetcode.com/contest/weekly-contest-207/problems/maximum-non-negative-product-in-a-matrix/)
     * 두개의 dp 배열을 활용해야 하는 문제 (창의적이다)    
+        * Maximum dp, Minimum dp !
 
 10. [징검다리 건너기](https://programmers.co.kr/learn/courses/30/lessons/64062)
     * 두가지 해결 방법이 있는 문제
         * Sliding window Maximum 활용 (나는 이 방법을 썼다.. 이해하는데 오래걸렸다)
         * 이진 탐색하면서 일일이 check
          
+11. [토마토](https://www.acmicpc.net/problem/7576)
+    * 문제는 잘 풀었는데, python의 `deque`와 `array`의 `loop`에 관련하여 할말이 있다.
+        * `for i in range(len(deque))` 가 `while len(deque) >= 1` 보다 확실하게 현재 `deque`에 포함된 모든 내용을 확인한다.
+            * `while` 의 경우, `while` 문 내에서 `deque`값이 추가되면 그 값도 꺼내지게 된다. 
+        * 2차원 `array`의 `loop`의 경우, 특정 값 `t`가 존재하는지 확인하고 싶다면 다음처럼 하면 좋다.
+            `for i in array: if t in i: print('exist!')`
          
-         
+12. [전구와 스위치](https://www.acmicpc.net/problem/2138)
+    * greedy를 이용한 해법은 간단했지만, 그걸 떠올리기에는 역부족이였음   
+        * 그리고 greedy인것을 알아도 시간초과를 피하기 위해선 조금 트릭이 필요했다.
+        * greedy는 경우의 수를 제한하는 방법이라는 것을 생각하자.
+
+13. [Majority Element II](https://leetcode.com/problems/majority-element-ii/)
+    * 핵심: 크기가 `n`인 배열 중 `⌊n/2⌋` 보다 큰 값은 반드시 **한**개만 존재한다.
+        * 그럼 `⌊n/3⌋` 의 경우는 ?
+
+14. [30](https://www.acmicpc.net/problem/10610)
+    * 30에 대한 배경 지식과 greedy를 이용하여 푸는 문제
+    * 깨달은점
+        * 어떤 수의 모든 자리의 수를 더해서 3으로 나눠지면 그 수는 3의 배수다.
+        * 배수 관련 문제가 나올때는 그 배수의 값들을 나열한 뒤, 패턴을 찾아보자.
+        * 입력값이 말도안되게 크면, 의외로 로직은 간단하다. 
+
+        
 * Interval 관련 문제    
     1. [디스크 컨트롤러](https://programmers.co.kr/learn/courses/30/lessons/42627)
         * heap을 어떻게 사용하는가?
@@ -67,7 +91,13 @@
     2. [단속카메라](https://programmers.co.kr/learn/courses/30/lessons/42884)
         * 정확성은 옳았으나, 효율적이지 못했음
         * 이것도 greedy
-
+    3. [회의실배정](https://www.acmicpc.net/problem/1931)
+        * 핵심은 그리디 및 정렬
+            * 의외로 간단한 문제였다. 하지만 난 틀렸지.
+        * 열에 따른 정렬 방법 (tie 해결) `array.sort(key=lambda x: (x[1], x[0]))`
+            * 두번째 열을 기준으로 오름차순 정렬 후, 두번째 열의 값이 서로 같으면 첫번째 열의 값으로 오름차순 정렬함
+    
+        
 * 공부해야할 자료구조 또는 알고리즘
 1. Segmentation Tree
     * [구간 합 구하기](https://www.acmicpc.net/problem/2042)
