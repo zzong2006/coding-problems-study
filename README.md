@@ -111,17 +111,17 @@
         * 다시 한번 살펴보는게 좋을 것 같다.
         
 ### Interval 관련 문제    
-    1. [디스크 컨트롤러](https://programmers.co.kr/learn/courses/30/lessons/42627)
-        * heap을 어떻게 사용하는가?
-        * greedy이긴 한데 무엇을 greedy 할지 -> 방식이 잘못됬음
-    2. [단속카메라](https://programmers.co.kr/learn/courses/30/lessons/42884)
-        * 정확성은 옳았으나, 효율적이지 못했음
-        * 이것도 greedy
-    3. [회의실배정](https://www.acmicpc.net/problem/1931)
-        * 핵심은 그리디 및 정렬
-            * 의외로 간단한 문제였다. 하지만 난 틀렸지.
-        * 열에 따른 정렬 방법 (tie 해결) `array.sort(key=lambda x: (x[1], x[0]))`
-            * 두번째 열을 기준으로 오름차순 정렬 후, 두번째 열의 값이 서로 같으면 첫번째 열의 값으로 오름차순 정렬함
+1. [디스크 컨트롤러](https://programmers.co.kr/learn/courses/30/lessons/42627)
+    * heap을 어떻게 사용하는가?
+    * greedy이긴 한데 무엇을 greedy 할지 -> 방식이 잘못됬음
+2. [단속카메라](https://programmers.co.kr/learn/courses/30/lessons/42884)
+    * 정확성은 옳았으나, 효율적이지 못했음
+    * 이것도 greedy
+3. [회의실배정](https://www.acmicpc.net/problem/1931)
+    * 핵심은 그리디 및 정렬
+        * 의외로 간단한 문제였다. 하지만 난 틀렸지.
+    * 열에 따른 정렬 방법 (tie 해결) `array.sort(key=lambda x: (x[1], x[0]))`
+        * 두번째 열을 기준으로 오름차순 정렬 후, 두번째 열의 값이 서로 같으면 첫번째 열의 값으로 오름차순 정렬함
     
         
 ## 공부해야할 자료구조 또는 알고리즘
