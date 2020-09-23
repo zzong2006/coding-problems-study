@@ -7,7 +7,7 @@
     * 모든 솔루션에 대한 언어는 java 및 python 입니다.
 
 
-* 다시 풀어보았으면 좋을 법한 문제들
+## 다시 풀어보았으면 좋을 법한 문제들
 1. [문자열 압축 (프로그래머즈)](https://programmers.co.kr/learn/courses/30/lessons/60057)
     * 굳이 String을 만들 필요 없이 개수만 계산하면 되는 것임 
     * Git Link
@@ -99,7 +99,9 @@
 
 14. [부분수열의 합](https://www.acmicpc.net/problem/14225)
     * combination을 구하는 방식이 잘못되었다.
-        * 부분 수열에서 combination 구하는 것은 sliding 방식으로 구해야 한다. `(1,2,3) -> (1,2), (2,3), (1,2,3)`
+        * 부분 수열에서 combination 구하는 것은 sliding 방식으로 구해야 한다.     
+        `(1,2,3) -> (1,2), (2,3), (1,2,3)`
+  
 
 15. [욕심쟁이 판다](https://www.acmicpc.net/problem/1937)
     * dfs (또는 bfs) + dp 사용 문제
@@ -108,7 +110,7 @@
         * 이 문제의 경우, dp의 이유 말고도, 이미 방문한 곳은 절대 방문하지 않는다.. 왜? 판다의 특성 때문에
         * 다시 한번 살펴보는게 좋을 것 같다.
         
-* Interval 관련 문제    
+### Interval 관련 문제    
     1. [디스크 컨트롤러](https://programmers.co.kr/learn/courses/30/lessons/42627)
         * heap을 어떻게 사용하는가?
         * greedy이긴 한데 무엇을 greedy 할지 -> 방식이 잘못됬음
@@ -122,7 +124,7 @@
             * 두번째 열을 기준으로 오름차순 정렬 후, 두번째 열의 값이 서로 같으면 첫번째 열의 값으로 오름차순 정렬함
     
         
-* 공부해야할 자료구조 또는 알고리즘
+## 공부해야할 자료구조 또는 알고리즘
 1. Segmentation Tree
     * [구간 합 구하기](https://www.acmicpc.net/problem/2042)
         * 처음 구현해봄 (트리 생성, 수정, 구간 합)
