@@ -109,6 +109,37 @@
         * 주워 들음) dp는 한번 정하면 일반적으로 절대 수정하면 안되는 것을 원칙으로 하자.
         * 이 문제의 경우, dp의 이유 말고도, 이미 방문한 곳은 절대 방문하지 않는다.. 왜? 판다의 특성 때문에
         * 다시 한번 살펴보는게 좋을 것 같다.
+
+16. [거스름돈](https://programmers.co.kr/learn/courses/30/lessons/12907)
+    * dp 문제인데, 타일 문제랑 비슷해서 햇갈렸다. 중요한점은 같은 값끼리 중복이 허용되지 않는 다는 점
+        * 타일은 이미 섞어놓은 조합에서 하나를 더 얹는 것인데, 거스름돈 문제는 개별적으로 올려놓는 느낌 ?
+        * 예를 들면, 5를 위해 2 + 1 + 1 과 1 + 1 + 2 은 타일에서 다르지만, 거스름돈에서는 같다. 즉, 1을 먼저 이용 후, 2를 처리해야함
+
+17. [골드바흐의 추측](https://www.acmicpc.net/problem/6588)   
+    * 에라스토테네스의 채를 이용해 소수를 빠르게 구하는 방법을 터득하자.
+    * ![image](https://upload.wikimedia.org/wikipedia/commons/b/b9/Sieve_of_Eratosthenes_animation.gif)
+    * 참고 : `math.sqrt(m)` 대신에 `m ** 0.5` 를 사용하면 편리하다.
+
+18. [ABCDE](https://www.acmicpc.net/problem/13023)
+    * DFS에서 굳이 2d 배열로 연결되있지 않은 vertices 까지 체크할 필요가 없다.
+        * `set()` 또는 `list()`가 들어간 2d 배열을 만들어서 연결되있는 것만 집어넣어 주자.
+        * 그리고, dfs에서 이미 방문한 것을 확인할 수 있는 방법은 `set()` 말고 bit manipulation이 있다.
+            * 우선 방문한 노드가 `i` 라고 가정하면, `z += (1 << i)` 로 `z` 에 저장
+            * 이후 어떤 노드 `k`가 이미 방문했는지 확인하고 싶다면, `(1 << k) & z == 1` 로 확인한다.
+            
+19. [숨바꼭질3](https://www.acmicpc.net/problem/13549)
+    * 가중치(cost)가 다른 문제에서의 BFS 사용: 이 문제는 cost가 다르다. (순간 이동 cost: 0, 움직임 cost: 1)
+        * 너무 길어지는것을 막기 위해, 최대한 빠른걸 먼저 해결해야 하고, 이를 위해 그냥 queue 대신 priorityQueue를 사용한다.
+        * 또한 문제 input에 대한 여러 경우의 수를 생각해보는 것을 잊지말자. 
+
+20. [이분 그래프](https://www.acmicpc.net/problem/1707)
+    * 이분 그래프의 정의
+        1. > 그래프의 정점의 집합을 둘로 분할하여, 각 집합에 속한 정점끼리는 서로 인접하지 않도록 분할할 수 있을 때, 그러한 그래프를 특별히 이분 그래프 (Bipartite Graph) 라 부른다.
+        2. 인접한 정점끼리 서로 다른 색으로 칠해서 모든 정점을 두 가지 색으로만 칠할 수 있는 그래프
+        ![image](https://gmlwjd9405.github.io/images/data-structure-graph/bipartite-graph1.gif)
+    * **각 정점에 대해서** BFS 또는 DFS 사용
+        * BFS 또는 DFS를 사용하면서 특정 정점에 인접한 정점들은 특정 정점과 반대의 색을 칠한다.
+        * 칠하는 도중, 만약 이미 칠해진 정점을 발견한 경우, 그 정점이 인접한 정점과 같은 색이라면 이분 그래프가 아니다.
         
 ### Interval 관련 문제    
 1. [디스크 컨트롤러](https://programmers.co.kr/learn/courses/30/lessons/42627)
@@ -135,5 +166,5 @@
 
 * python tip
     1. 재귀 함수 최대 깊이 늘리기 `sys.setrecursionlimit(10**7)` (메모리 초과 가능성 농후)
-    
+    2. `ord` 는 character를 ascii 값으로, `chr`는 ascii 값을 character로 바꾸는 built-in function
     
