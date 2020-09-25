@@ -51,9 +51,7 @@
     * 풀긴 풀었는데 재귀로 풀었다가 TLE 나버린 case
         *   Backtracking 솔루션을 보니 훨씬 깔끔했다. 다만 이해하긴 좀 어려웠음.   
         
-9. [Maximum Non Negative Product in a Matrix](https://leetcode.com/contest/weekly-contest-207/problems/maximum-non-negative-product-in-a-matrix/)
-    * 두개의 dp 배열을 활용해야 하는 문제 (창의적이다)    
-        * Maximum dp, Minimum dp !
+
 
 10. [징검다리 건너기](https://programmers.co.kr/learn/courses/30/lessons/64062)
     * 두가지 해결 방법이 있는 문제
@@ -104,16 +102,11 @@
   
 
 15. [욕심쟁이 판다](https://www.acmicpc.net/problem/1937)
-    * dfs (또는 bfs) + dp 사용 문제
-        * dp 업데이트 방식이 내가 경험한 것과 다르다.
+    * dfs (또는 bfs) + memoization 사용 문제
+        * memoization 업데이트 방식이 내가 경험한 것과 다르다.
         * 주워 들음) dp는 한번 정하면 일반적으로 절대 수정하면 안되는 것을 원칙으로 하자.
-        * 이 문제의 경우, dp의 이유 말고도, 이미 방문한 곳은 절대 방문하지 않는다.. 왜? 판다의 특성 때문에
+        * 이 문제의 경우, memoization의 이유 말고도, 이미 방문한 곳은 절대 방문하지 않는다.. 왜? 판다의 특성 때문에
         * 다시 한번 살펴보는게 좋을 것 같다.
-
-16. [거스름돈](https://programmers.co.kr/learn/courses/30/lessons/12907)
-    * dp 문제인데, 타일 문제랑 비슷해서 햇갈렸다. 중요한점은 같은 값끼리 중복이 허용되지 않는 다는 점
-        * 타일은 이미 섞어놓은 조합에서 하나를 더 얹는 것인데, 거스름돈 문제는 개별적으로 올려놓는 느낌 ?
-        * 예를 들면, 5를 위해 2 + 1 + 1 과 1 + 1 + 2 은 타일에서 다르지만, 거스름돈에서는 같다. 즉, 1을 먼저 이용 후, 2를 처리해야함
 
 17. [골드바흐의 추측](https://www.acmicpc.net/problem/6588)   
     * 에라스토테네스의 채를 이용해 소수를 빠르게 구하는 방법을 터득하자.
@@ -140,7 +133,21 @@
     * **각 정점에 대해서** BFS 또는 DFS 사용
         * BFS 또는 DFS를 사용하면서 특정 정점에 인접한 정점들은 특정 정점과 반대의 색을 칠한다.
         * 칠하는 도중, 만약 이미 칠해진 정점을 발견한 경우, 그 정점이 인접한 정점과 같은 색이라면 이분 그래프가 아니다.
-        
+
+### Dynamic Programming (DP)
+1. [거스름돈](https://programmers.co.kr/learn/courses/30/lessons/12907)
+    * dp 문제인데, 타일 문제랑 비슷해서 햇갈렸다. 중요한점은 같은 값끼리 중복이 허용되지 않는 다는 점
+        * 타일은 이미 섞어놓은 조합에서 하나를 더 얹는 것인데, 거스름돈 문제는 개별적으로 올려놓는 느낌 ?
+        * 예를 들면, 5를 위해 2 + 1 + 1 과 1 + 1 + 2 은 타일에서 다르지만, 거스름돈에서는 같다. 즉, 1을 먼저 이용 후, 2를 처리해야함
+       
+2. [Maximum Non Negative Product in a Matrix](https://leetcode.com/contest/weekly-contest-207/problems/maximum-non-negative-product-in-a-matrix/)
+    * 두개의 dp 배열을 활용해야 하는 문제 (창의적이다)    
+        * Maximum dp, Minimum dp !
+
+3. [로봇 조종하기](https://www.acmicpc.net/problem/2169)
+    * [Maximum Non Negative Product in a Matrix](https://leetcode.com/contest/weekly-contest-207/problems/maximum-non-negative-product-in-a-matrix/) 문제와 마찬가지로, 2개의 dp 배열을 활용해야 하는 문제다.
+        * 여기서는 방향에 따라서 dp 배열을 생성했다.  
+              
 ### Interval 관련 문제    
 1. [디스크 컨트롤러](https://programmers.co.kr/learn/courses/30/lessons/42627)
     * heap을 어떻게 사용하는가?
