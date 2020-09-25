@@ -5,9 +5,9 @@
     * 백준 문제에 대한 솔루션은 문제 닉네임과 문제 번호가 함께 표기되어 있습니다.
     * 프로그래머즈 문제에 대한 솔루션은 문제 닉네임만 표기되어 있습니다. 이 repository 내에서 따로 분류해야 할 것 같습니다.
     * 모든 솔루션에 대한 언어는 java 및 python 입니다.
+    * (2020/09/25) 못 풀었지만 생성된 문제에 대한 파일은 `${filename}_(unsolved)` 표시를 하기로 하였습니다. 
 
-
-## 다시 풀어보았으면 좋을 법한 문제들
+## 오답노트: 다시 풀어보았으면 좋을 법한 문제들
 1. [문자열 압축 (프로그래머즈)](https://programmers.co.kr/learn/courses/30/lessons/60057)
     * 굳이 String을 만들 필요 없이 개수만 계산하면 되는 것임 
     * Git Link
@@ -134,6 +134,11 @@
         * BFS 또는 DFS를 사용하면서 특정 정점에 인접한 정점들은 특정 정점과 반대의 색을 칠한다.
         * 칠하는 도중, 만약 이미 칠해진 정점을 발견한 경우, 그 정점이 인접한 정점과 같은 색이라면 이분 그래프가 아니다.
 
+21. [Largest Number](https://leetcode.com/problems/largest-number/)
+    * 서로 붙여보면서 정렬하는 것이 핵심. 답은 정말 간단한데 너무 창의적이라 생각을 못했다.
+
+
+
 ### Dynamic Programming (DP)
 1. [거스름돈](https://programmers.co.kr/learn/courses/30/lessons/12907)
     * dp 문제인데, 타일 문제랑 비슷해서 햇갈렸다. 중요한점은 같은 값끼리 중복이 허용되지 않는 다는 점
@@ -146,12 +151,12 @@
 
 3. [로봇 조종하기](https://www.acmicpc.net/problem/2169)
     * [Maximum Non Negative Product in a Matrix](https://leetcode.com/contest/weekly-contest-207/problems/maximum-non-negative-product-in-a-matrix/) 문제와 마찬가지로, 2개의 dp 배열을 활용해야 하는 문제다.
-        * 여기서는 방향에 따라서 dp 배열을 생성했다.  
+        * 여기서는 특정 dp cell의 값을 정할 때, 어느 방향에서 오는가에 따라 dp 배열을 생성했다.  
               
 ### Interval 관련 문제    
 1. [디스크 컨트롤러](https://programmers.co.kr/learn/courses/30/lessons/42627)
     * heap을 어떻게 사용하는가?
-    * greedy이긴 한데 무엇을 greedy 할지 -> 방식이 잘못됬음
+    * greedy이긴 한데 무엇을 greedy 할지 -> 가장 짧은 시간이 걸리는 것 중에서 가장 빠르게 요청이 온것을 처리함
 2. [단속카메라](https://programmers.co.kr/learn/courses/30/lessons/42884)
     * 정확성은 옳았으나, 효율적이지 못했음
     * 이것도 greedy
@@ -168,10 +173,18 @@
         * 처음 구현해봄 (트리 생성, 수정, 구간 합)
         * python3 를 사용했는데 시간초과가 자꾸 발생함 -> `sys.readline().split()` 으로 해결
             * 참고 : https://www.acmicpc.net/problem/15552
+    * [최솟값과 최댓값](https://www.acmicpc.net/problem/2357)
+        * 구간의 합 대신, 최대값과 최소값을 segmentation tree로 구현 
+        * 재귀에서 `return`을 이해하고 활용하는 연습이 더 필요함
+        
+        
 2. Trie
 3. Union-Find (복습)
+4. 0-1 BFS 
+
 
 * python tip
     1. 재귀 함수 최대 깊이 늘리기 `sys.setrecursionlimit(10**7)` (메모리 초과 가능성 농후)
     2. `ord` 는 character를 ascii 값으로, `chr`는 ascii 값을 character로 바꾸는 built-in function
-    
+    3. JAVA 와 같은 `comparator`를 이용하고 싶으면, `from functools import cmp_to_key`를 가져온 뒤에,   
+    `sorted(nums, key=cmp_to_key(lambda x, y: x - y)))` 와 같은 방법으로 정렬을 하자. (물론 따로 `comparator` 함수를 정의해도 됨)

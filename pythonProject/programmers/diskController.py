@@ -1,39 +1,38 @@
 from queue import PriorityQueue
+from functools import cmp_to_key
 import heapq
+
+def least_job(curr, jbs):
+    output = None
+    smallest = jbs[-1]
+    for i in range(0, len(jbs)):
+        start, consume = jbs[i]
+        if curr >= start and (output is None or output[1] > consume or (output[1] == consume and output[0] > start)):
+            output = jbs[i]
+        if smallest[0] > start or (smallest[0] == start and smallest[1] > consume):
+            smallest = jbs[i]
+    if output is None:
+        return smallest
+    else:
+        return output
 
 
 def solution(jobs):
-    sorted(jobs, key=lambda x: x[0])
-    mh = []
-    removed = set()
-    heapq.heapify(mh)
+    curr = 0
+    ls = []
 
-    answer = 0
-    curr_time = 0
-    saved_curr = 0
-    disk_empty = True
-
-    while len(removed) != len(jobs):
-        # search
-        for i in range(saved_curr, len(jobs)):
-            if jobs[i][0] > curr_time:
-                saved_curr = i
-                break
-            else:
-                heapq.heappush(mh, (jobs[i][1], i))
-
-                if i == len(jobs) - 1:
-                    saved_curr = len(jobs)
-        if len(mh) > 0:
-            (s, idx) = heapq.heappop(mh)
-            curr_time += s
-            answer += (curr_time - jobs[idx][0])
-            # curr_time += jobs[idx][1]
-            removed.add(idx)
-            print((curr_time - jobs[idx][0]), idx)
-        else:
-            curr_time = jobs[saved_curr][0]
-    return int(answer / len(jobs))
+    while jobs:
+        found_job = least_job(curr, jobs)
+        start, consume = found_job
+        jobs.remove(found_job)
+        #print(found_job, jobs)
+        if curr < start:
+            curr = start
+        curr += consume
+        ls.append(curr - start)
+    #print(ls)
+    return sum(ls) // len(ls)
 
 
-print(solution([[0, 6], [0, 8], [7, 1]]))
+print(solution( [[0, 9], [0, 4], [0, 5], [0, 7], [0, 3]]))
+print(solution(	[[0, 3], [1, 9], [2, 6]]))
