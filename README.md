@@ -191,8 +191,7 @@
     `sorted(nums, key=cmp_to_key(lambda x, y: x - y)))` 와 같은 방법으로 정렬을 하자. (물론 따로 `comparator` 함수를 정의해도 됨)
     4. 문제풀이 할때, 입력은 `sys.readline().strip()` 으로 받는다. 한 줄 통째로 받는 것          
         * 참고 : https://www.acmicpc.net/problem/15552
-    5. `age = ages.get('a', 'b')` : `age`라는 `dict()`에 `'a'`가 key로 존재하는지 확인하고 없으면, `ages['a']='b'` 수행
-    6. `loop` 돌면서 특정 item 찾을 때, 못 찾을 경우 예외 처리 방법 
+    5. `loop` 돌면서 특정 item 찾을 때, 못 찾을 경우 (`False/True`같은) temporary variable을 사용하지 않고 예외 처리 방법 
         ```
        for letter in haystack:
         if needle == letter:
@@ -201,3 +200,4 @@
        else:    # If no break occurred (indentation을 for loop와 같이 맞춘다.)
             print('Not found!')
        ```
+    6. `sample = defaultdict(dict)`은 `sample["a"]["b"] = 2`와 같은 형태로 `dict` 내 `dict`을 정의하게 해준다. 
