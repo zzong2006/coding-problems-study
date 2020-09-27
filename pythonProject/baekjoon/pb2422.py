@@ -1,7 +1,7 @@
 from itertools import combinations
 
 n, m = list(map(int, input().split()))
-combs = []
+
 combs = list(combinations(range(1, n + 1), 3))
 
 ices = [[False] * (n + 1) for _ in range(n + 1)]

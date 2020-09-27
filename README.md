@@ -44,8 +44,7 @@
 
 7. [Maximum Sum Obtained of Any Permutation (leetcode)](https://leetcode.com/problems/maximum-sum-obtained-of-any-permutation/)
     * 주어진 여러개의 구간들 중 가장 많이 중첩된 순위를 한꺼번에 계산하는법
-        * 핵심 : `시작 구간`에는 `1` 그리고 `마지막 구간 + 1` 에는 `-1` 을 놓고 **굴린다**..!
-        * 정말 천재적인 발상이다....
+        * 핵심 : `시작 구간`에는 `1` 그리고 `마지막 구간 + 1` 에는 `-1` 을 놓고(더하고) **굴린다**..!
         
 8. [Split a String Into the Max Number of Unique Substrings](https://leetcode.com/contest/weekly-contest-207/problems/split-a-string-into-the-max-number-of-unique-substrings/)
     * 풀긴 풀었는데 재귀로 풀었다가 TLE 나버린 case
@@ -62,7 +61,7 @@
     * 문제는 잘 풀었는데, python의 `deque`와 `array`의 `loop`에 관련하여 할말이 있다.
         * `for i in range(len(deque))` 가 `while len(deque) >= 1` 보다 확실하게 현재 `deque`에 포함된 모든 내용을 확인한다.
             * `while` 의 경우, `while` 문 내에서 `deque`값이 추가되면 그 값도 꺼내지게 된다. 
-        * 2차원 `array`의 `loop`의 경우, 특정 값 `t`가 존재하는지 확인하고 싶다면 다음처럼 하면 좋다.
+        * 2차원 `array`의 `loop`의 경우, 특정 값 `t`가 존재하는지 확인하고 싶다면 다음처럼 하면 좋다.     
             `for i in array: if t in i: print('exist!')`
          
 12. [전구와 스위치](https://www.acmicpc.net/problem/2138)
@@ -73,7 +72,7 @@
         * 이 문제도 비슷한 문제인데, 1차원 greedy가 2차원으로 확장되었다고 생각하면 됨.
         * Combination 구할 때, bit masking을 사용하면 유용하다.
             * 예시) `for i in range(0, 1 << n):` -> 이렇게 하면 `2^n`개의 조합(yes/no)을 구할 수 있다.
-        * 아무도 python으로 푼 사람이 없음, 나도 pypy3으로 채점하고 있다.
+        * 잡설) 이 문제를 python으로 푼 사람이 아무도 없음 (속도가 느려서), 나도 pypy3으로 채점하고 있다.
             * 그리고 greedy가 이렇게 어려운 문제인지 몰랐음;;;
         
         
@@ -137,7 +136,10 @@
 21. [Largest Number](https://leetcode.com/problems/largest-number/)
     * 서로 붙여보면서 정렬하는 것이 핵심. 답은 정말 간단한데 너무 창의적이라 생각을 못했다.
 
-
+22. [Two Sum](https://leetcode.com/problems/two-sum/solution/)
+    * 주어진 배열의 두 숫자를 더해서 목적하는 값을 찾는 문제
+        * `O(n^2)`은 너무 쉽고, `O(n)`으로 풀려면 hashtable를 사용해야 했다.  
+        * hashtable에 숫자를 넣으면서 동시에 체크하는 방법이 빠름
 
 ### Dynamic Programming (DP)
 1. [거스름돈](https://programmers.co.kr/learn/courses/30/lessons/12907)
@@ -157,6 +159,7 @@
 1. [디스크 컨트롤러](https://programmers.co.kr/learn/courses/30/lessons/42627)
     * heap을 어떻게 사용하는가?
     * greedy이긴 한데 무엇을 greedy 할지 -> 가장 짧은 시간이 걸리는 것 중에서 가장 빠르게 요청이 온것을 처리함
+        * 그렇다고 또 디스크가 놀고있으면 안되므로, 아무리 짧은 시간이 걸려도 하는게 없으면, 도착한 요청을 바로 처리
 2. [단속카메라](https://programmers.co.kr/learn/courses/30/lessons/42884)
     * 정확성은 옳았으나, 효율적이지 못했음
     * 이것도 greedy
@@ -171,8 +174,6 @@
 1. Segmentation Tree
     * [구간 합 구하기](https://www.acmicpc.net/problem/2042)
         * 처음 구현해봄 (트리 생성, 수정, 구간 합)
-        * python3 를 사용했는데 시간초과가 자꾸 발생함 -> `sys.readline().split()` 으로 해결
-            * 참고 : https://www.acmicpc.net/problem/15552
     * [최솟값과 최댓값](https://www.acmicpc.net/problem/2357)
         * 구간의 합 대신, 최대값과 최소값을 segmentation tree로 구현 
         * 재귀에서 `return`을 이해하고 활용하는 연습이 더 필요함
@@ -188,3 +189,15 @@
     2. `ord` 는 character를 ascii 값으로, `chr`는 ascii 값을 character로 바꾸는 built-in function
     3. JAVA 와 같은 `comparator`를 이용하고 싶으면, `from functools import cmp_to_key`를 가져온 뒤에,   
     `sorted(nums, key=cmp_to_key(lambda x, y: x - y)))` 와 같은 방법으로 정렬을 하자. (물론 따로 `comparator` 함수를 정의해도 됨)
+    4. 문제풀이 할때, 입력은 `sys.readline().strip()` 으로 받는다. 한 줄 통째로 받는 것          
+        * 참고 : https://www.acmicpc.net/problem/15552
+    5. `age = ages.get('a', 'b')` : `age`라는 `dict()`에 `'a'`가 key로 존재하는지 확인하고 없으면, `ages['a']='b'` 수행
+    6. `loop` 돌면서 특정 item 찾을 때, 못 찾을 경우 예외 처리 방법 
+        ```
+       for letter in haystack:
+        if needle == letter:
+            print('Found !')
+            break
+       else:    # If no break occurred (indentation을 for loop와 같이 맞춘다.)
+            print('Not found!')
+       ```
