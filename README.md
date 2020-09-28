@@ -51,7 +51,6 @@
         *   Backtracking 솔루션을 보니 훨씬 깔끔했다. 다만 이해하긴 좀 어려웠음.   
         
 
-
 10. [징검다리 건너기](https://programmers.co.kr/learn/courses/30/lessons/64062)
     * 두가지 해결 방법이 있는 문제
         * Sliding window Maximum 활용 (나는 이 방법을 썼다.. 이해하는데 오래걸렸다)
@@ -138,9 +137,21 @@
 
 22. [Two Sum](https://leetcode.com/problems/two-sum/solution/)
     * 주어진 배열의 두 숫자를 더해서 목적하는 값을 찾는 문제
-        * `O(n^2)`은 너무 쉽고, `O(n)`으로 풀려면 hashtable를 사용해야 했다.  
+        * `O(n^2)`은 너무 쉽고, `O(n)`으로 풀려면 hashtable을 사용해야 했다.  
         * hashtable에 숫자를 넣으면서 동시에 체크하는 방법이 빠름
 
+23. [Maximum Number of Achievable Transfer Requests](https://leetcode.com/problems/maximum-number-of-achievable-transfer-requests/)
+    * 최대/최소를 구하는 문제의 contraints가 작은 경우 (`1<= n<= 20`, `1<= request.length <=16`), 모든 조합을 고려해볼 것
+        * `itertools.combinations` 사용
+
+24. [Pokémon Army (easy version)](https://codeforces.com/contest/1420/problem/C1) 
+    * Local minima & local maxima를 구하는 문제
+        * 배열 `a`의 local minima란, `i`번째 원소 `a_i`가 `a_(i-1) >= a_i && a_i <= a_(i+1)`를 만족하는 경우 (구덩이, valley)
+        * local maxima는 그 반대, 즉, `a_(i-1) <= a_i && a_i >= a_(i+1)` (동산, peak)
+    * 배열에서 최대의 합을 구하는 문제가 있다면, 그 값들을 시각화 하는 것도 문제를 파악하는데 도움이 된다.
+        * 만약 + 로 시작해서 -, +, -, + 이런 순으로 원소들의 최대 합을 구하는 문제가 있다면, 반드시 정답은 홀수 번 합이다 (e.g. + - +).
+        
+        
 ### Dynamic Programming (DP)
 1. [거스름돈](https://programmers.co.kr/learn/courses/30/lessons/12907)
     * dp 문제인데, 타일 문제랑 비슷해서 햇갈렸다. 중요한점은 같은 값끼리 중복이 허용되지 않는 다는 점
@@ -171,7 +182,7 @@
     
         
 ## 공부해야할 자료구조 또는 알고리즘
-1. Segmentation Tree
+1. Segmentation Tree 
     * [구간 합 구하기](https://www.acmicpc.net/problem/2042)
         * 처음 구현해봄 (트리 생성, 수정, 구간 합)
     * [최솟값과 최댓값](https://www.acmicpc.net/problem/2357)
@@ -182,7 +193,8 @@
 2. Trie
 3. Union-Find (복습)
 4. 0-1 BFS 
-
+5. Suffix Array
+6. lazy propagation
 
 * python tip
     1. 재귀 함수 최대 깊이 늘리기 `sys.setrecursionlimit(10**7)` (메모리 초과 가능성 농후)
@@ -192,7 +204,8 @@
     4. 문제풀이 할때, 입력은 `sys.readline().strip()` 으로 받는다. 한 줄 통째로 받는 것          
         * 참고 : https://www.acmicpc.net/problem/15552
     5. `loop` 돌면서 특정 item 찾을 때, 못 찾을 경우 (`False/True`같은) temporary variable을 사용하지 않고 예외 처리 방법 
-        ```
+        ```python
+       haystack = dict(); needle = 'a'
        for letter in haystack:
         if needle == letter:
             print('Found !')
@@ -201,3 +214,12 @@
             print('Not found!')
        ```
     6. `sample = defaultdict(dict)`은 `sample["a"]["b"] = 2`와 같은 형태로 `dict` 내 `dict`을 정의하게 해준다. 
+    7. 2진수 (binary number)의 모든 1 계산하기 (`bin(i).count("1")`)
+    8. 어떤 값 `a`에서 특정 값 `b`를 `a`가 0이 될 때까지 빼내기
+        ```python
+       a = 5; b = 3
+       while a > 0:
+           subtracted = min(a, b)      # b = 3 값을 빼냄
+           a = max(0, a - b)                    # 빼낸 값 a를 조정
+            
+       ```
