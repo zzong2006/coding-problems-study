@@ -196,30 +196,29 @@
 5. Suffix Array
 6. lazy propagation
 
-* python tip
-    1. 재귀 함수 최대 깊이 늘리기 `sys.setrecursionlimit(10**7)` (메모리 초과 가능성 농후)
-    2. `ord` 는 character를 ascii 값으로, `chr`는 ascii 값을 character로 바꾸는 built-in function
-    3. JAVA 와 같은 `comparator`를 이용하고 싶으면, `from functools import cmp_to_key`를 가져온 뒤에,   
-    `sorted(nums, key=cmp_to_key(lambda x, y: x - y)))` 와 같은 방법으로 정렬을 하자. (물론 따로 `comparator` 함수를 정의해도 됨)
-    4. 문제풀이 할때, 입력은 `sys.readline().strip()` 으로 받는다. 한 줄 통째로 받는 것          
-        * 참고 : https://www.acmicpc.net/problem/15552
-    5. `loop` 돌면서 특정 item 찾을 때, 못 찾을 경우 (`False/True`같은) temporary variable을 사용하지 않고 예외 처리 방법 
-        ```python
-       haystack = dict(); needle = 'a'
-       for letter in haystack:
-        if needle == letter:
-            print('Found !')
-            break
-       else:    # If no break occurred (indentation을 for loop와 같이 맞춘다.)
-            print('Not found!')
-       ```
-    6. `sample = defaultdict(dict)`은 `sample["a"]["b"] = 2`와 같은 형태로 `dict` 내 `dict`을 정의하게 해준다. 
-    7. 2진수 (binary number)의 모든 1 계산하기 (`bin(i).count("1")`)
-    8. 어떤 값 `a`에서 특정 값 `b`를 `a`가 0이 될 때까지 빼내기
-        ```python
-       a = 5; b = 3
-       while a > 0:
-           subtracted = min(a, b)      # b = 3 값을 빼냄
-           a = max(0, a - b)                    # 빼낸 값 a를 조정
-            
-       ```
+## python tip
+1. 재귀 함수 최대 깊이 늘리기 `sys.setrecursionlimit(10**7)` (메모리 초과 가능성 농후)
+2. `ord` 는 character를 ascii 값으로, `chr`는 ascii 값을 character로 바꾸는 built-in function
+3. JAVA 와 같은 `comparator`를 이용하고 싶으면, `from functools import cmp_to_key`를 가져온 뒤에,   
+`sorted(nums, key=cmp_to_key(lambda x, y: x - y)))` 와 같은 방법으로 정렬을 하자. (물론 따로 `comparator` 함수를 정의해도 됨)
+4. 문제풀이 할때, 입력은 `sys.readline().strip()` 으로 받는다. `sys.readline()`은 line을 전부 입력 받는 것          
+    * 참고 : https://www.acmicpc.net/problem/15552
+5. `loop` 돌면서 특정 item 찾을 때, 못 찾을 경우 (`False/True`같은) temporary variable을 사용하지 않고 예외 처리 방법 
+    ```python
+   haystack = dict(); needle = 'a'
+   for letter in haystack:
+    if needle == letter:
+        print('Found !')
+        break
+   else:    # If no break occurred (indentation을 for loop와 같이 맞춘다.)
+        print('Not found!')
+   ```
+6. `sample = defaultdict(dict)`은 `sample["a"]["b"] = 2`와 같은 형태로 `dict` 내 `dict`을 정의하게 해준다. 
+7. 2진수 (binary number)의 모든 1 계산하기 (`bin(i).count("1")`)
+8. 어떤 값 `a`에서 특정 값 `b`를 `a`가 0이 될 때까지 빼내기
+    ```python
+   a = 5; b = 3
+   while a > 0:
+       subtracted = min(a, b)      # b = 3 값을 빼냄
+       a = max(0, a - b)           # 빼낸 값 a를 조정
+   ```
