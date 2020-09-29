@@ -6,6 +6,7 @@
     * 프로그래머즈 문제에 대한 솔루션은 문제 닉네임만 표기되어 있습니다. 이 repository 내에서 따로 분류해야 할 것 같습니다.
     * 모든 솔루션에 대한 언어는 java 및 python 입니다.
     * (2020/09/25) 못 풀었지만 생성된 문제에 대한 파일은 `${filename}_(unsolved)` 표시를 하기로 하였습니다. 
+* [leetcode](https://leetcode.com/)와 [codeforce](https://codeforces.com/) 문제들을 일부 추가하였습니다.
 
 ## 오답노트: 다시 풀어보았으면 좋을 법한 문제들
 1. [문자열 압축 (프로그래머즈)](https://programmers.co.kr/learn/courses/30/lessons/60057)
@@ -151,7 +152,25 @@
     * 배열에서 최대의 합을 구하는 문제가 있다면, 그 값들을 시각화 하는 것도 문제를 파악하는데 도움이 된다.
         * 만약 + 로 시작해서 -, +, -, + 이런 순으로 원소들의 최대 합을 구하는 문제가 있다면, 반드시 정답은 홀수 번 합이다 (e.g. + - +).
         
-        
+25. [Subarray Product Less Than K](https://leetcode.com/problems/subarray-product-less-than-k/)   
+    * [Sliding Window를 활용](https://www.geeksforgeeks.org/number-subarrays-product-less-k/)해서 해결하는 문제
+        * `[1, 2, 3]`이 가질 수 있는 총 subarray가 a개인 경우,     
+        `[1, 2, 3, 4]`의 총 subarray는 `a + start - end = a + 4 - 0` 가 된다.
+            * 여기서 `start` 는 `0` 의 index, 그리고 `end`는 `4`의 index
+        * 이러한 특징을 활용하여 array에서 window를 놓고 sliding 시키면서 product 값 그리고 subarray 개수를 계산하면 됨
+
+26. [스타트와 링크](https://www.acmicpc.net/problem/14889)
+    * 문제 자체는 쉬웠는데, 짝수 `n` 명을 반/반 두 팀으로 나누는 조합에 대하여 할말이 있다.
+        * `python`의 `itertools.combinations()`에서 생성된 조합을 절반으로 나누면 위 조합이 만들어진다.
+            * 예를 들어 `n=4`명의 조합은 `(0, 1), (0, 2), (0, 3), (1, 2), (1, 3), (2, 3)` 인데, 이를 절반으로 나누면 정확히 반/반 조합이다.
+            * 즉, `A = (0, 1), (0, 2), (0, 3)` / `B = (1, 2), (1, 3), (2, 3)` 으로 나누고, `A[i]`는 `B[n-i-1]` 와 정확히 매칭된다. 
+
+27. [퍼즐](https://www.acmicpc.net/problem/1525)
+    * 조그만 2차원 배열을 쉽게 다루는 방법
+        * `3x3` 배열인 경우 `(0,0)`부터 `(2,2)`까지 각 원소들을 하나의 문자열로 표현한다. (e.g.`123456780`)
+
+
+
 ### Dynamic Programming (DP)
 1. [거스름돈](https://programmers.co.kr/learn/courses/30/lessons/12907)
     * dp 문제인데, 타일 문제랑 비슷해서 햇갈렸다. 중요한점은 같은 값끼리 중복이 허용되지 않는 다는 점
@@ -222,3 +241,4 @@
        subtracted = min(a, b)      # b = 3 값을 빼냄
        a = max(0, a - b)           # 빼낸 값 a를 조정
    ```
+9. 집합 `a`와 `b`의 차집합은 `a-b`로 구한다.

@@ -1,3 +1,4 @@
+# 푼 문제
 import sys
 
 get_input = sys.stdin.readline
