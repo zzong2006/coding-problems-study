@@ -63,17 +63,7 @@
             * `while` 의 경우, `while` 문 내에서 `deque`값이 추가되면 그 값도 꺼내지게 된다. 
         * 2차원 `array`의 `loop`의 경우, 특정 값 `t`가 존재하는지 확인하고 싶다면 다음처럼 하면 좋다.     
             `for i in array: if t in i: print('exist!')`
-         
-12. [전구와 스위치](https://www.acmicpc.net/problem/2138)
-    * greedy를 이용한 해법은 간단했지만, 그걸 떠올리기에는 역부족이였음   
-        * 그리고 greedy인것을 알아도 시간초과를 피하기 위해선 조금 트릭이 필요했다.
-        * greedy는 경우의 수를 제한하는 방법이라는 것을 생각하자.
-    * [동전 뒤집기](https://www.acmicpc.net/problem/1285)
-        * 이 문제도 비슷한 문제인데, 1차원 greedy가 2차원으로 확장되었다고 생각하면 됨.
-        * Combination 구할 때, bit masking을 사용하면 유용하다.
-            * 예시) `for i in range(0, 1 << n):` -> 이렇게 하면 `2^n`개의 조합(yes/no)을 구할 수 있다.
-        * 잡설) 이 문제를 python으로 푼 사람이 아무도 없음 (속도가 느려서), 나도 pypy3으로 채점하고 있다.
-            * 그리고 greedy가 이렇게 어려운 문제인지 몰랐음;;;
+
         
         
 13. [Majority Element II](https://leetcode.com/problems/majority-element-ii/)
@@ -86,13 +76,7 @@
              1. 움직이는 사이에 문제가 없음을 확인 모든 자원 >= 소모 자원 
              2. (1)이 확인되었다면, 반드시 정답은 존재     
                 -> `0~n` 방향으로 자원 충전 및 소모 진행하면서 시작 위치 찾기 
-             
-14. [30](https://www.acmicpc.net/problem/10610)
-    * 30에 대한 배경 지식과 greedy를 이용하여 푸는 문제
-    * 깨달은점
-        * 어떤 수의 모든 자리의 수를 더해서 3으로 나눠지면 그 수는 3의 배수다.
-        * 배수 관련 문제가 나올때는 그 배수의 값들을 나열한 뒤, 패턴을 찾아보자.
-        * 입력값이 말도안되게 크면, 의외로 로직은 간단하다. 
+
 
 14. [부분수열의 합](https://www.acmicpc.net/problem/14225)
     * combination을 구하는 방식이 잘못되었다.
@@ -169,8 +153,51 @@
     * 조그만 2차원 배열을 쉽게 다루는 방법
         * `3x3` 배열인 경우 `(0,0)`부터 `(2,2)`까지 각 원소들을 하나의 문자열로 표현한다. (e.g.`123456780`)
 
+### Greedy Algorithm
+         
+1. [전구와 스위치](https://www.acmicpc.net/problem/2138)
+    * greedy를 이용한 해법은 간단했지만, 그걸 떠올리기에는 역부족이였음   
+        * 그리고 greedy인것을 알아도 시간초과를 피하기 위해선 조금 트릭이 필요했다.
+        * greedy는 경우의 수를 제한하는 방법이라는 것을 생각하자.
+    * [동전 뒤집기](https://www.acmicpc.net/problem/1285)
+        * 이 문제도 비슷한 문제인데, 1차원 greedy가 2차원으로 확장되었다고 생각하면 됨.
+        * Combination 구할 때, bit masking을 사용하면 유용하다.
+            * 예시) `for i in range(0, 1 << n):` -> 이렇게 하면 `2^n`개의 조합(yes/no)을 구할 수 있다.
+        * 잡설) 이 문제를 python으로 푼 사람이 아무도 없음 (속도가 느려서), 나도 pypy3으로 채점하고 있다.
+            * 그리고 greedy가 이렇게 어려운 문제인지 몰랐음;;;
+                         
+2. [30](https://www.acmicpc.net/problem/10610)
+    * 30에 대한 배경 지식과 greedy를 이용하여 푸는 문제
+    * 깨달은점
+        * 어떤 수의 모든 자리의 수를 더해서 3으로 나눠지면 그 수는 3의 배수다.
+        * 배수 관련 문제가 나올때는 그 배수의 값들을 나열한 뒤, 패턴을 찾아보자.
+        * 입력값이 말도안되게 크면, 의외로 로직은 간단하다. 
 
+3. [Bag of Tokens](https://leetcode.com/problems/bag-of-tokens/)
+    * 가장 큰 값을 받고, 가장 작은 값을 소모하면서 진행해 나가면 된다.
 
+4. [보석 도둑](https://www.acmicpc.net/problem/1202)
+    * priority queue와 greedy 문제
+        * 가장 크기가 작은 가방을 기준으로, 그 가방에 넣을 수 있는 보석들을 나열(`queue`에 삽입)하고, 가장 큰 가치를 가진 보석을 뽑는다(`pop`).
+            * 이런 방식으로 진행하면, 다른 가방도 체크할 때 한번 확인한 보석은 더 이상 크기를 비교할 필요가 없다. 
+    * `multiset`과 lower-bound를 활용해도 풀린다고 하는데, python은 그런거(`mutliset`) 없다.
+        * 비슷한걸로 `itertools.Counter`가 존재하긴 하는데, `multiset`과 달리 `key`간 정렬이 안됨
+    
+
+#### Interval 관련 문제    
+1. [디스크 컨트롤러](https://programmers.co.kr/learn/courses/30/lessons/42627)
+    * heap을 어떻게 사용하는가?
+    * greedy이긴 한데 무엇을 greedy 할지 -> 가장 짧은 시간이 걸리는 것 중에서 가장 빠르게 요청이 온것을 처리함
+        * 그렇다고 또 디스크가 놀고있으면 안되므로, 아무리 짧은 시간이 걸려도 하는게 없으면, 도착한 요청을 바로 처리
+2. [단속카메라](https://programmers.co.kr/learn/courses/30/lessons/42884)
+    * 정확성은 옳았으나, 효율적이지 못했음
+    * 이것도 greedy
+3. [회의실배정](https://www.acmicpc.net/problem/1931)
+    * 핵심은 그리디 및 정렬
+        * 의외로 간단한 문제였다. 하지만 난 틀렸지.
+    * 열에 따른 정렬 방법 (tie 해결) `array.sort(key=lambda x: (x[1], x[0]))`
+        * 두번째 열을 기준으로 오름차순 정렬 후, 두번째 열의 값이 서로 같으면 첫번째 열의 값으로 오름차순 정렬함
+        
 ### Dynamic Programming (DP)
 1. [거스름돈](https://programmers.co.kr/learn/courses/30/lessons/12907)
     * dp 문제인데, 타일 문제랑 비슷해서 햇갈렸다. 중요한점은 같은 값끼리 중복이 허용되지 않는 다는 점
@@ -184,20 +211,13 @@
 3. [로봇 조종하기](https://www.acmicpc.net/problem/2169)
     * [Maximum Non Negative Product in a Matrix](https://leetcode.com/contest/weekly-contest-207/problems/maximum-non-negative-product-in-a-matrix/) 문제와 마찬가지로, 2개의 dp 배열을 활용해야 하는 문제다.
         * 여기서는 특정 dp cell의 값을 정할 때, 어느 방향에서 오는가에 따라 dp 배열을 생성했다.  
+
+4. [Word Break](https://leetcode.com/problems/word-break/)
+    * 여기서 dp는 Boolean 형 `dp[i]`로 표기될 수 있는데, `dp[i]`는 주어진 string `s`의 `i`번째 substring까지, 주어진 dictionary로 만들 수 있는가 이다.
+        * 예를 들어, `s = abcde , dict = ["abc", "de"]` 가 존재한다면,     
+        `dp[0] = True (empty string)`, `dp[0] -> dp[3] = True (due to "abc")`, `dp[3] -> dp[5] = True (due to "de")`가 된다.
               
-### Interval 관련 문제    
-1. [디스크 컨트롤러](https://programmers.co.kr/learn/courses/30/lessons/42627)
-    * heap을 어떻게 사용하는가?
-    * greedy이긴 한데 무엇을 greedy 할지 -> 가장 짧은 시간이 걸리는 것 중에서 가장 빠르게 요청이 온것을 처리함
-        * 그렇다고 또 디스크가 놀고있으면 안되므로, 아무리 짧은 시간이 걸려도 하는게 없으면, 도착한 요청을 바로 처리
-2. [단속카메라](https://programmers.co.kr/learn/courses/30/lessons/42884)
-    * 정확성은 옳았으나, 효율적이지 못했음
-    * 이것도 greedy
-3. [회의실배정](https://www.acmicpc.net/problem/1931)
-    * 핵심은 그리디 및 정렬
-        * 의외로 간단한 문제였다. 하지만 난 틀렸지.
-    * 열에 따른 정렬 방법 (tie 해결) `array.sort(key=lambda x: (x[1], x[0]))`
-        * 두번째 열을 기준으로 오름차순 정렬 후, 두번째 열의 값이 서로 같으면 첫번째 열의 값으로 오름차순 정렬함
+
     
         
 ## 공부해야할 자료구조 또는 알고리즘
@@ -208,11 +228,14 @@
         * 구간의 합 대신, 최대값과 최소값을 segmentation tree로 구현 
         * 재귀에서 `return`을 이해하고 활용하는 연습이 더 필요함
         
-        
 2. Trie
 3. Union-Find (복습)
 4. 0-1 BFS 
 5. Suffix Array
+    * [Suffix Array](https://www.acmicpc.net/problem/9248)
+        * 이 자료구조가 무엇인지 이해하는 것은 쉽지만, 이 구조를 활용하고, 빠른 시간내에 구축하는게 핵심인 자료구조.
+        * SA(Suffix Array)의 구축을 위한 naive approach는 `O(n^2*log(n))`이고, 좀 더 빠른 접근은 `O(nlog(n))`에 가능함
+        
 6. lazy propagation
 
 ## python tip
@@ -233,6 +256,9 @@
         print('Not found!')
    ```
 6. `sample = defaultdict(dict)`은 `sample["a"]["b"] = 2`와 같은 형태로 `dict` 내 `dict`을 정의하게 해준다. 
+    * 또한, `defaultdict(dict)`은 key가 존재하지 않을 경우, default 값을 `dict`으로 한다.
+        * 즉, `if "c" not in sample then sample["c"] is dict()`라는 의미다. (`defaultdict(list)` 이렇게도 가능)
+        
 7. 2진수 (binary number)의 모든 1 계산하기 (`bin(i).count("1")`)
 8. 어떤 값 `a`에서 특정 값 `b`를 `a`가 0이 될 때까지 빼내기
     ```python
