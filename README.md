@@ -64,8 +64,6 @@
         * 2차원 `array`의 `loop`의 경우, 특정 값 `t`가 존재하는지 확인하고 싶다면 다음처럼 하면 좋다.     
             `for i in array: if t in i: print('exist!')`
 
-        
-        
 13. [Majority Element II](https://leetcode.com/problems/majority-element-ii/)
     * 핵심: 크기가 `n`인 배열 중 `⌊n/2⌋` 보다 큰 값은 반드시 **한**개만 존재한다.
         * 그럼 `⌊n/3⌋` 의 경우는 ?
@@ -153,6 +151,14 @@
     * 조그만 2차원 배열을 쉽게 다루는 방법
         * `3x3` 배열인 경우 `(0,0)`부터 `(2,2)`까지 각 원소들을 하나의 문자열로 표현한다. (e.g.`123456780`)
 
+28. [First Missing Positive](https://leetcode.com/problems/first-missing-positive/)
+    * 문제는 쉽지만, 더욱 효율적으로 풀 수 있는 방법이 존재한다.
+        * 길이가 `n`인 배열 `a`에 포함되지 않은 가장 작은 양수는 반드시 `1~(n+1)` 사이의 값이다.
+        * 그리고, `a`의 원소의 크기가 `1`이상 `n`미만이라고 할 때, 해당 원소의 등장 횟수를 `a` 자체에서 셀 수 있다.
+            * `a`의 원소를 인덱스로 여기고 길이를 더해준다 -> `a[a[i]%n] += n`
+            * 이후 `a[i] // n == 0` 인 경우, 그 `i`값은 `a`에 원래 존재하지 않았던 원소라는 것을 체크할 수 있다 ([출처](https://leetcode.com/problems/first-missing-positive/discuss/17080/Python-O(1)-space-O(n)-time-solution-with-explanation)).
+            
+            
 ### Greedy Algorithm
          
 1. [전구와 스위치](https://www.acmicpc.net/problem/2138)
@@ -268,3 +274,6 @@
        a = max(0, a - b)           # 빼낸 값 a를 조정
    ```
 9. 집합 `a`와 `b`의 차집합은 `a-b`로 구한다.
+10. 입력된 값을 자동으로 정렬해주는 pure python list: `sortedcontainers.SortedList()`
+    * `heapq`도 마찬가지로 입력된 값을 정렬해주기는 하지만, `heapq`로 사용되는 `list`는 index별로 정렬되있지는 않다.
+    * `add()`로 데이터 입력, 다루는 건 `list`와 똑같음, `bisect` 사용 가능
