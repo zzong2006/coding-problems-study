@@ -186,11 +186,15 @@
     * priority queue와 greedy 문제
         * 가장 크기가 작은 가방을 기준으로, 그 가방에 넣을 수 있는 보석들을 나열(`queue`에 삽입)하고, 가장 큰 가치를 가진 보석을 뽑는다(`pop`).
             * 이런 방식으로 진행하면, 다른 가방도 체크할 때 한번 확인한 보석은 더 이상 크기를 비교할 필요가 없다. 
-    * `multiset`과 lower-bound를 활용해도 풀린다고 하는데, python은 그런거(`mutliset`) 없다.
-        * 비슷한걸로 `itertools.Counter`가 존재하긴 하는데, `multiset`과 달리 `key`간 정렬이 안됨
-    
+    * `multiset`과 lower-bound를 활용해도 풀린다고 하는데, python은 `multiset`대신 `sortedcontainers.SortedList()`를 사용
+    * 비슷한 문제로 [순회강연](https://www.acmicpc.net/problem/2109) 이 존재한다.
+        * 특정 날짜에 강연을 진행하면 하루가 지나므로, 그 날짜 이후의 강연들의 진행 유무에 영향을 받는다.
+        * 하지만, 그 날짜 이전의 강연들은 이미 지나갔으므로 진행 유무에 영향을 받지 않는다.
+            * 이러한 특징을 활용하여, 가장 강연 기한이 긴 날부터 짧은 날 순으로 내려가며,
+             해당 날짜부터 가능한 강연들만 선별하고(`n`일 기준이면 `n, n+1, n+2, ...`) 
+             그 강연들 중 얻을 수 있는 최대 이득(강연료)을 찾는다(priority queue 이용). 
 
-#### Interval 관련 문제    
+#### Interval 관련 문제 (Greedy)    
 1. [디스크 컨트롤러](https://programmers.co.kr/learn/courses/30/lessons/42627)
     * heap을 어떻게 사용하는가?
     * greedy이긴 한데 무엇을 greedy 할지 -> 가장 짧은 시간이 걸리는 것 중에서 가장 빠르게 요청이 온것을 처리함
