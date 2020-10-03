@@ -157,8 +157,12 @@
         * 그리고, `a`의 원소의 크기가 `1`이상 `n`미만이라고 할 때, 해당 원소의 등장 횟수를 `a` 자체에서 셀 수 있다.
             * `a`의 원소를 인덱스로 여기고 길이를 더해준다 -> `a[a[i]%n] += n`
             * 이후 `a[i] // n == 0` 인 경우, 그 `i`값은 `a`에 원래 존재하지 않았던 원소라는 것을 체크할 수 있다 ([출처](https://leetcode.com/problems/first-missing-positive/discuss/17080/Python-O(1)-space-O(n)-time-solution-with-explanation)).
-            
-            
+
+29.[K-diff Pairs in an Array](https://leetcode.com/problems/k-diff-pairs-in-an-array/)            
+    * Counter를 활용하는 문제: 리스트가 주어졌을 때, `b-a == k, a <= b`를 만족하는 쌍 `(a, b)` 찾기
+        * 리스트의 모든 값들을 Counter에 넣은 다음, `Counter[b-k]`가 하나라도 count 되었다면, 그 쌍 `(a, b)`는 리스트에 존재함
+
+
 ### Greedy Algorithm
          
 1. [전구와 스위치](https://www.acmicpc.net/problem/2138)
@@ -209,11 +213,14 @@
     * 정확성은 옳았으나, 효율적이지 못했음
     * 이것도 greedy
 3. [회의실배정](https://www.acmicpc.net/problem/1931)
-    * 핵심은 그리디 및 정렬
-        * 의외로 간단한 문제였다. 하지만 난 틀렸지.
+    * 핵심은 그리디 및 정렬 
     * 열에 따른 정렬 방법 (tie 해결) `array.sort(key=lambda x: (x[1], x[0]))`
         * 두번째 열을 기준으로 오름차순 정렬 후, 두번째 열의 값이 서로 같으면 첫번째 열의 값으로 오름차순 정렬함
-        
+4. [강의실배정](https://www.acmicpc.net/problem/11000)
+    * min-heap을 활용하는 문제
+        * 모든 강의실의 시간을 빈틈없이 채우기 위해서, 가장 빨리 끝나는 강의실(min-heap)부터 차례로 강의 시간을 채워넣는다.
+        * 만약, 주어진 강의 시간 구간이 어느 강의실에도 매칭되지 않다고 판단(heap root 비교)되면, 새로운 강의실을 생성한다(heap item 삽입). 
+    
 ### Dynamic Programming (DP)
 1. [거스름돈](https://programmers.co.kr/learn/courses/30/lessons/12907)
     * dp 문제인데, 타일 문제랑 비슷해서 햇갈렸다. 중요한점은 같은 값끼리 중복이 허용되지 않는 다는 점
@@ -233,11 +240,14 @@
         * 예를 들어, `s = abcde , dict = ["abc", "de"]` 가 존재한다면,     
         `dp[0] = True (empty string)`, `dp[0] -> dp[3] = True (due to "abc")`, `dp[3] -> dp[5] = True (due to "de")`가 된다.
               
-
-    
+#### 가장 긴 증가하는 부분 수열 (Longest Increasing Subsequence) (DP 하위)
+1. [가장 긴 증가하는 부분 수열](https://www.acmicpc.net/problem/12015)
+    * 문제를 [가장 **큰** 증가 부분 수열](https://www.acmicpc.net/problem/11055)로 착각했다. 문제를 똑바로 읽는 연습을 하자.
+    * 이 문제를 `O(nlog(n))`으로 푸는 방법은 이분 탐색을 이용하는 것, 그리고 수열을 찾아갈 때, 수열의 꼬리(오른쪽 끝)를 최대한 작게 만들어줘야 한다.
+    * 인덱스 트리(Index Tree)를 이용해서도 풀 수 있다고 한다. 
         
 ## 공부해야할 자료구조 또는 알고리즘
-1. Segmentation Tree 
+1. Segmentation Tree & Index Tree
     * [구간 합 구하기](https://www.acmicpc.net/problem/2042)
         * 처음 구현해봄 (트리 생성, 수정, 구간 합)
     * [최솟값과 최댓값](https://www.acmicpc.net/problem/2357)
@@ -253,6 +263,14 @@
         * SA(Suffix Array)의 구축을 위한 naive approach는 `O(n^2*log(n))`이고, 좀 더 빠른 접근은 `O(nlog(n))`에 가능함
         
 6. lazy propagation
+7. 위상 정렬 (Topology Sort)
+    * Cycle이 없는 directed graph가 주어질 때, 모든 노드들을 DFS를 통해 방문한 순서로 나열한 정렬 방법
+        * `a -> b -> c` 라면, `a b c`가 나와야 한다.
+        * 즉, DFS를 통해 방문한 마지막 노드부터, 모든 노드 값을 stack에 넣고 꺼내면 된다. `stack: [c, b, a] -> a b c`
+    * priority queue와 노드의 **indegree** 값을 이용해도 위상 정렬을 수행할 수 있다.
+        * 어떤 노드의 indegree란, directed graph에서 그 노드로 향하는 화살표의 총 개수를 의미한다. 
+    * 관련 문제
+        * [줄 세우기](https://www.acmicpc.net/problem/2252): 그냥 위상 정렬 알고리즘을 적용하면 됨
 
 ## python tip
 1. 재귀 함수 최대 깊이 늘리기 `sys.setrecursionlimit(10**7)` (메모리 초과 가능성 농후)
