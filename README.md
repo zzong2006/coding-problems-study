@@ -158,7 +158,7 @@
             * `a`의 원소를 인덱스로 여기고 길이를 더해준다 -> `a[a[i]%n] += n`
             * 이후 `a[i] // n == 0` 인 경우, 그 `i`값은 `a`에 원래 존재하지 않았던 원소라는 것을 체크할 수 있다 ([출처](https://leetcode.com/problems/first-missing-positive/discuss/17080/Python-O(1)-space-O(n)-time-solution-with-explanation)).
 
-29.[K-diff Pairs in an Array](https://leetcode.com/problems/k-diff-pairs-in-an-array/)            
+29.[K-diff Pairs in an Array](https://leetcode.com/problems/k-diff-pairs-in-an-array/)
     * Counter를 활용하는 문제: 리스트가 주어졌을 때, `b-a == k, a <= b`를 만족하는 쌍 `(a, b)` 찾기
         * 리스트의 모든 값들을 Counter에 넣은 다음, `Counter[b-k]`가 하나라도 count 되었다면, 그 쌍 `(a, b)`는 리스트에 존재함
 
@@ -240,7 +240,7 @@
         * 예를 들어, `s = abcde , dict = ["abc", "de"]` 가 존재한다면,     
         `dp[0] = True (empty string)`, `dp[0] -> dp[3] = True (due to "abc")`, `dp[3] -> dp[5] = True (due to "de")`가 된다.
               
-#### 가장 긴 증가하는 부분 수열 (Longest Increasing Subsequence) (DP 하위)
+### 가장 긴 증가하는 부분 수열 (Longest Increasing Subsequence) 
 1. [가장 긴 증가하는 부분 수열](https://www.acmicpc.net/problem/12015)
     * 문제를 [가장 **큰** 증가 부분 수열](https://www.acmicpc.net/problem/11055)로 착각했다. 문제를 똑바로 읽는 연습을 하자.
     * 이 문제를 `O(nlog(n))`으로 푸는 방법은 이분 탐색을 이용하는 것, 그리고 수열을 찾아갈 때, 수열의 꼬리(오른쪽 끝)를 최대한 작게 만들어줘야 한다.
@@ -267,6 +267,7 @@
     * Cycle이 없는 directed graph가 주어질 때, 모든 노드들을 DFS를 통해 방문한 순서로 나열한 정렬 방법
         * `a -> b -> c` 라면, `a b c`가 나와야 한다.
         * 즉, DFS를 통해 방문한 마지막 노드부터, 모든 노드 값을 stack에 넣고 꺼내면 된다. `stack: [c, b, a] -> a b c`
+        * 시간 복잡도는 `O(V + E)` (`V`는 노드(vertex) 개수, `E`는 edge 개수)
     * priority queue와 노드의 **indegree** 값을 이용해도 위상 정렬을 수행할 수 있다.
         * 어떤 노드의 indegree란, directed graph에서 그 노드로 향하는 화살표의 총 개수를 의미한다. 
     * 관련 문제
