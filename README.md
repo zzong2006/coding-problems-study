@@ -306,3 +306,4 @@
 10. 입력된 값을 자동으로 정렬해주는 pure python list: `sortedcontainers.SortedList()`
     * `heapq`도 마찬가지로 입력된 값을 정렬해주기는 하지만, `heapq`로 사용되는 `list`는 index별로 정렬되있지는 않다.
     * `add()`로 데이터 입력, 다루는 건 `list`와 똑같음, `bisect` 사용 가능
+11. 리스트 정렬 시, 첫번째 원소는 오름차순, 두번재 원소는 내림차순 정렬: `array.sort(key=lambda x: (x[0], -x[1]))`
