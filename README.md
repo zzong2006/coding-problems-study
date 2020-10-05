@@ -162,6 +162,9 @@
     * Counter를 활용하는 문제: 리스트가 주어졌을 때, `b-a == k, a <= b`를 만족하는 쌍 `(a, b)` 찾기
         * 리스트의 모든 값들을 Counter에 넣은 다음, `Counter[b-k]`가 하나라도 count 되었다면, 그 쌍 `(a, b)`는 리스트에 존재함
 
+30. [보석 쇼핑](https://programmers.co.kr/learn/courses/30/lessons/67258)
+    * Sliding window를 활용하는 문제
+        * 연속된 subarray 문제가 나오면 sliding window 개념을 활용하자.
 
 ### Greedy Algorithm
          
@@ -207,15 +210,17 @@
 #### Interval 관련 문제 (Greedy)    
 1. [디스크 컨트롤러](https://programmers.co.kr/learn/courses/30/lessons/42627)
     * heap을 어떻게 사용하는가?
-    * greedy이긴 한데 무엇을 greedy 할지 -> 가장 짧은 시간이 걸리는 것 중에서 가장 빠르게 요청이 온것을 처리함
+    * 가장 짧은 시간이 걸리는 것 중에서 가장 빠르게 요청이 온것을 처리함
         * 그렇다고 또 디스크가 놀고있으면 안되므로, 아무리 짧은 시간이 걸려도 하는게 없으면, 도착한 요청을 바로 처리
+        
 2. [단속카메라](https://programmers.co.kr/learn/courses/30/lessons/42884)
     * 정확성은 옳았으나, 효율적이지 못했음
-    * 이것도 greedy
+
 3. [회의실배정](https://www.acmicpc.net/problem/1931)
     * 핵심은 그리디 및 정렬 
     * 열에 따른 정렬 방법 (tie 해결) `array.sort(key=lambda x: (x[1], x[0]))`
         * 두번째 열을 기준으로 오름차순 정렬 후, 두번째 열의 값이 서로 같으면 첫번째 열의 값으로 오름차순 정렬함
+        
 4. [강의실배정](https://www.acmicpc.net/problem/11000)
     * min-heap을 활용하는 문제
         * 모든 강의실의 시간을 빈틈없이 채우기 위해서, 가장 빨리 끝나는 강의실(min-heap)부터 차례로 강의 시간을 채워넣는다.
@@ -255,10 +260,23 @@
         * 재귀에서 `return`을 이해하고 활용하는 연습이 더 필요함
         
 2. Trie
-3. Union-Find (복습)
+    * HashMap(`dict` in python)을 활용해서 만든 트리
+        * 여러 단어들을 하나의 트리에 넣어서, prefix/whole word 처리를 할 때 유용하다.
+        * Trie 구조 생성 복잡도 `O(L*N)`(`L`: 문자열 최대 길이, `N`: 문자열 총 개수)
+    * 관련 문제들 (어려운 문제가 아닌 경우, Trie class를 따로 만들지 않고 `set` 또는 `dict`으로 풀린다))
+        * [전화번호 목록](https://www.acmicpc.net/problem/5052), [개미굴](https://www.acmicpc.net/problem/14725)
+       
+    
+3. Union-Find 
+    * [공항](https://www.acmicpc.net/problem/10775)
+        * `g_i`가 입력으로 들어온 비행기가 들어갈 게이트는 `1 <= g_i <= G`인데,     
+        최대한 많은 도킹을 위해선 오른쪽 `g_i`부터 왼쪽 `1`까지 찾아가면서 빈자리에 넣는 것이 맞다.
+        * `g_i`에 비행기를 넣으면 그 다음 도킹할 게이트는 `g_i-1`이므로, `g_i`의 부모를 `g_i-1`로 설정한다(union).
+            * 위 과정에서 `g_i`의 부모가 0인 경우는 빈 게이트가 없다는 뜻으로 해석할 수 있다.
+            
 4. 0-1 BFS 
 5. Suffix Array
-    * [Suffix Array](https://www.acmicpc.net/problem/9248)
+    * [Suffix Array](https://www.acmicpc.net/problem/9248) (아직 못풀음)
         * 이 자료구조가 무엇인지 이해하는 것은 쉽지만, 이 구조를 활용하고, 빠른 시간내에 구축하는게 핵심인 자료구조.
         * SA(Suffix Array)의 구축을 위한 naive approach는 `O(n^2*log(n))`이고, 좀 더 빠른 접근은 `O(nlog(n))`에 가능함
         
@@ -272,6 +290,17 @@
         * 어떤 노드의 indegree란, directed graph에서 그 노드로 향하는 화살표의 총 개수를 의미한다. 
     * 관련 문제
         * [줄 세우기](https://www.acmicpc.net/problem/2252): 그냥 위상 정렬 알고리즘을 적용하면 됨
+        * [음악프로그램](https://www.acmicpc.net/problem/2623): 위상 정렬 + **directed** graph cycle 찾기
+            * [DFS의 Graph coloring을 이용하여 Cycle](https://www.youtube.com/watch?v=rKQaZuoUR4M&ab_channel=TusharRoy-CodingMadeSimple) 을 찾는 방법
+                0. 세 개의 집합(A, B, C): A는 초기 집합(처음에 모든 노드가 여기 있음)/ B는 후보 집합(cycle이 발생 가능한 노드)/ C는 확정 집합(cycle이 없는게 확인된 노드)
+                1. 세 개의 집합를 만들고, DFS로 노드 방문 시, 세 가지 케이스를 다룬다.
+                    1. 그 노드가 A에 있을 경우: 그 노드를 A에서 B로 옮겨준다.
+                    2. 그 노드가 B에 있을 경우: B에 있는 노드들에 의해 cycle이 확실하게 발생했다.
+                    3. 그 노드가 C에 있을 경우: 이미 해당 노드는 cycle이 없는 노드다. 무시하면 됨.
+                2. 모든 이웃 노드를 방문한 노드들은 cycle이 없는게 확실하므로, B에서 C로 옮겨준다.
+                3. 모든 노드가 A에서 C로 옮겨졌으면 그 **directed** graph는 cycle이 없다.
+                * HashMap(`dict`)을 이용하여 노드 간 이동을 기록하면, cycle에 해당하는 노드들을 알 수 있다.
+
 
 ## python tip
 1. 재귀 함수 최대 깊이 늘리기 `sys.setrecursionlimit(10**7)` (메모리 초과 가능성 농후)
@@ -303,7 +332,8 @@
        a = max(0, a - b)           # 빼낸 값 a를 조정
    ```
 9. 집합 `a`와 `b`의 차집합은 `a-b`로 구한다.
-10. 입력된 값을 자동으로 정렬해주는 pure python list: `sortedcontainers.SortedList()`
+10. 입력된 값을 자동으로 정렬해주는 pure python list: `sortedcontainers.SortedList()` (근데 속도가 꽤 느림, 비추천)
     * `heapq`도 마찬가지로 입력된 값을 정렬해주기는 하지만, `heapq`로 사용되는 `list`는 index별로 정렬되있지는 않다.
     * `add()`로 데이터 입력, 다루는 건 `list`와 똑같음, `bisect` 사용 가능
 11. 리스트 정렬 시, 첫번째 원소는 오름차순, 두번재 원소는 내림차순 정렬: `array.sort(key=lambda x: (x[0], -x[1]))`
+12. 어떤 문자열이 특정 문자열로 시작하는 것을 확인하고 싶다면: `'this is test!'.startswith('this') -> True`
