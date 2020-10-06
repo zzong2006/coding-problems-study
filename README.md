@@ -11,7 +11,6 @@
 ## 오답노트: 다시 풀어보았으면 좋을 법한 문제들
 1. [문자열 압축 (프로그래머즈)](https://programmers.co.kr/learn/courses/30/lessons/60057)
     * 굳이 String을 만들 필요 없이 개수만 계산하면 되는 것임 
-    * Git Link
    
 2. [숫자 카드2 (백준)](https://www.acmicpc.net/problem/10816)
     * lower_bound 또는 upper_bound 구현
@@ -32,12 +31,9 @@
     * python에서의 queue는 list 보다는 collections의 deque를 사용하는 것이 좋다는 것을 깨달음
 
 5. [자와 각도기](https://www.acmicpc.net/problem/2916)
-    * queue를 이용한 bfs를 쓰면 속도가 늦다
-        * 배열과 재귀를 이용한 dfs가 빠름
-    * 잡설
-        * 풀긴 풀었는데, 힌트를 너무 많이 봤다
-        * *자*는 쓰지 않음
-        * 각도의 개념을 이해하는게 중요했음
+    * BFS보다 DFS를 사용하는게 빠른 문제
+    * *자*는 쓰지 않음
+    * 각도의 개념을 이해하는게 중요했음
         
 6. [사탕 게임](https://www.acmicpc.net/problem/3085) 
     * 구현은 어렵지 않았는데, 경우의 수가 핵심이었다. 
@@ -250,7 +246,11 @@
     * 문제를 [가장 **큰** 증가 부분 수열](https://www.acmicpc.net/problem/11055)로 착각했다. 문제를 똑바로 읽는 연습을 하자.
     * 이 문제를 `O(nlog(n))`으로 푸는 방법은 이분 탐색을 이용하는 것, 그리고 수열을 찾아갈 때, 수열의 꼬리(오른쪽 끝)를 최대한 작게 만들어줘야 한다.
     * 인덱스 트리(Index Tree)를 이용해서도 풀 수 있다고 한다. 
-        
+
+### 수학
+1. [Complement of Base 10 Integer](https://leetcode.com/problems/complement-of-base-10-integer/)
+    * 주어진 binary number `a`의 1의 보수 `b`를 `O(log(n))`으로 구하는 방법: 2^N-1-`a`=`b` (e.g. `a= '1010`, `b= '0101'`)
+    
 ## 공부해야할 자료구조 또는 알고리즘
 1. Segmentation Tree & Index Tree
     * [구간 합 구하기](https://www.acmicpc.net/problem/2042)
