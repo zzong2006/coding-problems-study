@@ -250,15 +250,23 @@
 ### 수학
 1. [Complement of Base 10 Integer](https://leetcode.com/problems/complement-of-base-10-integer/)
     * 주어진 binary number `a`의 1의 보수 `b`를 `O(log(n))`으로 구하는 방법: 2^N-1-`a`=`b` (e.g. `a= '1010`, `b= '0101'`)
+
+### 이분 탐색
+* 반으로 잘라서 왼쪽 오른쪽 탐색하는 방법 (general way)
+    * `mid = (start + end) // 2 `, 그리고 `search(start, mid)` (왼쪽), `search(mid + 1, end)` (오른쪽)
+    * `mid` 를 활용하고, `start > end`인 경우 중단
     
 ## 공부해야할 자료구조 또는 알고리즘
-1. Segmentation Tree & Index Tree
+1. Segment (or Segmentation) Tree & Index Tree 
+    * Fenwick Tree (Binary Indexed Tree)
+        * Segment Tree 보다 메모리를 절약할 수 있는 트리
+        
     * [구간 합 구하기](https://www.acmicpc.net/problem/2042)
-        * 처음 구현해봄 (트리 생성, 수정, 구간 합)
+        * Segmentation Tree를 처음 구현해봄 (트리 생성, 수정, 구간 합)
     * [최솟값과 최댓값](https://www.acmicpc.net/problem/2357)
         * 구간의 합 대신, 최대값과 최소값을 segmentation tree로 구현 
         * 재귀에서 `return`을 이해하고 활용하는 연습이 더 필요함
-        
+    
 2. Trie
     * HashMap(`dict` in python)을 활용해서 만든 트리
         * 여러 단어들을 하나의 트리에 넣어서, prefix/whole word 처리를 할 때 유용하다.
