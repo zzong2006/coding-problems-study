@@ -345,3 +345,40 @@
     * `add()`로 데이터 입력, 다루는 건 `list`와 똑같음, `bisect` 사용 가능
 11. 리스트 정렬 시, 첫번째 원소는 오름차순, 두번재 원소는 내림차순 정렬: `array.sort(key=lambda x: (x[0], -x[1]))`
 12. 어떤 문자열이 특정 문자열로 시작하는 것을 확인하고 싶다면: `'this is test!'.startswith('this') -> True`
+
+## SQL
+1. `LIMIT`: 테이블 가장 상위의 행 하나만 출력하기 `SELECT * FROM sample LIMIT 1`
+    * `SUM`,`MAX`, `MIN`의 aggregation 을 이용해서 하나만 출력할 수 있다.
+2. 중복 제거
+    * tuple 중복에는 `DISTINCT` 사용: `SELECT DISTINCT * FROM sample`
+        * `COUNT`와 중복해서 사용하는 법 `SELECT COUNT(DISTINCT name) FROM sample`
+    * 특정 column 중복에는 `GROUP BY` 사용: `SELECT * FROM sample GROUP BY name` 
+3. `NULL` 처리
+    * `NULL` 제거: `SELECT * FROM sample WHERE name is not NULL`
+    * `COUNT` 사용 시, `NULL` 은 알아서 제외하고 count 함
+    * `IFNULL` (`NULL`값이면 다른 값으로 처리) : `SELECT IFNULL(name, 'No name') FROM sample`
+4. 날짜 데이터 추출
+    * YEAR, MONTH, DAY, HOUR, MINUTE, SECOND
+    * 날짜 출력 포맷 변경: `SELECT DATE_FORMAT(datetime, '%Y-%m-%d) from sample`
+        * 시/분/초 : `%h-%i-%s` (`%H`는 24시간, `%h`는 12시간 단위)
+    * column 포맷 변환(`CAST`): `SELECT CAST(datetime AS DATE) from sample`
+    * 날짜 차이: `DATEDIFF(d1, d2)` 또는 `d1 - d2` (d1가 이후 그리고 d2가 이전이여야 양수값)
+5. JOIN
+    * OUTER JOIN : `SELECT * FROM sample AS a LEFT OUTER JOIN sample_2 AS b ON a.name=b.name`
+    * INNER JOIN : `SELECT * FROM sample AS a INNER JOIN sample_2 AS b ON a.name=b.name`
+        * 다른 방법 : `SELECT * FROM sample a, sample_2 b WHERE a.name=b.name`
+            * 응용 가능 (이름이 같거나 성적이 같거나) : `SELECT * FROM sample a, sample_2 b WHERE a.name=b.name OR a.grade=b.grade`
+6. CASE 또는 IF
+    * 이름에 'woo'가 들어가 있으면 'O'로 표시: `SELECT CASE WHEN name LIKE '%woo%' THEN 'O' FROM sample`
+        * IF 를 사용한 버전 (안들어가 있으면 'X' 표시도 추가): `SELECT IF(name LIKE '%woo%', 'O', 'X') FROM sample`
+7. HAVING
+    * Aggregation(GROUP BY, SUM, COUNT etc.)에 조건문 처럼 쓰임
+        * `SELECT COUNT(CustomerID) FROM Customers GROUP BY Country HAVING COUNT(CustomerID) > 5`
+8. IN
+    * 특정 value에 포함된 record만 추려냄
+        * `SELECT * FROM Customers WHERE Country IN ('Germany', 'France', 'UK')`
+        * `SELECT * FROM Customers WHERE Country IN (SELECT Country FROM Suppliers)`
+9. With Recursive 
+    * 1 부터 10 까지 포함하는 테이블 만들기
+        * `with recursive f(n) as (select 1 union all select n + 1 from f(n) where n < 10)`
+        * 사용 : `select n from f`
