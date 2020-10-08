@@ -162,6 +162,12 @@
     * Sliding window를 활용하는 문제
         * 연속된 subarray 문제가 나오면 sliding window 개념을 활용하자.
 
+31. [Rotate List](https://leetcode.com/problems/rotate-list/)
+    * Rotate 하는 list를 만들기 
+        * 우선 list를 circular 하게 만들자 (꼬리가 머리를 가리키는 식으로).
+        * 그리고, 그 꼬리에서 다시 `len(list) - (k % len(list))` 만큼 이동한 후(`k`는 list 이동 횟수), 도착한 list의 노드가 꼬리가 된다.
+            * 그 노드(`A`)를 꼬리로 만드는 방법: `head = A->next` 그리고, `A->next = None`  
+
 ### Greedy Algorithm
          
 1. [전구와 스위치](https://www.acmicpc.net/problem/2138)
@@ -345,6 +351,7 @@
     * `add()`로 데이터 입력, 다루는 건 `list`와 똑같음, `bisect` 사용 가능
 11. 리스트 정렬 시, 첫번째 원소는 오름차순, 두번재 원소는 내림차순 정렬: `array.sort(key=lambda x: (x[0], -x[1]))`
 12. 어떤 문자열이 특정 문자열로 시작하는 것을 확인하고 싶다면: `'this is test!'.startswith('this') -> True`
+13. 소수점 5 번째 자리까지 출력하는 str type 변수 만들기: `floating_num = '{:.5f}'.format(3.141592687)`
 
 ## SQL
 1. `LIMIT`: 테이블 가장 상위의 행 하나만 출력하기 `SELECT * FROM sample LIMIT 1`
@@ -380,5 +387,5 @@
         * `SELECT * FROM Customers WHERE Country IN (SELECT Country FROM Suppliers)`
 9. With Recursive 
     * 1 부터 10 까지 포함하는 테이블 만들기
-        * `with recursive f(n) as (select 1 union all select n + 1 from f(n) where n < 10)`
+        * `with recursive f(n) as (select 1 union all select n + 1 from f where n < 10)`
         * 사용 : `select n from f`
