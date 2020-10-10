@@ -257,6 +257,13 @@
 1. [Complement of Base 10 Integer](https://leetcode.com/problems/complement-of-base-10-integer/)
     * 주어진 binary number `a`의 1의 보수 `b`를 `O(log(n))`으로 구하는 방법: 2^N-1-`a`=`b` (e.g. `a= '1010`, `b= '0101'`)
 
+2. [요세푸스 문제](https://www.acmicpc.net/problem/1158)
+    * 원형 관련 문제에서는 queue를 생각하면 편하다.
+    * 시작 `index`를 0부터 시작해서, 모임 배열 `arr`의 `k`번째 사람을 계속 제외하는 경우는 아래와 같다.
+        * `index = (index + k - 1) % len(arr)`을 만족하는 `arr[index]` 를 지속적으로 지워주면 된다(`pop`).
+        
+    
+    
 ### 이분 탐색
 * 반으로 잘라서 왼쪽 오른쪽 탐색하는 방법 (general way)
     * `mid = (start + end) // 2 `, 그리고 `search(start, mid)` (왼쪽), `search(mid + 1, end)` (오른쪽)
@@ -352,6 +359,7 @@
 11. 리스트 정렬 시, 첫번째 원소는 오름차순, 두번재 원소는 내림차순 정렬: `array.sort(key=lambda x: (x[0], -x[1]))`
 12. 어떤 문자열이 특정 문자열로 시작하는 것을 확인하고 싶다면: `'this is test!'.startswith('this') -> True`
 13. 소수점 5 번째 자리까지 출력하는 str type 변수 만들기: `floating_num = '{:.5f}'.format(3.141592687)`
+14. `print`로 출력 시, `,` 간 간격을 수정하고 싶다면: `print('<','>', sep='')`-> `<>` 출력 (`< >` 아님) 
 
 ## SQL
 1. `LIMIT`: 테이블 가장 상위의 행 하나만 출력하기 `SELECT * FROM sample LIMIT 1`
