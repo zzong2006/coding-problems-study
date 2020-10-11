@@ -168,6 +168,13 @@
         * 그리고, 그 꼬리에서 다시 `len(list) - (k % len(list))` 만큼 이동한 후(`k`는 list 이동 횟수), 도착한 list의 노드가 꼬리가 된다.
             * 그 노드(`A`)를 꼬리로 만드는 방법: `head = A->next` 그리고, `A->next = None`  
 
+32.[Count Subtrees With Max Distance Between Cities](https://leetcode.com/problems/count-subtrees-with-max-distance-between-cities/)    
+    * Tree에서 가능한 모든 Subtree를 찾는 방법: 가능한 모든 vertices의 조합을 찾아내서, 그것이 tree 인지 확인
+        * 가능한 모든 vertices 조합을 찾는 방법: `combinations` 또는 `bitmasking`사용
+        * Tree인지 확인하는 방법: `BFS` 또는 `DFS`로 **조합에 존재하는** 정점 간 거리를 구하고, 만약 구할 수 없다면 tree가 아님
+            * `BFS` 방법(다익스트라 응용): 초기 거리를 무한으로 설정(시작 노드만 0), `queue`를 이용해서 정점을 넣고 빼고, 이웃 정점 거리 = 이전 정점 거리 + 1 
+    * `BFS`로 풀어보는 것을 권장
+
 ### Greedy Algorithm
          
 1. [전구와 스위치](https://www.acmicpc.net/problem/2138)
@@ -179,7 +186,6 @@
         * Combination 구할 때, bit masking을 사용하면 유용하다.
             * 예시) `for i in range(0, 1 << n):` -> 이렇게 하면 `2^n`개의 조합(yes/no)을 구할 수 있다.
         * 잡설) 이 문제를 python으로 푼 사람이 아무도 없음 (속도가 느려서), 나도 pypy3으로 채점하고 있다.
-
                          
 2. [30](https://www.acmicpc.net/problem/10610)
     * 30에 대한 배경 지식과 greedy를 이용하여 푸는 문제
@@ -208,7 +214,16 @@
     * 1차원 좌표계에 존재하는 `N`개의 값들을 `K`개의 연속된 그룹으로 나눴을 때, 각 그룹이 가진 범위들의 합의 최소를 구하면된다.
         * 예를 들어) `N = 5: 1 2 6 7 8` 그리고 `K = 2`라면, `[1 2] [6 7 8]`로 나누는 것이 최소(1(`[1 2]`)+2(`[6 7 8]`)=3)다. 
 
+6.[Split Two Strings to Make Palindrome](https://leetcode.com/problems/split-two-strings-to-make-palindrome/)
+    * A의 prefix 와 B의 suffix를 붙여서 만든 palindrome C는 다음을 만족한다.
+        * A의 prefix 길이: N > B의 suffix 길이라면, A 앞에서 N 만큼 문자열은 B 뒤에서 N 만큼 문자열을 뒤집은 것과 같다.
+        * 그리고, C는 앞, 뒤 N 개의 문자를 제외한 가운데 문자열이 palindrome을 다시 이루고 있다.
+        * 예시) A: `ak/bbcc` + B: `cc/bbka` = C `akbbka` (`/`는 prefix, suffix 구분 표시) 
+            * N: 2 => A 앞 `ak`, B 뒤 `ka` 그리고 가운데 문자열 `bb`는 palindrome
+    * 다시 구현을 권장
 
+
+    
 #### Interval 관련 문제 (Greedy)    
 1. [디스크 컨트롤러](https://programmers.co.kr/learn/courses/30/lessons/42627)
     * heap을 어떻게 사용하는가?
@@ -284,6 +299,8 @@
     * HashMap(`dict` in python)을 활용해서 만든 트리
         * 여러 단어들을 하나의 트리에 넣어서, prefix/whole word 처리를 할 때 유용하다.
         * Trie 구조 생성 복잡도 `O(L*N)`(`L`: 문자열 최대 길이, `N`: 문자열 총 개수)
+    * KMP 알고리즘 (Knuth-Morris-Pratt string matching algorithm)
+    * 아호 코라식 알고리즘 (Aho-Corasick multiple pattern matching algorithm)
     * 관련 문제들 (어려운 문제가 아닌 경우, Trie class를 따로 만들지 않고 `set` 또는 `dict`으로 풀린다))
         * [전화번호 목록](https://www.acmicpc.net/problem/5052), [개미굴](https://www.acmicpc.net/problem/14725)
        
