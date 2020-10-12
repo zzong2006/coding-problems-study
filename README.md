@@ -222,7 +222,11 @@
             * N: 2 => A 앞 `ak`, B 뒤 `ka` 그리고 가운데 문자열 `bb`는 palindrome
     * 다시 구현을 권장
 
-
+7.[Remove Duplicate Letters](https://leetcode.com/problems/smallest-subsequence-of-distinct-characters/)
+    * 중복을 제거하면서 가장 사전 상 빠른 문자열을 만드는 문제 (`"cbacdcbc"->"acdb"`)
+    * 문자열의 문자를 모두 count하고, 차례대로 문자를 stack에 넣으면서, stack의 밑바닥이 사전 상 가장 빠른 문자가 오도록 만든다.
+        * 단, 문자열에 등장한 문자는 적어도 한번씩은 등장해야 하므로, 문자 등장 횟수에 유의하면서 stack의 문자들을 조절한다.
+        * 예를 들어, stack에 `bc`가 있고 `a`를 넣는다면, stack은 `a`가 되야 하지만, stack의 값들이 각각 문자열의 하나밖에 없는 문자인 경우 빼지 않고 stack을 `bca`로 만든다. 
     
 #### Interval 관련 문제 (Greedy)    
 1. [디스크 컨트롤러](https://programmers.co.kr/learn/courses/30/lessons/42627)
