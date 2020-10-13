@@ -175,6 +175,23 @@
             * `BFS` 방법(다익스트라 응용): 초기 거리를 무한으로 설정(시작 노드만 0), `queue`를 이용해서 정점을 넣고 빼고, 이웃 정점 거리 = 이전 정점 거리 + 1 
     * `BFS`로 풀어보는 것을 권장
 
+33.[불!](https://www.acmicpc.net/problem/4179)
+    * 예외 케이스를 기억하자: 1) 불은 한개가 아닐 수 있다, 2) 미로의 크기가 최소인 경우 (1 by 1)
+
+34.[팰린드롬 만들기](https://www.acmicpc.net/problem/1213)
+    * `AAABB`로 팬린드롬 만들 때 -> `ABABA`가 `BAAAB` 보다 사전 순 먼저임
+        * 위의 경우, 홀수나 짝수 상관없이 알파벳 순으로 절반씩 붙여주고, 가운데 하나만 홀수 알파벳을 붙인다 (`AB` + `A` + `BA`)
+
+35.[Sort List](https://leetcode.com/problems/sort-list/)
+    * Merge Sort를 활용하여 linked list 정렬하기 
+        * Top Down 방식과 Bottom Up 방식이 존재함
+            1. Top Down: O(nlog(n))의 Time complexity 그리고 O(log(n))의 Space complexity 
+                * O(log(n))은 recursive call stack의 추가 공간 요구 때문에 발생 (트리의 높이라고 생각하면 됨)
+                * Linked list의 중간 node 찾는 법: head에서부터 하나는 1 node, 다른 하나는 2 node 씩 움직이는 pointer를 활용
+                * Merge 방법: dummy head를 만들고, 합치려는 두 list의 node 중, 작은 값부터 순서대로 dummy에 엮어줌
+            2. Bottom Up: O(nlog(n))의 Time complexity 그리고 O(1)의 Space complexity
+                * 아직 자세히 확인하지 못함 
+    
 ### Greedy Algorithm
          
 1. [전구와 스위치](https://www.acmicpc.net/problem/2138)
