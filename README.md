@@ -231,7 +231,7 @@
     * 1차원 좌표계에 존재하는 `N`개의 값들을 `K`개의 연속된 그룹으로 나눴을 때, 각 그룹이 가진 범위들의 합의 최소를 구하면된다.
         * 예를 들어) `N = 5: 1 2 6 7 8` 그리고 `K = 2`라면, `[1 2] [6 7 8]`로 나누는 것이 최소(1(`[1 2]`)+2(`[6 7 8]`)=3)다. 
 
-6.[Split Two Strings to Make Palindrome](https://leetcode.com/problems/split-two-strings-to-make-palindrome/)
+6. [Split Two Strings to Make Palindrome](https://leetcode.com/problems/split-two-strings-to-make-palindrome/)
     * A의 prefix 와 B의 suffix를 붙여서 만든 palindrome C는 다음을 만족한다.
         * A의 prefix 길이: N > B의 suffix 길이라면, A 앞에서 N 만큼 문자열은 B 뒤에서 N 만큼 문자열을 뒤집은 것과 같다.
         * 그리고, C는 앞, 뒤 N 개의 문자를 제외한 가운데 문자열이 palindrome을 다시 이루고 있다.
@@ -239,7 +239,7 @@
             * N: 2 => A 앞 `ak`, B 뒤 `ka` 그리고 가운데 문자열 `bb`는 palindrome
     * 다시 구현을 권장
 
-7.[Remove Duplicate Letters](https://leetcode.com/problems/smallest-subsequence-of-distinct-characters/)
+7. [Remove Duplicate Letters](https://leetcode.com/problems/smallest-subsequence-of-distinct-characters/)
     * 중복을 제거하면서 가장 사전 상 빠른 문자열을 만드는 문제 (`"cbacdcbc"->"acdb"`)
     * 문자열의 문자를 모두 count하고, 차례대로 문자를 stack에 넣으면서, stack의 밑바닥이 사전 상 가장 빠른 문자가 오도록 만든다.
         * 단, 문자열에 등장한 문자는 적어도 한번씩은 등장해야 하므로, 문자 등장 횟수에 유의하면서 stack의 문자들을 조절한다.
@@ -350,14 +350,14 @@
     * 관련 문제
         * [줄 세우기](https://www.acmicpc.net/problem/2252): 그냥 위상 정렬 알고리즘을 적용하면 됨
         * [음악프로그램](https://www.acmicpc.net/problem/2623): 위상 정렬 + **directed** graph cycle 찾기
-            * [DFS의 Graph coloring을 이용하여 Cycle](https://www.youtube.com/watch?v=rKQaZuoUR4M&ab_channel=TusharRoy-CodingMadeSimple) 을 찾는 방법
-                0. 세 개의 집합(A, B, C): A는 초기 집합(처음에 모든 노드가 여기 있음)/ B는 후보 집합(cycle이 발생 가능한 노드)/ C는 확정 집합(cycle이 없는게 확인된 노드)
-                1. 세 개의 집합를 만들고, DFS로 노드 방문 시, 세 가지 케이스를 다룬다.
+            * [DFS의 Graph coloring을 이용하여 Cycle](https://www.youtube.com/watch?v=rKQaZuoUR4M&ab_channel=TusharRoy-CodingMadeSimple) 을 찾는 방법     
+                1. 세 개의 집합(A, B, C): A는 초기 집합(처음에 모든 노드가 여기 있음)/ B는 후보 집합(cycle이 발생 가능한 노드)/ C는 확정 집합(cycle이 없는게 확인된 노드)
+                2. 세 개의 집합를 만들고, DFS로 노드 방문 시, 세 가지 케이스를 다룬다.
                     1. 그 노드가 A에 있을 경우: 그 노드를 A에서 B로 옮겨준다.
                     2. 그 노드가 B에 있을 경우: B에 있는 노드들에 의해 cycle이 확실하게 발생했다.
                     3. 그 노드가 C에 있을 경우: 이미 해당 노드는 cycle이 없는 노드다. 무시하면 됨.
-                2. 모든 이웃 노드를 방문한 노드들은 cycle이 없는게 확실하므로, B에서 C로 옮겨준다.
-                3. 모든 노드가 A에서 C로 옮겨졌으면 그 **directed** graph는 cycle이 없다.
+                3. 모든 이웃 노드를 방문한 노드들은 cycle이 없는게 확실하므로, B에서 C로 옮겨준다.
+                4. 모든 노드가 A에서 C로 옮겨졌으면 그 **directed** graph는 cycle이 없다.
                 * HashMap(`dict`)을 이용하여 노드 간 이동을 기록하면, cycle에 해당하는 노드들을 알 수 있다.
 
 
