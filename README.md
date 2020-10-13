@@ -168,21 +168,21 @@
         * 그리고, 그 꼬리에서 다시 `len(list) - (k % len(list))` 만큼 이동한 후(`k`는 list 이동 횟수), 도착한 list의 노드가 꼬리가 된다.
             * 그 노드(`A`)를 꼬리로 만드는 방법: `head = A->next` 그리고, `A->next = None`  
 
-32.[Count Subtrees With Max Distance Between Cities](https://leetcode.com/problems/count-subtrees-with-max-distance-between-cities/)    
+32. [Count Subtrees With Max Distance Between Cities](https://leetcode.com/problems/count-subtrees-with-max-distance-between-cities/)    
     * Tree에서 가능한 모든 Subtree를 찾는 방법: 가능한 모든 vertices의 조합을 찾아내서, 그것이 tree 인지 확인
         * 가능한 모든 vertices 조합을 찾는 방법: `combinations` 또는 `bitmasking`사용
         * Tree인지 확인하는 방법: `BFS` 또는 `DFS`로 **조합에 존재하는** 정점 간 거리를 구하고, 만약 구할 수 없다면 tree가 아님
             * `BFS` 방법(다익스트라 응용): 초기 거리를 무한으로 설정(시작 노드만 0), `queue`를 이용해서 정점을 넣고 빼고, 이웃 정점 거리 = 이전 정점 거리 + 1 
     * `BFS`로 풀어보는 것을 권장
 
-33.[불!](https://www.acmicpc.net/problem/4179)
+33. [불!](https://www.acmicpc.net/problem/4179)
     * 예외 케이스를 기억하자: 1) 불은 한개가 아닐 수 있다, 2) 미로의 크기가 최소인 경우 (1 by 1)
 
-34.[팰린드롬 만들기](https://www.acmicpc.net/problem/1213)
+34. [팰린드롬 만들기](https://www.acmicpc.net/problem/1213)
     * `AAABB`로 팬린드롬 만들 때 -> `ABABA`가 `BAAAB` 보다 사전 순 먼저임
         * 위의 경우, 홀수나 짝수 상관없이 알파벳 순으로 절반씩 붙여주고, 가운데 하나만 홀수 알파벳을 붙인다 (`AB` + `A` + `BA`)
 
-35.[Sort List](https://leetcode.com/problems/sort-list/)
+35. [Sort List](https://leetcode.com/problems/sort-list/)
     * Merge Sort를 활용하여 linked list 정렬하기 
         * Top Down 방식과 Bottom Up 방식이 존재함
             1. Top Down: O(nlog(n))의 Time complexity 그리고 O(log(n))의 Space complexity 
