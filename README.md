@@ -278,7 +278,13 @@
     * 여기서 dp는 Boolean 형 `dp[i]`로 표기될 수 있는데, `dp[i]`는 주어진 string `s`의 `i`번째 substring까지, 주어진 dictionary로 만들 수 있는가 이다.
         * 예를 들어, `s = abcde , dict = ["abc", "de"]` 가 존재한다면,     
         `dp[0] = True (empty string)`, `dp[0] -> dp[3] = True (due to "abc")`, `dp[3] -> dp[5] = True (due to "de")`가 된다.
-              
+        
+5. [도둑질](https://programmers.co.kr/learn/courses/30/lessons/42897?language=python3)
+    * 배열이 원형인 경우에 DP를 적용하는 문제
+        * 두가지 case로 나눠서 각 case 마다 DP를 진행한 후, 둘 DP 계산 결과에서 가장 큰 값이 최종 정답이 된다.
+        * `0 ~ N-1`개의 배열의 원소의 경우, `0`번째 집을 털거나 `N-1`번째 집을 터는 경우로 나눠진다.
+            * 이렇게 case를 나누면 배열이 원형이 아니라 그냥 직선 형태가 되는것을 확인할 수 있다.
+
 ### 수열 문제 (Subsequence) 
 1. [가장 긴 증가하는 부분 수열](https://www.acmicpc.net/problem/12015)
     * 문제를 [가장 **큰** 증가 부분 수열](https://www.acmicpc.net/problem/11055)로 착각했다. 문제를 똑바로 읽는 연습을 하자.
