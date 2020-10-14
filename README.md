@@ -47,7 +47,6 @@
     * 풀긴 풀었는데 재귀로 풀었다가 TLE 나버린 case
         *   Backtracking 솔루션을 보니 훨씬 깔끔했다. 다만 이해하긴 좀 어려웠음.   
         
-
 10. [징검다리 건너기](https://programmers.co.kr/learn/courses/30/lessons/64062)
     * 두가지 해결 방법이 있는 문제
         * Sliding window Maximum 활용 (나는 이 방법을 썼다.. 이해하는데 오래걸렸다)
@@ -158,9 +157,6 @@
     * Counter를 활용하는 문제: 리스트가 주어졌을 때, `b-a == k, a <= b`를 만족하는 쌍 `(a, b)` 찾기
         * 리스트의 모든 값들을 Counter에 넣은 다음, `Counter[b-k]`가 하나라도 count 되었다면, 그 쌍 `(a, b)`는 리스트에 존재함
 
-30. [보석 쇼핑](https://programmers.co.kr/learn/courses/30/lessons/67258)
-    * Sliding window를 활용하는 문제
-        * 연속된 subarray 문제가 나오면 sliding window 개념을 활용하자.
 
 31. [Rotate List](https://leetcode.com/problems/rotate-list/)
     * Rotate 하는 list를 만들기 
@@ -283,11 +279,19 @@
         * 예를 들어, `s = abcde , dict = ["abc", "de"]` 가 존재한다면,     
         `dp[0] = True (empty string)`, `dp[0] -> dp[3] = True (due to "abc")`, `dp[3] -> dp[5] = True (due to "de")`가 된다.
               
-### 가장 긴 증가하는 부분 수열 (Longest Increasing Subsequence) 
+### 수열 문제 (Subsequence) 
 1. [가장 긴 증가하는 부분 수열](https://www.acmicpc.net/problem/12015)
     * 문제를 [가장 **큰** 증가 부분 수열](https://www.acmicpc.net/problem/11055)로 착각했다. 문제를 똑바로 읽는 연습을 하자.
     * 이 문제를 `O(nlog(n))`으로 푸는 방법은 이분 탐색을 이용하는 것, 그리고 수열을 찾아갈 때, 수열의 꼬리(오른쪽 끝)를 최대한 작게 만들어줘야 한다.
-    * 인덱스 트리(Index Tree)를 이용해서도 풀 수 있다고 한다. 
+    * 인덱스 트리(Index Tree)를 이용해서도 풀 수 있다고 한다.
+     
+2. [부분합](https://www.acmicpc.net/problem/1806)
+    * 수열 + 연속 합 = Two Pointer 문제
+    * head와 tail pointer를 조금씩 움직이면서, 그 사이의 수열을 이용한다. (sliding window와 비슷하기도 함)
+
+3. [보석 쇼핑](https://programmers.co.kr/learn/courses/30/lessons/67258)
+    * Sliding window를 활용하는 문제
+        * 연속된 subarray 문제가 나오면 sliding window 개념을 활용하자.    
 
 ### 수학
 1. [Complement of Base 10 Integer](https://leetcode.com/problems/complement-of-base-10-integer/)
@@ -304,7 +308,12 @@
 * 반으로 잘라서 왼쪽 오른쪽 탐색하는 방법 (general way)
     * `mid = (start + end) // 2 `, 그리고 `search(start, mid)` (왼쪽), `search(mid + 1, end)` (오른쪽)
     * `mid` 를 활용하고, `start > end`인 경우 중단
-    
+1. [입국심사](https://programmers.co.kr/learn/courses/30/lessons/43238?language=python3)
+    * 심사 시간을 이용해서 시간을 찾는 것이 아니라, 일단 시간을 추정하고 그것이 옳은지 확인
+        * 시간을 추정하는 방법은 이분 탐색을 이용
+    * `int(추정 시간값 / 각 심사관별 심사시간) = 심사관당 맡을 수 있는 입국자 수`
+        * 각 심사가 걸리는 시간은 심사관마다 독립적으로 동작함
+        
 ## 공부해야할 자료구조 또는 알고리즘
 1. Segment (or Segmentation) Tree & Index Tree 
     * Fenwick Tree (Binary Indexed Tree)
