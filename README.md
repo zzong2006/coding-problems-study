@@ -187,7 +187,14 @@
                 * Merge 방법: dummy head를 만들고, 합치려는 두 list의 node 중, 작은 값부터 순서대로 dummy에 엮어줌
             2. Bottom Up: O(nlog(n))의 Time complexity 그리고 O(1)의 Space complexity
                 * 아직 자세히 확인하지 못함 
-    
+
+36. [Rotate Array](https://leetcode.com/problems/rotate-array/)
+    * Given an array, rotate the array to the right by `k` step
+    * O(n)의 Time complexity 그리고 O(1)의 Space complexity로 rorate하기
+        * 예시로 이해하는 것이 빠르다. 배열 A: `[1,2,3,4,5]` -> `[4,5,1,2,3]` (When `k=2`)
+        * 일단 A를 뒤집어보면: `[5,4,3,2,1]`.. 패턴이 보이는가? `[/5,4/3,2,1/]`: `/`로 나눠진 부분을 뒤집어 주면된다.
+         
+        
 ### Greedy Algorithm
          
 1. [전구와 스위치](https://www.acmicpc.net/problem/2138)
@@ -339,7 +346,7 @@
     * 아호 코라식 알고리즘 (Aho-Corasick multiple pattern matching algorithm)
     * 관련 문제들 (어려운 문제가 아닌 경우, Trie class를 따로 만들지 않고 `set` 또는 `dict`으로 풀린다))
         * [전화번호 목록](https://www.acmicpc.net/problem/5052), [개미굴](https://www.acmicpc.net/problem/14725)
-       
+
     
 3. Union-Find 
     * [공항](https://www.acmicpc.net/problem/10775)
