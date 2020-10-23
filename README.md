@@ -194,7 +194,16 @@
         * 예시로 이해하는 것이 빠르다. 배열 A: `[1,2,3,4,5]` -> `[4,5,1,2,3]` (When `k=2`)
         * 일단 A를 뒤집어보면: `[5,4,3,2,1]`.. 패턴이 보이는가? `[/5,4/3,2,1/]`: `/`로 나눠진 부분을 뒤집어 주면된다.
          
-        
+37. [132 Pattern](https://leetcode.com/problems/132-pattern/) (Keyword: Stack)
+    * `n`개의 원소를 가진 `nums`배열이 `i < j < k` and `nums[i] < nums[k] < nums[j]`를 만족하는지 확인하는 문제
+    * 핵심은 `i < j`면서  `nums[i] < nums[j]`를 만족하는 `j`를 먼저 찾고, 그 다음 `j`를 중심으로 조건을 만족하는 `k`를 찾는다.
+        * `j`를 `0~len(nums)-1`까지 움직이면서 `i_nums[j]`을 update
+            * `i_nums[j]`이란, `nums`의 `j`번째까지의 원소 중 가장 작은 원소를 의미: 이것이 `i`가 됨
+        * 만약, `i_nums[j] < nums[j]`라면, 반드시 `i < j`와 `nums[i] < nums[j]`를 만족하는 `j`가 있다는 뜻임
+        * 그리고 `j + 1` 이후부터 조건을 만족하는 `k`를 찾으면 된다.
+    * 위 방법은 `O(n^2)` 방법이다. 하지만, binary search를 이용하는 `O(nlog(n))` 그리고 stack을 이용하는 `O(n)` 방법이 존재함
+    * 더 좋은 방법은 이후에... 
+
 ### Greedy Algorithm
          
 1. [전구와 스위치](https://www.acmicpc.net/problem/2138)
