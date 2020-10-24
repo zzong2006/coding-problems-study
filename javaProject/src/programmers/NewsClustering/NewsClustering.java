@@ -1,4 +1,4 @@
-package NewsClustering;
+package programmers.NewsClustering;
 
 import java.util.HashMap;
 

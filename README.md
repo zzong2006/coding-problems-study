@@ -204,6 +204,14 @@
     * 위 방법은 `O(n^2)` 방법이다. 하지만, binary search를 이용하는 `O(nlog(n))` 그리고 stack을 이용하는 `O(n)` 방법이 존재함
     * 더 좋은 방법은 이후에... 
 
+38. [Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/) 
+    * 일련의 양의 정수 높이가 존재하는 `n`개의 블럭들이 주어지고, 블럭에 물을 부었을 때 얼마나 많은 물이 블럭에 잠기는지 세는 문제
+    * 핵심: `i`번째 블럭이 보유할 수 있는 물의 높이 `H`를 다음과 같이 구할 수 있다.
+        * `0~i`번째 블럭 중 가장 높은 높이 `A`, `i~n-1`번째 블럭 중 가장 높은 높이 `B`
+        * `H = min(A,B) - h` (`h`는 `i`번째 블럭의 높이)
+            * 물론, `min(A,B) > h`의 경우만, 아니면 `H = 0`임
+        * 시간 복잡도를 줄이기 위해 배열 `left`와 `right`를 사용 (`left[i]`는 `A` 그리고 `right[i]`는 `B`를 저장하는 배열)
+        
 ### Greedy Algorithm
          
 1. [전구와 스위치](https://www.acmicpc.net/problem/2138)

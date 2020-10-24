@@ -1,7 +1,7 @@
 // https://programmers.co.kr/learn/courses/30/lessons/60061?language=java
 // 프로그래머즈 : 기둥과 보 설치
 
-package installPillar;
+package programmers.installPillar;
 
 import java.util.ArrayList;
 import java.util.Collections;

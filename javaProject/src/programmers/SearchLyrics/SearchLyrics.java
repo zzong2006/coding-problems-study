@@ -1,9 +1,8 @@
-package SearchLyrics;
+package programmers.SearchLyrics;
 
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.Comparator;
 
 public class SearchLyrics {
