@@ -211,7 +211,25 @@
         * `H = min(A,B) - h` (`h`는 `i`번째 블럭의 높이)
             * 물론, `min(A,B) > h`의 경우만, 아니면 `H = 0`임
         * 시간 복잡도를 줄이기 위해 배열 `left`와 `right`를 사용 (`left[i]`는 `A` 그리고 `right[i]`는 `B`를 저장하는 배열)
-        
+
+39. [가운데를 말해요](https://www.acmicpc.net/problem/1655)
+    * min heap & max heap 두 개를 동시에 사용하는 문제
+        * 전체 배열 `A` 중에서 min heap은 내림차순 담당, max heap은 오름차순 담당
+        * `A = [1,2,3,4,5]` 의 경우 min heap: `[5,4]`, max heap:`[1,2,3]`
+    * 정렬된 배열의 중간값(median)을 출력해야 하므로, 두개의 heap 길이를 비슷하게 유지한다.
+        * max heap에 우선적으로 값을 넣고, 1개 이상 길이가 차이날 경우 min heap에 넣는다.
+    * max heap의 root 값이 배열의 median 값이라고 정하자.
+        * 이 경우, 매번 두 heap 중 하나에 값을 넣을때마다, max heap의 root 값이 min heap의 root 값보다 크면 교환한다.
+        * Why?
+            1. 각 heap의 오름차순과 내림차순을 유지해야하므로
+            2. 배열의 길이가 짝수일 경우, median은 중간에 있는 두 수 중에서 작은 수이므로
+
+40. [Champagne-tower](https://leetcode.com/problems/champagne-tower/)
+    * 샴페인을 부워서 특정 잔에 얼마나 많은 물이 남아있는지 알아내는 문제
+    ![image](https://s3-lc-upload.s3.amazonaws.com/uploads/2018/03/09/tower.png)
+    * 잔에 물을 한컵씩 붓는다고 생각하지 말고, 한번에 다 따라버렸을 때 어떻게 흘러가는지 파악하는게 핵심이다.
+    
+    
 ### Greedy Algorithm
          
 1. [전구와 스위치](https://www.acmicpc.net/problem/2138)
