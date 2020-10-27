@@ -226,9 +226,12 @@
 
 40. [Champagne-tower](https://leetcode.com/problems/champagne-tower/)
     * 샴페인을 부워서 특정 잔에 얼마나 많은 물이 남아있는지 알아내는 문제
-    ![image](https://s3-lc-upload.s3.amazonaws.com/uploads/2018/03/09/tower.png)
     * 잔에 물을 한컵씩 붓는다고 생각하지 말고, 한번에 다 따라버렸을 때 어떻게 흘러가는지 파악하는게 핵심이다.
     
+41. [트리의 지름](https://www.acmicpc.net/problem/1167)
+    * 트리의 지름이란, 트리에서 임의의 두 점 사이의 거리 중 가장 긴 것을 말한다.
+    * 구하는 방법: 임의의 노드 `A`에서 가장 거리가 먼 노드 `B`를 찾는다.
+    다시, `B`에서 거리가 가장 먼 노드 `C`를 찾으면, `B`와 `C`의 거리가 트리의 지름이 된다.
     
 ### Greedy Algorithm
          
