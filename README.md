@@ -211,7 +211,13 @@
         * `H = min(A,B) - h` (`h`는 `i`번째 블럭의 높이)
             * 물론, `min(A,B) > h`의 경우만, 아니면 `H = 0`임
         * 시간 복잡도를 줄이기 위해 배열 `left`와 `right`를 사용 (`left[i]`는 `A` 그리고 `right[i]`는 `B`를 저장하는 배열)
-
+    * [Maximize Distance to Closest Person] (https://leetcode.com/problems/maximize-distance-to-closest-person/)
+        * 풀이 방법이 비슷한 문제 (`left`, `right` 배열 활용)
+        * 배열들을 사용하지 않고 공간 복잡도를 줄이는 방법: 어떤 좌석 `i`에서 가장 가까운 사람과의 거리는 `min(i - prev, future - i)` 임
+            * `prev`는 `i`에서부터 가장 가까운 왼쪽 사람이 앉은 자리, `future`는 `i`에서부터 가장 가까운 오른쪽 사람이 앉은 자리
+            * `future`를 위해 python에서 `generator`를 활용할 수 있음 
+        
+    
 39. [가운데를 말해요](https://www.acmicpc.net/problem/1655)
     * min heap & max heap 두 개를 동시에 사용하는 문제
         * 전체 배열 `A` 중에서 min heap은 내림차순 담당, max heap은 오름차순 담당
