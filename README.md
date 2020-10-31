@@ -211,7 +211,7 @@
         * `H = min(A,B) - h` (`h`는 `i`번째 블럭의 높이)
             * 물론, `min(A,B) > h`의 경우만, 아니면 `H = 0`임
         * 시간 복잡도를 줄이기 위해 배열 `left`와 `right`를 사용 (`left[i]`는 `A` 그리고 `right[i]`는 `B`를 저장하는 배열)
-    * [Maximize Distance to Closest Person] (https://leetcode.com/problems/maximize-distance-to-closest-person/)
+    * [Maximize Distance to Closest Person](https://leetcode.com/problems/maximize-distance-to-closest-person/)
         * 풀이 방법이 비슷한 문제 (`left`, `right` 배열 활용)
         * 배열들을 사용하지 않고 공간 복잡도를 줄이는 방법: 어떤 좌석 `i`에서 가장 가까운 사람과의 거리는 `min(i - prev, future - i)` 임
             * `prev`는 `i`에서부터 가장 가까운 왼쪽 사람이 앉은 자리, `future`는 `i`에서부터 가장 가까운 오른쪽 사람이 앉은 자리
@@ -238,7 +238,12 @@
     * 트리의 지름이란, 트리에서 임의의 두 점 사이의 거리 중 가장 긴 것을 말한다.
     * 구하는 방법: 임의의 노드 `A`에서 가장 거리가 먼 노드 `B`를 찾는다.
     다시, `B`에서 거리가 가장 먼 노드 `C`를 찾으면, `B`와 `C`의 거리가 트리의 지름이 된다.
-    
+
+42. [불량 사용자](https://programmers.co.kr/learn/courses/30/lessons/64064)
+    * 'abcd'와 'ab*d'가 일치하는지 확인하는 법
+        * '*' 을 제외한 나머지 문자('ab' 그리고 'd')가 동일할 경우
+        * '*' 을 제외한 나머지 문자 길이 + '*'에 해당하는 길이가 같다면, 두 문자열이 동일하다고 판단한다.
+  
 ### Greedy Algorithm
          
 1. [전구와 스위치](https://www.acmicpc.net/problem/2138)
