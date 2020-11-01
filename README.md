@@ -243,7 +243,22 @@
     * 'abcd'와 'ab*d'가 일치하는지 확인하는 법
         * '*' 을 제외한 나머지 문자('ab' 그리고 'd')가 동일할 경우
         * '*' 을 제외한 나머지 문자 길이 + '*'에 해당하는 길이가 같다면, 두 문자열이 동일하다고 판단한다.
-  
+
+43. [Check Array Formation Through Concatenation](https://leetcode.com/problems/check-array-formation-through-concatenation/)
+    * `list` 간 `+`로 합칠 수 있다 
+        * `[1,2] + [3,4] = [1,2,3,4]`
+    * `dict`의 `get`함수가 유용하다 
+        * ```
+            mp= {1: [5]}
+            a = mp.get(1, []) # a = [5] 
+            b = mp.get(2, []) # b = [] 
+          ```
+          
+44. [Convert Binary Number in a Linked List to Integer](https://leetcode.com/problems/convert-binary-number-in-a-linked-list-to-integer/)    
+    * linked list에 포함된 값을 정수로 바꾸는 문제
+    * `<<` 와 `|`를 활용하면 공간 복잡도 `O(1)`로 해결할 수 있다. 
+    
+     
 ### Greedy Algorithm
          
 1. [전구와 스위치](https://www.acmicpc.net/problem/2138)
