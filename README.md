@@ -60,7 +60,7 @@
             `for i in array: if t in i: print('exist!')`
 
 13. [Majority Element II](https://leetcode.com/problems/majority-element-ii/)
-    * 핵심: 크기가 `n`인 배열 중 `⌊n/2⌋` 보다 큰 값은 반드시 **한**개만 존재한다.
+    * 핵심: 크기가 `n`인 배열 중 특정 원소의 개수가 `⌊n/2⌋` 보다 많은 원소는 반드시 **한**개만 존재한다.
         * 그럼 `⌊n/3⌋` 의 경우는 ?
 
 14. [Gas Station](https://leetcode.com/problems/gas-station/)
@@ -238,7 +238,15 @@
     * 트리의 지름이란, 트리에서 임의의 두 점 사이의 거리 중 가장 긴 것을 말한다.
     * 구하는 방법: 임의의 노드 `A`에서 가장 거리가 먼 노드 `B`를 찾는다.
     다시, `B`에서 거리가 가장 먼 노드 `C`를 찾으면, `B`와 `C`의 거리가 트리의 지름이 된다.
-
+    * [Minimum Height Trees](https://leetcode.com/problems/minimum-height-trees/)
+        * tree-like graph에서 가장 짧은 높이를 가진 tree의 root node를 찾는 문제
+        * 트리의 지름에 가장 가운데 존재하는 노드(들)을 찾으면 된다.
+            * 이러한 노드들을 centroids 라는 별명으로 부르는데, tree-like graph에서 centroids는 반드시 2개 이하임이 증명되어있다.
+        * 푸는 방법은 두 가지: 1) 트리의 지름을 구하면서 지름을 이루는 노드 경로 찾기 2) Topology sort
+        * Topology sort의 경우, BFS로 해결한다.         
+        즉, graph의 leaf node들을 모두 큐에 넣고, 안으로 조금씩 들어가면서 최종적으로 두 노드만 남을 때까지 방문한 노드들을 graph에서 제외시킨다. 
+        그리고 남은 두 노드가 centroids가 된다.
+        
 42. [불량 사용자](https://programmers.co.kr/learn/courses/30/lessons/64064)
     * 'abcd'와 'ab*d'가 일치하는지 확인하는 법
         * '*' 을 제외한 나머지 문자('ab' 그리고 'd')가 동일할 경우

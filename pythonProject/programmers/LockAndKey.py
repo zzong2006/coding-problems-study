@@ -1,6 +1,7 @@
 from collections import deque
 import timeit
 
+
 def rotate(a):
     new_key = [[0] * len(a) for _ in range(len(a[0]))]
 
@@ -42,33 +43,45 @@ def fit(k, lo, s_of_z):
 
 
 def move_up(a):
-    new_key = [[0] * len(a) for _ in range(len(a[0]))]
-    for i in range(0, len(a) - 1):
-        new_key[i][:] = a[i + 1][:]
-    return new_key
+    n = len(a)
+    new_key = [[0] * n for _ in range(len(a[0]))]
+    removed_ones = sum(a[n - 1][:])
+    for i in range(0, n - 1):
+        if i < n - 1:
+            new_key[i][:] = a[i + 1][:]
+
+    return new_key, removed_ones
 
 
 def move_down(a):
-    new_key = [[0] * len(a) for _ in range(len(a[0]))]
-    for i in range(1, len(a)):
+    n = len(a)
+    new_key = [[0] * n for _ in range(len(a[0]))]
+    removed_ones = sum(a[0][:])
+
+    for i in range(1, n):
         new_key[i][:] = a[i - 1][:]
-    return new_key
+    return new_key, removed_ones
 
 
 def move_left(a):
+    n = len(a)
     new_key = [[0] * len(a) for _ in range(len(a[0]))]
+    removed_ones = sum(a[:][len(a[0]) - 1])
+
     for i in range(len(a)):
         for j in range(len(a[0]) - 1):
             new_key[i][j] = a[i][j + 1]
-    return new_key
+    return new_key, removed_ones
 
 
 def move_right(a):
     new_key = [[0] * len(a) for _ in range(len(a[0]))]
+    removed_ones = sum(a[:][0])
     for i in range(len(a)):
         for j in range(1, len(a[0])):
             new_key[i][j] = a[i][j - 1]
-    return new_key
+
+    return new_key, removed_ones
 
 
 def solution(key, lock):
@@ -80,53 +93,44 @@ def solution(key, lock):
                 sum_of_zero += 1
     que = deque()
     answer = False
+    sum_of_ones = sum(list(map(sum, tuple(map(tuple, key)))))
     key = tuple(map(tuple, key))
-    que.append((key, 0))
+    que.append((key, 0, sum_of_ones))
     check = set()
     check.add(key)
 
     while len(que) > 0 or answer:
-        kk, angle = que.popleft()
+        kk, angle, s_of_one = que.popleft()
         if fit(kk, lock, sum_of_zero):
             # print(kk, lock)
             return True
         else:
             # up , down, right, left
-            up_key = move_up(kk)
-            tp = tuple(map(tuple, up_key))
-            sum_of_ones = sum(list(map(sum,tp)))
-            if tp not in check and sum_of_ones >= sum_of_zero:
-                check.add(tp)
-                que.append((tp, angle))
+            tp, rmv = move_up(kk)
+            if tp.__repr__ not in check and s_of_one - rmv >= sum_of_zero:
+                check.add(tp.__repr__)
+                que.append((tp, angle, s_of_one - rmv))
 
-            down_key = move_down(kk)
-            tp = tuple(map(tuple, down_key))
-            sum_of_ones = sum(list(map(sum, tp)))
-            if tp not in check and sum_of_ones >= sum_of_zero:
-                check.add(tp)
-                que.append((tp, angle))
+            tp, rmv = move_down(kk)
+            if tp.__repr__ not in check and sum_of_ones - rmv >= sum_of_zero:
+                check.add(tp.__repr__)
+                que.append((tp, angle, s_of_one - rmv))
 
-            right_key = move_right(kk)
-            tp = tuple(map(tuple, right_key))
-            sum_of_ones = sum(list(map(sum, tp)))
-            if tp not in check and sum_of_ones >= sum_of_zero:
-                check.add(tp)
-                que.append((tp, angle))
+            tp, rmv = move_right(kk)
+            if tp.__repr__ not in check and sum_of_ones - rmv >= sum_of_zero:
+                check.add(tp.__repr__)
+                que.append((tp, angle, s_of_one - rmv))
 
-            left_key = move_left(kk)
-            tp = tuple(map(tuple, left_key))
-            sum_of_ones = sum(list(map(sum, tp)))
-            if tp not in check and sum_of_ones >= sum_of_zero:
-                check.add(tp)
-                que.append((tp, angle))
+            tp, rmv = move_left(kk)
+            if tp.__repr__ not in check and sum_of_ones - rmv >= sum_of_zero:
+                check.add(tp.__repr__)
+                que.append((tp, angle, s_of_one - rmv))
 
-            if angle < 270 :
-                rotate_key = rotate(kk)
-                tp = tuple(map(tuple, rotate_key))
-                sum_of_ones = sum(list(map(sum, tp)))
-                if tp not in check and sum_of_ones >= sum_of_zero:
-                    check.add(tp)
-                    que.append((tp, angle + 90))
+            if angle < 270:
+                tp = rotate(kk)
+                if tp.__repr__ not in check :
+                    check.add(tp.__repr__)
+                    que.append((tp, angle + 90, s_of_one - rmv))
 
     return answer
 
