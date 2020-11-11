@@ -338,6 +338,15 @@
     * min-heap을 활용하는 문제
         * 모든 강의실의 시간을 빈틈없이 채우기 위해서, 가장 빨리 끝나는 강의실(min-heap)부터 차례로 강의 시간을 채워넣는다.
         * 만약, 주어진 강의 시간 구간이 어느 강의실에도 매칭되지 않다고 판단(heap root 비교)되면, 새로운 강의실을 생성한다(heap item 삽입). 
+
+5. [추석 트래픽](https://programmers.co.kr/learn/courses/30/lessons/17676)
+    * `2016-09-15 01:00:04.002` 와 같은 시간 문제를 다룰 때 팁
+        * `time` 모듈은 소수점 `sec`를 지원하지 않는다. 정수 시간만 지원 (e.g. `01:00:04`) 
+        * 년, 월, 일이 문제에 의미가 없다면, 시간을 초 단위로 변경하는 것이 편하다.
+            * 년, 월, 일의 초 단위 변환이 필요하면 python tip 참조 
+        * 어떤 시간 `t`로 부터 1초 범위는 1000ms 단위로 생각했을 때, `t ~ t + 0.999sec` 까지다 (`t ~ t + 1 sec` 아님!).
+        * 소수점 덧셈, 뺄셈은 이상한 계산 결과를 종종 내놓는다(e.g. `1 + 0.001 = 1.0010000004`).
+            * 이런 경우 가장 확실한 방법은 `Decimal` 모듈을 사용하는 것이지만, `round`를 이용해도 충분하다.
     
 ### Dynamic Programming (DP)
 1. [거스름돈](https://programmers.co.kr/learn/courses/30/lessons/12907)
@@ -400,7 +409,25 @@
         * 시간을 추정하는 방법은 이분 탐색을 이용
     * `int(추정 시간값 / 각 심사관별 심사시간) = 심사관당 맡을 수 있는 입국자 수`
         * 각 심사가 걸리는 시간은 심사관마다 독립적으로 동작함
-        
+
+### 그래프
+1. [DFS의 Graph coloring을 이용하여 Cycle](https://www.youtube.com/watch?v=rKQaZuoUR4M&ab_channel=TusharRoy-CodingMadeSimple) 을 찾는 방법     
+    1. 세 개의 집합(A, B, C): A는 초기 집합(처음에 모든 노드가 여기 있음)/ B는 후보 집합(cycle이 발생 가능한 노드)/ C는 확정 집합(cycle이 없는게 확인된 노드)
+    2. 세 개의 집합를 만들고, DFS로 노드 방문 시, 세 가지 케이스를 다룬다.
+        1. 그 노드가 A에 있을 경우: 그 노드를 A에서 B로 옮겨준다.
+        2. 그 노드가 B에 있을 경우: B에 있는 노드들에 의해 cycle이 확실하게 발생했다.
+        3. 그 노드가 C에 있을 경우: 이미 해당 노드는 cycle이 없는 노드다. 무시하면 됨.
+    3. 모든 이웃 노드를 방문한 노드들은 cycle이 없는게 확실하므로, B에서 C로 옮겨준다.
+    4. 모든 노드가 A에서 C로 옮겨졌으면 그 **directed** graph는 cycle이 없다.
+    * HashMap(`dict`)을 이용하여 노드 간 이동을 기록하면, cycle에 해당하는 노드들을 알 수 있다.
+    * 관련 문제의 특징: 트리를 어떤 순서대로 방문하려는데, 주어진 노드 순서로 방문이 불가능/가능 한지의 여부를 물어봄
+    * 관련 문제
+        1. [음악프로그램](https://www.acmicpc.net/problem/2623)
+            * topology sort
+        2. [동굴 탐험](https://programmers.co.kr/learn/courses/30/lessons/67260)
+            * Undirected Tree를 Directed Tree로 바꿔줘야 함 (시작 node가 명시되어야 변환이 가능)
+            * 바꾸는 방법: 우선 Undirected Tree를 구성하고, BFS로 모든 노드를 방문, 부모-자식 관계를 찾으면서 directed Tree 구성
+
 ## 공부해야할 자료구조 또는 알고리즘
 1. Segment (or Segmentation) Tree & Index Tree 
     * Fenwick Tree (Binary Indexed Tree)
@@ -445,18 +472,9 @@
         * 어떤 노드의 indegree란, directed graph에서 그 노드로 향하는 화살표의 총 개수를 의미한다. 
     * 관련 문제
         * [줄 세우기](https://www.acmicpc.net/problem/2252): 그냥 위상 정렬 알고리즘을 적용하면 됨
-        * [음악프로그램](https://www.acmicpc.net/problem/2623): 위상 정렬 + **directed** graph cycle 찾기
-            * [DFS의 Graph coloring을 이용하여 Cycle](https://www.youtube.com/watch?v=rKQaZuoUR4M&ab_channel=TusharRoy-CodingMadeSimple) 을 찾는 방법     
-                1. 세 개의 집합(A, B, C): A는 초기 집합(처음에 모든 노드가 여기 있음)/ B는 후보 집합(cycle이 발생 가능한 노드)/ C는 확정 집합(cycle이 없는게 확인된 노드)
-                2. 세 개의 집합를 만들고, DFS로 노드 방문 시, 세 가지 케이스를 다룬다.
-                    1. 그 노드가 A에 있을 경우: 그 노드를 A에서 B로 옮겨준다.
-                    2. 그 노드가 B에 있을 경우: B에 있는 노드들에 의해 cycle이 확실하게 발생했다.
-                    3. 그 노드가 C에 있을 경우: 이미 해당 노드는 cycle이 없는 노드다. 무시하면 됨.
-                3. 모든 이웃 노드를 방문한 노드들은 cycle이 없는게 확실하므로, B에서 C로 옮겨준다.
-                4. 모든 노드가 A에서 C로 옮겨졌으면 그 **directed** graph는 cycle이 없다.
-                * HashMap(`dict`)을 이용하여 노드 간 이동을 기록하면, cycle에 해당하는 노드들을 알 수 있다.
-
-
+            
+        
+        
 ## python tip
 1. 재귀 함수 최대 깊이 늘리기 `sys.setrecursionlimit(10**7)` (메모리 초과 가능성 농후)
 2. `ord` 는 character를 ascii 값으로, `chr`는 ascii 값을 character로 바꾸는 built-in function
@@ -494,6 +512,9 @@
 12. 어떤 문자열이 특정 문자열로 시작하는 것을 확인하고 싶다면: `'this is test!'.startswith('this') -> True`
 13. 소수점 5 번째 자리까지 출력하는 str type 변수 만들기: `floating_num = '{:.5f}'.format(3.141592687)`
 14. `print`로 출력 시, `,` 간 간격을 수정하고 싶다면: `print('<','>', sep='')`-> `<>` 출력 (`< >` 아님) 
+15. 시간에 관련된 문자열을 `time` format으로 변환
+    * `k = time.strptime('2016-09-14 01:00:06', '%Y-%m-%d %H:%M:%S')`
+    * 초 단위로 변환: `time.mktime(k) # 1473782406.0`
 
 ## SQL
 1. `LIMIT`: 테이블 가장 상위의 행 하나만 출력하기 `SELECT * FROM sample LIMIT 1`
