@@ -130,10 +130,10 @@
         * 만약 + 로 시작해서 -, +, -, + 이런 순으로 원소들의 최대 합을 구하는 문제가 있다면, 반드시 정답은 홀수 번 합이다 (e.g. + - +).
         
 25. [Subarray Product Less Than K](https://leetcode.com/problems/subarray-product-less-than-k/)   
-    * [Sliding Window를 활용](https://www.geeksforgeeks.org/number-subarrays-product-less-k/)해서 해결하는 문제
+    * [Sliding Window를 활용](https://www.geeksforgeeks.org/number-subarrays-product-less-k/) 해서 해결하는 문제
         * `[1, 2, 3]`이 가질 수 있는 총 subarray가 a개인 경우,     
-        `[1, 2, 3, 4]`의 총 subarray는 `a + start - end = a + 4 - 0` 가 된다.
-            * 여기서 `start` 는 `0` 의 index, 그리고 `end`는 `4`의 index
+        `[1, 2, 3, 4]`의 총 subarray는 `a + end - start = a + 4 - 0` 가 된다.
+            * 여기서 `start` 는 `1` 의 index, 그리고 `end`는 `4`의 index + 1
         * 이러한 특징을 활용하여 array에서 window를 놓고 sliding 시키면서 product 값 그리고 subarray 개수를 계산하면 됨
 
 26. [스타트와 링크](https://www.acmicpc.net/problem/14889)
@@ -443,12 +443,18 @@
     * HashMap(`dict` in python)을 활용해서 만든 트리
         * 여러 단어들을 하나의 트리에 넣어서, prefix/whole word 처리를 할 때 유용하다.
         * Trie 구조 생성 복잡도 `O(L*N)`(`L`: 문자열 최대 길이, `N`: 문자열 총 개수)
-    * KMP 알고리즘 (Knuth-Morris-Pratt string matching algorithm)
-    * 아호 코라식 알고리즘 (Aho-Corasick multiple pattern matching algorithm)
-    * 관련 문제들 (어려운 문제가 아닌 경우, Trie class를 따로 만들지 않고 `set` 또는 `dict`으로 풀린다))
+    * 관련 문제들 (어려운 문제가 아닌 경우, Trie 를 따로 만들지 않고 `set` 또는 `dict`으로 풀린다))
         * [전화번호 목록](https://www.acmicpc.net/problem/5052), [개미굴](https://www.acmicpc.net/problem/14725)
-
-    
+        * [가사 검색](https://programmers.co.kr/learn/courses/30/lessons/60060)
+            * 패턴 매칭 시, Trie 활용 팁 두가지
+                1. 각 Trie node에 `length` 변수 추가 후 Trie 구축중에 계산 (`length`: 해당 노드 이후 매칭되는 단어의 총 개수)
+                2. prefix 단어(e.g. `???ord`) matching 에는 단어를 거꾸로 해서 넣은 Trie 사용, 
+                postfix 단어(e.g. `ord???`) matching 에는 일반 Trie 사용
+    * 관련 알고리즘
+        * KMP 알고리즘 (Knuth-Morris-Pratt string matching algorithm)
+        * 아호 코라식 알고리즘 (Aho-Corasick multiple pattern matching algorithm)
+        
+        
 3. Union-Find 
     * [공항](https://www.acmicpc.net/problem/10775)
         * `g_i`가 입력으로 들어온 비행기가 들어갈 게이트는 `1 <= g_i <= G`인데,     
