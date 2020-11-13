@@ -478,8 +478,20 @@
         * 어떤 노드의 indegree란, directed graph에서 그 노드로 향하는 화살표의 총 개수를 의미한다. 
     * 관련 문제
         * [줄 세우기](https://www.acmicpc.net/problem/2252): 그냥 위상 정렬 알고리즘을 적용하면 됨
-            
-        
+
+8. Floyd-Warshall algorithm
+    * 다익스트라 알고리즘의 단점을 보완한 알고리즘
+        * 다익스트라는 single source shortest path 였지만, 플로이드-워셜은 all pairs shortest path이다.
+        * 다익스트라는 음의 가중치를 가진 간선은 사용이 불가능하지만, 플로이드-워셜에서는 사용이 가능하다.
+    * 플로이드-워셜 알고리즘의 단점은 시간 복잡도가 매우 높다는 것이다 (`V^3`, `V`는 vertex 개수)
+    * 핵심: 플로이드-워셜은 다음과 같은 재귀식을 반복한다. 
+        * `dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j])`
+        * 위 식은 정점 `i` 와 `j` 사이에 `k`라는 정점을 통한 경로를 추가하였을 때, `i`와 `j` 사이의 최단 경로를 의미함
+    * 관련 문제
+        * [플로이드](https://www.acmicpc.net/problem/11404) : 만약 동일한 정점 간 사이의 거리가 여러개라면, 그 중 최소만 설정한다.
+        * [맥주 마시면서 걸어가기](https://www.acmicpc.net/problem/9205)
+            * DFS, BFS로 풀어도 되지만, 플로이드-워셜 알고리즘 개념을 이용해도 풀기가 가능한 문제
+            * A->C 로 가는 것은 불가능(False)해도, A->B 이 가능(True)하고, B->C가 가능하다면, A->C도 가능하다. 
         
 ## python tip
 1. 재귀 함수 최대 깊이 늘리기 `sys.setrecursionlimit(10**7)` (메모리 초과 가능성 농후)
