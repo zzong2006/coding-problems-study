@@ -438,7 +438,9 @@
     * [최솟값과 최댓값](https://www.acmicpc.net/problem/2357)
         * 구간의 합 대신, 최대값과 최소값을 segmentation tree로 구현 
         * 재귀에서 `return`을 이해하고 활용하는 연습이 더 필요함
-    
+    * [구간 곱 구하기](https://www.acmicpc.net/problem/11505)
+        * 트리 수정에서, 구간 곱의 경우, 구간 내 원소가 0 으로 수정될 경우 전부 꼬이게된다. 
+        이런 경우, 수정할 원소가 속하는 구간만 트리에서 새로 계산한다.
 2. Trie
     * HashMap(`dict` in python)을 활용해서 만든 트리
         * 여러 단어들을 하나의 트리에 넣어서, prefix/whole word 처리를 할 때 유용하다.
@@ -450,6 +452,9 @@
                 1. 각 Trie node에 `length` 변수 추가 후 Trie 구축중에 계산 (`length`: 해당 노드 이후 매칭되는 단어의 총 개수)
                 2. prefix 단어(e.g. `???ord`) matching 에는 단어를 거꾸로 해서 넣은 Trie 사용, 
                 postfix 단어(e.g. `ord???`) matching 에는 일반 Trie 사용
+        * [휴대폰 자판](https://www.acmicpc.net/problem/5670)
+            * Trie에 포함된 전체 단어들에 대해서 한꺼번에 재귀로 계산할 수 있는가? (풀긴 풀었는데 코드를 다시 한번 생각)
+            
     * 관련 알고리즘
         * KMP 알고리즘 (Knuth-Morris-Pratt string matching algorithm)
         * 아호 코라식 알고리즘 (Aho-Corasick multiple pattern matching algorithm)
