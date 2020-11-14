@@ -33,8 +33,8 @@ def solution(n, build_frame):
     # 양쪽 끝 부분이 다른 보와 동시에 연결되어 있는지?
     def bo_connected(x, y):
         for i in range(len(bos)):
-            for j in range(i + 1, len(bos)):
-                if (bos[i].start == (x, y) and bos[j].end == (x + 1, y)) or (
+            for j in range(len(bos)):
+                if i != j and (bos[i].start == (x, y) and bos[j].end == (x + 1, y)) or (
                         bos[i].end == (x, y) and bos[j].start == (x + 1, y)):
                     return True
         return False
@@ -100,12 +100,3 @@ def solution(n, build_frame):
     answer.sort(key=lambda x: (x[0], x[1], x[2]))
 
     return answer
-
-
-print(solution(5, [[1, 0, 0, 1], [1, 1, 1, 1], [2, 1, 0, 1], [2, 2, 1, 1], [5, 0, 0, 1], [5, 1, 0, 1], [4, 2, 1, 1],
-                   [3, 2, 1, 1]]))
-print(solution(5, [[0, 0, 0, 1], [0, 1, 0, 1], [2, 0, 0, 1], [4, 0, 0, 1], [0, 1, 1, 1], [1, 1, 1, 1], [2, 1, 1, 1],
-                   [3, 1, 1, 1],
-                   [2, 0, 0, 0], [1, 1, 1, 0], [2, 2, 0, 1], [2, 0, 0, 1], [1, 1, 1, 0]]))
-print(solution(5, [[0, 0, 0, 1], [0, 1, 0, 1], [2, 2, 1, 1], [0, 2, 1, 1], [3, 0, 0, 1], [3, 1, 0, 1], [2, 2, 1, 1],
-                   [1, 2, 1, 1], [2, 2, 1, 0]]))

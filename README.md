@@ -14,19 +14,19 @@
    
 2. [숫자 카드2 (백준)](https://www.acmicpc.net/problem/10816)
     * lower_bound 또는 upper_bound 구현
-    * python 으로 시도했는데 TO로 실패함. bisect library 이용해서 풀음.
+    * python 으로 시도했는데 TO로 실패함. `bisect` library 이용해서 풀음.
     
 3. [한윤정이 이탈리아에 가서 아이스크림을 사먹는데 (백준)](https://www.acmicpc.net/problem/2422)
     * 핵심은 배열을 활용하는 것 
         * 금지 조합은 2가지인데, 선택 조합은 3가지
         * 여기서는 선택 조합 보다는 금지 조합에 대한 배열을 만들고, 선택 조합을 금지 조합에 대입시켜보는 것이 맞다.
         * 예) (1,2,3) -> (1,2), (2,3), (1,3) 확인
-    * python lib의 itertools combinations는 시간이 너무 오래걸림
+    * python lib의 `itertools.combinations`는 시간이 너무 오래걸림
     * 다중 for문으로 푸는것이 훨씬 빠름 (약 3배정도)
 
 4. [경주로 건설 (프로그래머즈)](https://programmers.co.kr/learn/courses/30/lessons/67259?language=python3)
     * bfs 로 해결하는 것인데, 테스트 케이스가 부족하여서 조금 쉬운 문제가 되버림 (하지만 난 못풀었음)
-    * 핵심은 dp도 적절히 섞어줘서 가지치기를 진행하는 것
+    * 핵심은 memoization도 적절히 섞어줘서 가지치기를 진행하는 것
     * python에서의 상하좌우 이동은 tuple로 해결하는 것이 좋다는 것을 깨달음
     * python에서의 queue는 list 보다는 collections의 deque를 사용하는 것이 좋다는 것을 깨달음
 
@@ -209,7 +209,7 @@
     * 핵심: `i`번째 블럭이 보유할 수 있는 물의 높이 `H`를 다음과 같이 구할 수 있다.
         * `0~i`번째 블럭 중 가장 높은 높이 `A`, `i~n-1`번째 블럭 중 가장 높은 높이 `B`
         * `H = min(A,B) - h` (`h`는 `i`번째 블럭의 높이)
-            * 물론, `min(A,B) > h`의 경우만, 아니면 `H = 0`임
+            * 물론, `min(A,B) > h`의 경우만 위 식이 성립, 아니면 `H = 0`임
         * 시간 복잡도를 줄이기 위해 배열 `left`와 `right`를 사용 (`left[i]`는 `A` 그리고 `right[i]`는 `B`를 저장하는 배열)
     * [Maximize Distance to Closest Person](https://leetcode.com/problems/maximize-distance-to-closest-person/)
         * 풀이 방법이 비슷한 문제 (`left`, `right` 배열 활용)
@@ -266,7 +266,10 @@
     * linked list에 포함된 값을 정수로 바꾸는 문제
     * `<<` 와 `|`를 활용하면 공간 복잡도 `O(1)`로 해결할 수 있다. 
     
-     
+45. [기둥과 보 설치](https://programmers.co.kr/learn/courses/30/lessons/60061)
+    * 적은 수에 대한 조합을 고를 땐, 객기 부리지 말고 `O(n^2)`으로 단순히 생각하자.
+    
+    
 ### Greedy Algorithm
          
 1. [전구와 스위치](https://www.acmicpc.net/problem/2138)
@@ -277,7 +280,7 @@
         * 이 문제도 비슷한 문제인데, 1차원 greedy가 2차원으로 확장되었다고 생각하면 됨.
         * Combination 구할 때, bit masking을 사용하면 유용하다.
             * 예시) `for i in range(0, 1 << n):` -> 이렇게 하면 `2^n`개의 조합(yes/no)을 구할 수 있다.
-        * 잡설) 이 문제를 python으로 푼 사람이 아무도 없음 (속도가 느려서), 나도 pypy3으로 채점하고 있다.
+        * 잡설) 이 문제를 python으로 푼 사람이 아무도 없음 (속도가 느려서), 나도 pypy3으로 채점했다.
                          
 2. [30](https://www.acmicpc.net/problem/10610)
     * 30에 대한 배경 지식과 greedy를 이용하여 푸는 문제
@@ -452,6 +455,7 @@
                 1. 각 Trie node에 `length` 변수 추가 후 Trie 구축중에 계산 (`length`: 해당 노드 이후 매칭되는 단어의 총 개수)
                 2. prefix 단어(e.g. `???ord`) matching 에는 단어를 거꾸로 해서 넣은 Trie 사용, 
                 postfix 단어(e.g. `ord???`) matching 에는 일반 Trie 사용
+                3. 만약 매칭해야되는 단어의 길이가 다양할 경우, 길이에 따른 여러개의 Trie를 구성하는 것이 좋다.
         * [휴대폰 자판](https://www.acmicpc.net/problem/5670)
             * Trie에 포함된 전체 단어들에 대해서 한꺼번에 재귀로 계산할 수 있는가? (풀긴 풀었는데 코드를 다시 한번 생각)
             
