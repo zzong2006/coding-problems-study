@@ -413,6 +413,13 @@
     * `int(추정 시간값 / 각 심사관별 심사시간) = 심사관당 맡을 수 있는 입국자 수`
         * 각 심사가 걸리는 시간은 심사관마다 독립적으로 동작함
 
+2. [Climbing the Leaderboard](https://www.hackerrank.com/challenges/climbing-the-leaderboard/problem)
+    * Dense Ranking 이라는 랭킹 산정 방식이 있다. 동일한 점수를 받은 사람에게는 동일한 등수를 부여하는 방식이다. (공동 1등 이런 식)
+        * 특정 사람에 대한 Dense Ranking을 쉽게 계산하기 위해서는 distinct한 score array를 만들면 된다.
+    * 또한 이분 탐색을 위한 `bisect`는 내림차순 배열에서 동작하지 않는다. 오직 오름차순만 된다.
+        * 즉, 내림차순에서 동작하는 bisect를 직접 만들어야 한다.
+   
+
 ### 그래프
 1. [DFS의 Graph coloring을 이용하여 Cycle](https://www.youtube.com/watch?v=rKQaZuoUR4M&ab_channel=TusharRoy-CodingMadeSimple) 을 찾는 방법     
     1. 세 개의 집합(A, B, C): A는 초기 집합(처음에 모든 노드가 여기 있음)/ B는 후보 집합(cycle이 발생 가능한 노드)/ C는 확정 집합(cycle이 없는게 확인된 노드)
