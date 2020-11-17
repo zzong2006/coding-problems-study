@@ -402,7 +402,12 @@
 3. [Valid Square](https://leetcode.com/problems/valid-square/)
     * 주어진 4개의 2차원 점이 정사각형을 이루는지 확인하는 문제
     * 정사각형은 반드시 두 종류의 길이를 가지므로(1.가로=세로, 2.대각선), 모든 꼭지점의 조합에 대한 길이를 구하고 집합에 넣어서 크기를 확인
-    
+
+4. [Mirror Reflection](https://leetcode.com/problems/mirror-reflection/)
+    * 정사각형 구석에서 레이저를 쏘면 튕겨서 어느쪽 구석에 도달할 것인지 맞추는 문제
+    * 튕기는 것을 고려하는 대신, 레이저가 일직선으로 나아간다고 가정하고 풀면 쉽게 풀린다.
+    * `p`와 `q`의 비율이 각각 홀수 또는 짝수냐에 따라서 도달할 구석이 달라지므로, 비율을 구하기 위해 `gcd(p,q)`를 활용한다.  
+
 ### 이분 탐색
 * 반으로 잘라서 왼쪽 오른쪽 탐색하는 방법 (general way)
     * `mid = (start + end) // 2 `, 그리고 `search(start, mid)` (왼쪽), `search(mid + 1, end)` (오른쪽)
