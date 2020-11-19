@@ -268,7 +268,11 @@
     
 45. [기둥과 보 설치](https://programmers.co.kr/learn/courses/30/lessons/60061)
     * 적은 수에 대한 조합을 고를 땐, 객기 부리지 말고 `O(n^2)`으로 단순히 생각하자.
-    
+
+46. [Decode String](https://leetcode.com/problems/decode-string/)
+    * 대괄호 내 알파벳을 배수로 만드는 문제 (e.x. `"3[a]2[bc]"` -> `aaabcbc`)
+    * DFS랑 stack을 사용하는 방법이 존재하는데, stack을 사용하는 방법도 괜찮은 것 같다.
+        * 문자열 전체를 loop로 돌면서 stack에 (현재 string, number)를 넣는다. 
     
 ### Greedy Algorithm
          
@@ -408,6 +412,14 @@
     * 튕기는 것을 고려하는 대신, 레이저가 일직선으로 나아간다고 가정하고 풀면 쉽게 풀린다.
     * `p`와 `q`의 비율이 각각 홀수 또는 짝수냐에 따라서 도달할 구석이 달라지므로, 비율을 구하기 위해 `gcd(p,q)`를 활용한다.  
 
+5. [멀쩡한 사각형](https://programmers.co.kr/learn/courses/30/lessons/62048)
+    * 직사각형을 1 by 1 grid로 나누고, 사각형의 대각선 꼭지점을 이을 때, 대각선이 지나가는 사각형의 총 개수를 세는 문제
+    * 가로 `W`, 세로 `H` 일 때, 총 개수는 `W + H - gcd(W, H)`
+        * `gcd(W, H) == 1` 의 경우: 대각선으로 생각하지 말고, 대각선을 굽혀서 직사각형의 가장자리만 걸어서 간다고 생각해보자. 그러면 총 `W` + `H` - 1 개를 지나게 된다.
+        * `gcd(W, H) == n (n != 1)` 의 경우: `gcd(W, H) == 1` 의 경우를 여러 번 나눈 직사각형이므로, 총 개수는 `n` * (`W/n` + `H/n` - 1) 이다. 
+
+
+
 ### 이분 탐색
 * 반으로 잘라서 왼쪽 오른쪽 탐색하는 방법 (general way)
     * `mid = (start + end) // 2 `, 그리고 `search(start, mid)` (왼쪽), `search(mid + 1, end)` (오른쪽)
@@ -442,6 +454,13 @@
         2. [동굴 탐험](https://programmers.co.kr/learn/courses/30/lessons/67260)
             * Undirected Tree를 Directed Tree로 바꿔줘야 함 (시작 node가 명시되어야 변환이 가능)
             * 바꾸는 방법: 우선 Undirected Tree를 구성하고, BFS로 모든 노드를 방문, 부모-자식 관계를 찾으면서 directed Tree 구성
+
+2. [LCA2, Lowest Common Ancestor](https://www.acmicpc.net/problem/11438)
+    * LCA 문제는 segment tree 또는 dp 를 이용하는 두 가지 방법으로 나눠진다.
+    * Segment Tree
+        * 
+    * DP
+        *
 
 ## 공부해야할 자료구조 또는 알고리즘
 1. Segment (or Segmentation) Tree & Index Tree 
