@@ -271,8 +271,8 @@
 
 46. [Decode String](https://leetcode.com/problems/decode-string/)
     * 대괄호 내 알파벳을 배수로 만드는 문제 (e.x. `"3[a]2[bc]"` -> `aaabcbc`)
-    * DFS랑 stack을 사용하는 방법이 존재하는데, stack을 사용하는 방법도 괜찮은 것 같다.
-        * 문자열 전체를 loop로 돌면서 stack에 (현재 string, number)를 넣는다. 
+    * DFS랑 stack을 사용하는 방법이 존재하는데, [stack을 사용하는 방법](https://github.com/zzong2006/coding-problems-study/blob/master/pythonProject/leetcode/Decode_String.py) 
+    도 괜찮은 것 같다.
     
 ### Greedy Algorithm
          

@@ -1,6 +1,9 @@
 class Solution:
     def decodeString(self, s: str) -> str:
         def dfs(idx):
+            """
+            DFS를 사용하는 방법
+            """
             result = ""
             number = ""
             i = idx
@@ -27,9 +30,12 @@ class Solution:
 
     def stacky(self, s):
         """
-        When we hit an open bracket, we know we have parsed k for the contents of the bracket, so
-        push (current_string, k) to the stack, so we can pop them on closing bracket to duplicate
-        the enclosed string k times.
+        스택을 사용하는 방법
+        3[a2[c]] 의 경우 예시:
+            current_string = "c" 일 때의 stack은 [("", 3), ("a", 2)]
+            그리고, stack.pop()은 ("a", 2) 를 불러오고, "a" + 2 * "c" 를 수행
+            즉, "acc"가 완성. 다시, stack.pop()은 ("", 3)을 불러오고, "" + 3 * "acc"를 수행
+            "accaccacc"가 완성
         """
         stack = []
         current_string = ""
@@ -37,9 +43,9 @@ class Solution:
 
         for char in s:
             if char == "[":
-                # Just finished parsing this k, save current string and k for when we pop
+                # 숫자로 구성된 문자열을 양수 k 로 치환하는데 성공하면, 이를 스택에 넣는다.
                 stack.append((current_string, k))
-                # Reset current_string and k for this new frame
+                # 현재 문자열을 reset 시킴
                 current_string = ""
                 k = 0
             elif char == "]":
