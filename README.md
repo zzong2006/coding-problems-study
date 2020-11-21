@@ -273,7 +273,16 @@
     * 대괄호 내 알파벳을 배수로 만드는 문제 (e.x. `"3[a]2[bc]"` -> `aaabcbc`)
     * DFS랑 stack을 사용하는 방법이 존재하는데, [stack을 사용하는 방법](https://github.com/zzong2006/coding-problems-study/blob/master/pythonProject/leetcode/Decode_String.py) 
     도 괜찮은 것 같다.
-    
+
+47. [Palindrome Index](https://www.hackerrank.com/challenges/palindrome-index/problem)
+    * 문자열 중 문자 하나만 빼서 palindrome이 되는 것이 가능한지 확인하는 문제
+    * two pointer를 문자열 양 끝에서 설정하고, 양쪽에서 가운데로 이동하면서 서로 일치하는지 확인한다.
+    * 만약, 서로 일치하지 않는 두 문자 A, B가 발생하면, 그때까지 일치한 문자열을 제외하고, A 또는 B를 제외했을 때 palindrome이 발생하는지 확인한다. 
+        * `aaacdcc`의 경우 `d`를 빼는 것이 맞다. 
+        `(aa)[a]{c}[d](cc)` 왼쪽 처럼, `()` 소괄호에 있는 문자열은 무시하고, 
+        `[]` 대괄호에 있는 문자 중 하나를 제외 후 `{}`와 합쳐서 palindrome이 발생하는지 확인한다.
+
+
 ### Greedy Algorithm
          
 1. [전구와 스위치](https://www.acmicpc.net/problem/2138)
@@ -532,7 +541,15 @@
         * [맥주 마시면서 걸어가기](https://www.acmicpc.net/problem/9205)
             * DFS, BFS로 풀어도 되지만, 플로이드-워셜 알고리즘 개념을 이용해도 풀기가 가능한 문제
             * A->C 로 가는 것은 불가능(False)해도, A->B 이 가능(True)하고, B->C가 가능하다면, A->C도 가능하다. 
-        
+
+9. Minimum-Spanning Tree (MST) : 최소 비용 신장 트리
+    * 가장 적은 비용으로 그래프의 모든 노드를 연결한 트리
+    * 크루스칼 알고리즘: MST를 만드는 알고리즘
+        * 간선 간 가중치를 min-heap에 넣고, 하나씩 꺼내어 union-find를 활용해 이으면서 트리를 구성해 나간다. 트리이므로 cycle은 만들지 않도록 주의한다.
+            * cycle 확인 방법: union-find를 이용해서 서로 부모가 같다면 이을 필요가 없음 (이으면 cycle 발생)
+    * 관련 문제 
+        * [네트워크 연결](https://www.acmicpc.net/problem/1922)
+ 
 ## python tip
 1. 재귀 함수 최대 깊이 늘리기 `sys.setrecursionlimit(10**7)` (메모리 초과 가능성 농후)
 2. `ord` 는 character를 ascii 값으로, `chr`는 ascii 값을 character로 바꾸는 built-in function
