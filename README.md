@@ -290,6 +290,10 @@
     * DFS로 안될 것 같으면, DP 도 고려할 수 있음. 
         * [솔루션](https://leetcode.com/problems/house-robber-iii/solution/)이 꽤 잘되어 있음
 
+49. [계산기 문제](https://leetcode.com/problems/basic-calculator-ii/)
+    1. stack을 활용한다(우선순위 연산자('*','/')가 나오면 stack에서 pop, 아니면('+','-') push)). 
+    2. 항상 '+' 가 있다고 생각하고 계산한다. (e.g. `1+2+3` -> `+1+2+3`), 시작 연산자가 '+'.
+
 ### Greedy Algorithm
          
 1. [전구와 스위치](https://www.acmicpc.net/problem/2138)

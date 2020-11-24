@@ -89,5 +89,6 @@ class Solution:
             new_s += number
         s = new_s
         return s
+
 a = Solution()
 print(a.calculate("3+2/4*2-7*4/2+2"))
