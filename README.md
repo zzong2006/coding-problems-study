@@ -282,6 +282,13 @@
         `(aa)[a]{c}[d](cc)` 왼쪽 처럼, `()` 소괄호에 있는 문자열은 무시하고, 
         `[]` 대괄호에 있는 문자 중 하나를 제외 후 `{}`와 합쳐서 palindrome이 발생하는지 확인한다.
 
+48. [House Robber III](https://leetcode.com/problems/house-robber-iii/)
+    * binary Tree로 이루어진 집 구조; 부모 노드의 값을 가지면, 자식 노드의 값을 못가지는 규칙에서, 최대 가질 수 있는 값 찾기
+    * DFS에서 시간초과 발생 시, memoization으로 해결할 수 있는지 확인
+        * Hashmap(`dict`)에서 class instance도 hashing이 가능하다(=key로 활용할 수 있음).
+        * Memoization을 굳이 하나의 자료구조로 수행할 필요는 없음. 두 개 이상으로 사용해도 됨.
+    * DFS로 안될 것 같으면, DP 도 고려할 수 있음. 
+        * [솔루션](https://leetcode.com/problems/house-robber-iii/solution/)이 꽤 잘되어 있음
 
 ### Greedy Algorithm
          
