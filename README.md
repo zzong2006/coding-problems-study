@@ -294,6 +294,18 @@
     1. stack을 활용한다(우선순위 연산자('*','/')가 나오면 stack에서 pop, 아니면('+','-') push)). 
     2. 항상 '+' 가 있다고 생각하고 계산한다. (e.g. `1+2+3` -> `+1+2+3`), 시작 연산자가 '+'.
 
+50. [Longest Substring with At Least K Repeating Characters](https://leetcode.com/problems/longest-substring-with-at-least-k-repeating-characters/)
+    * Divide Conquer 또는 Sliding Window를 사용하여 해결하는 문제
+    * Divide Conquer
+        * 전체 문자열의 알파벳 중 `k` 이상 존재하지 않는 알파벳을 발견한 경우, 해당 알파벳의 index 기준으로 문자열을 반으로 나눠서 반복
+        * 만약, 문자열의 모든 알파벳이 `k` 이상 존재한다면, 그 길이들 중 최대값이 정답
+        * ![image-20201127162623966](https://i.loli.net/2020/11/27/gTCw2Ia9HmdSinB.png)
+    * Sliding Window: 분할 정복보다 좀 더 복잡한 솔루션 (아직 이걸로 풀어보지 못함)
+        * Window를 움직이는 기준은 문자열 `s`의 unique 문자 개수 `0 < curr_unqiue < len(set(s))`
+        * 현재 Window에 포함된 unique 문자열 개수가 `curr_unqiue` 보다 낮을 경우 Window를 오른쪽으로 확장, 그 반대의 경우 왼쪽으로 축소
+        * 윈도우를 옮기면서, 윈도우에 포함된 문자열의 모든 알파벳이 `k` 이상 존재하면, 그 길이들 중 최대값이 정답
+
+        
 ### Greedy Algorithm
          
 1. [전구와 스위치](https://www.acmicpc.net/problem/2138)
