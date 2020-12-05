@@ -305,7 +305,12 @@
         * 현재 Window에 포함된 unique 문자열 개수가 `curr_unqiue` 보다 낮을 경우 Window를 오른쪽으로 확장, 그 반대의 경우 왼쪽으로 축소
         * 윈도우를 옮기면서, 윈도우에 포함된 문자열의 모든 알파벳이 `k` 이상 존재하면, 그 길이들 중 최대값이 정답
 
-        
+51. [Can Place Flowers](https://leetcode.com/problems/can-place-flowers/)
+    * 배열에 존재하는 양 원소들이 서로 `1`이 아닐 경우 count 하는 문제
+    * 예시) `a = [1,0,0,0,1]` 의 경우 `a[2]`만 count 된다.
+    * 체크 방법
+        * `if a[i] == 0 and (i == 0 or a[i - 1] == 0) and (i == len(a) - 1 or a[i + 1] == 0):`
+
 ### Greedy Algorithm
          
 1. [전구와 스위치](https://www.acmicpc.net/problem/2138)
