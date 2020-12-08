@@ -311,6 +311,12 @@
     * 체크 방법
         * `if a[i] == 0 and (i == 0 or a[i - 1] == 0) and (i == len(a) - 1 or a[i + 1] == 0):`
 
+52. [Populating Next Right Pointers in Each Node II](https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/)
+    * 이진 트리의 노드 중 
+    * ![images](https://assets.leetcode.com/uploads/2019/02/15/117_sample.png)
+    
+    
+    
 ### Greedy Algorithm
          
 1. [전구와 스위치](https://www.acmicpc.net/problem/2138)
