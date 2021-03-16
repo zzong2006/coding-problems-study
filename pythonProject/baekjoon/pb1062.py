@@ -18,10 +18,8 @@ for i in range(n):
 if k < 5:
     print(0)
 else:
-    remains_k = k - 5
-    # a, n, t, i, c
-    for w in ['a', 'n', 't', 'i', 'c']:
-        unique_alpha.remove(w)
+    remains_k = k - 5  # a, n, t, i, c
+    for w in ['a', 'n', 't', 'i', 'c']: unique_alpha.remove(w)
     max_words = 0
     # print(unique_alpha)
     if len(unique_alpha) <= remains_k:
