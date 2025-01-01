@@ -7,7 +7,7 @@ def solution():
     def melt(gla_set):
         melting = [[0] * m for _ in range(n)]
 
-        for (i, j) in gla_set:
+        for i, j in gla_set:
             if board[i][j] != 0:
                 for add_y, add_x in [(-1, 0), (1, 0), (0, 1), (0, -1)]:
                     new_y = i + add_y
@@ -15,7 +15,7 @@ def solution():
                     if 0 <= new_x < m and 0 <= new_y < n and board[new_y][new_x] == 0:
                         melting[i][j] += 1
         remove_set = set()
-        for (i, j) in gla_set:
+        for i, j in gla_set:
             if board[i][j] != 0:
                 board[i][j] = max(board[i][j] - melting[i][j], 0)
                 if board[i][j] == 0:
@@ -37,7 +37,11 @@ def solution():
                         for add_y, add_x in [(-1, 0), (1, 0), (0, 1), (0, -1)]:
                             new_y = y + add_y
                             new_x = x + add_x
-                            if 0 <= new_x < m and 0 <= new_y < n and new_board[new_y][new_x] != 0:
+                            if (
+                                0 <= new_x < m
+                                and 0 <= new_y < n
+                                and new_board[new_y][new_x] != 0
+                            ):
                                 new_board[new_y][new_x] = 0
                                 que.append((new_y, new_x))
         return count
@@ -62,5 +66,6 @@ def solution():
         return 0
     else:
         return time
+
 
 print(solution())

@@ -23,7 +23,8 @@ class Solution:
                     visited.add(s[i])
                 cnt[s[i]] -= 1
         print(stack)
-        return ''.join(stack)
+        return "".join(stack)
+
 
 a = Solution()
 print(a.removeDuplicateLetters("edebbed"))

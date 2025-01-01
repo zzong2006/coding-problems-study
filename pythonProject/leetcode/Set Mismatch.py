@@ -14,5 +14,3 @@ class Solution:
                 answer.append(j + 1)
                 break
         return answer
-
-

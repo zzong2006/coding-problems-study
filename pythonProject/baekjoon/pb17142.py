@@ -43,7 +43,11 @@ def solution():
                 new_y = y + add_y
                 new_x = x + add_x
 
-                if 0 <= new_y < n and 0 <= new_x < n and copied_board[new_y][new_x] == 0:
+                if (
+                    0 <= new_y < n
+                    and 0 <= new_x < n
+                    and copied_board[new_y][new_x] == 0
+                ):
                     copied_board[new_y][new_x] = 2
                     que.append([(new_y, new_x), t + 1])
             max_time = max(t, max_time)

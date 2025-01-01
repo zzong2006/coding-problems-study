@@ -12,9 +12,9 @@ def solution():
         ls = get_input().strip()
         for j in range(m):
             board[i][j] = ls[j]
-            if ls[j] == 'v':
+            if ls[j] == "v":
                 wolf.add((i, j))
-            elif ls[j] == 'o':
+            elif ls[j] == "o":
                 sheep.add((i, j))
 
     total_sheep = 0
@@ -32,19 +32,23 @@ def solution():
             curr_wolf = 0
             while len(que) > 0:
                 y, x = que.popleft()
-                if board[y][x] != '2':
-                    if board[y][x] == 'v':
+                if board[y][x] != "2":
+                    if board[y][x] == "v":
                         curr_wolf += 1
                         visited_wolf.add((y, x))
-                    elif board[y][x] == 'o':
+                    elif board[y][x] == "o":
                         curr_sheep += 1
                         visited_sheep.add((y, x))
-                    board[y][x] = '2'
+                    board[y][x] = "2"
                     for add_y, add_x in [(0, 1), (1, 0), (-1, 0), (0, -1)]:
                         new_y = y + add_y
                         new_x = x + add_x
-                        if 0 <= new_x < m and 0 <= new_y < n and board[new_y][new_x] != '2' \
-                                and board[new_y][new_x] != '#':
+                        if (
+                            0 <= new_x < m
+                            and 0 <= new_y < n
+                            and board[new_y][new_x] != "2"
+                            and board[new_y][new_x] != "#"
+                        ):
                             que.append((new_y, new_x))
 
             if curr_sheep > curr_wolf:
@@ -56,5 +60,6 @@ def solution():
             total_wolf += 1
 
     print(total_sheep, total_wolf)
+
 
 solution()

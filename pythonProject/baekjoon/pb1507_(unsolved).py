@@ -15,7 +15,8 @@ def solution():
 
     for i in range(t):
         for j in range(t):
-            print(board[i][j], end= ' ')
+            print(board[i][j], end=" ")
         print()
+
 
 solution()

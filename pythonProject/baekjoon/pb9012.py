@@ -10,7 +10,7 @@ def solution():
         stack = []
         for x in s:
             if stack:
-                if x == ')' and stack[-1] == '(':
+                if x == ")" and stack[-1] == "(":
                     stack.pop()
                 else:
                     stack.append(x)
@@ -25,9 +25,9 @@ def solution():
     for i in range(n):
         input_str = get_input().strip()
         if check(input_str):
-            print('YES')
+            print("YES")
         else:
-            print('NO')
+            print("NO")
 
 
 solution()

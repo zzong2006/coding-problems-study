@@ -10,16 +10,16 @@ Return a 2D array representing any matrix that fulfills the requirements.
 It's guaranteed that at least one matrix that fulfills the requirements exists.
 
 """
+
 from typing import List
 
 
 class Solution:
-
     def restoreMatrix(self, rowSum: List[int], colSum: List[int]) -> List[List[int]]:
-        answer = [[0] * len(colSum)] *len(rowSum)
+        answer = [[0] * len(colSum)] * len(rowSum)
         row = set()
         column = set()
-        
+
 
 a = Solution()
 print(a.restoreMatrix([3, 8], [4, 7]))

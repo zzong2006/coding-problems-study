@@ -15,7 +15,7 @@ def solution():
     count = 0
     for i in reversed(range(20 + 1)):
         if ls[i]:
-            sub_mass = 2**(3*i)
+            sub_mass = 2 ** (3 * i)
             if sub_mass > mass:
                 continue
             else:
@@ -29,5 +29,6 @@ def solution():
         if mass == 0:
             return count
     return -1
+
 
 print(solution())

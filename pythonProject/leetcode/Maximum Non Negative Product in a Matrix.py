@@ -29,7 +29,7 @@ class Solution:
         if mp[N - 1][M - 1] < 0:
             return -1
         else:
-            return mp[N - 1][M - 1] % (10 ** 9 + 7)
+            return mp[N - 1][M - 1] % (10**9 + 7)
 
 
 a = Solution()

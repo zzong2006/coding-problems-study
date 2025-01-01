@@ -1,5 +1,6 @@
 import sys
 
+
 def solution():
     def insert_heap(val, length):
         max_heap[length + 1] = val
@@ -7,7 +8,10 @@ def solution():
         while curr_idx > 1:
             parent_idx = curr_idx // 2
             if max_heap[parent_idx] < max_heap[curr_idx]:
-                max_heap[curr_idx], max_heap[parent_idx] = max_heap[parent_idx], max_heap[curr_idx]
+                max_heap[curr_idx], max_heap[parent_idx] = (
+                    max_heap[parent_idx],
+                    max_heap[curr_idx],
+                )
                 curr_idx = parent_idx
             else:
                 break
@@ -27,7 +31,10 @@ def solution():
                 break
             elif left < length <= right:
                 if max_heap[left] > max_heap[curr_idx]:
-                    max_heap[left], max_heap[curr_idx] = max_heap[curr_idx], max_heap[left]
+                    max_heap[left], max_heap[curr_idx] = (
+                        max_heap[curr_idx],
+                        max_heap[left],
+                    )
                     curr_idx = left
                 else:
                     break
@@ -37,12 +44,16 @@ def solution():
                 else:
                     idx = left
                 if max_heap[idx] > max_heap[curr_idx]:
-                    max_heap[idx], max_heap[curr_idx] = max_heap[curr_idx], max_heap[idx]
+                    max_heap[idx], max_heap[curr_idx] = (
+                        max_heap[curr_idx],
+                        max_heap[idx],
+                    )
                     curr_idx = idx
                 else:
                     break
 
         return output
+
     get_input = sys.stdin.readline
     n = int(get_input().strip())
     max_heap = [0] * (n * 4)
@@ -61,4 +72,6 @@ def solution():
             curr = insert_heap(o, curr)
             print(max_heap)
     # print(max_heap)
+
+
 solution()

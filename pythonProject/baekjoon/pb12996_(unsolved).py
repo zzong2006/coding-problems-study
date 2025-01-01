@@ -8,25 +8,25 @@ def solution():
             p_set.add(tuple(sorted(curr_set)))
         elif len(curr_set) < target:
             copied_set = curr_set.copy()
-            copied_set.append('A')
+            copied_set.append("A")
             dfs(a - 1, b, c, copied_set, target)
             copied_set = curr_set.copy()
-            copied_set.append('B')
+            copied_set.append("B")
             dfs(a, b - 1, c, copied_set, target)
             copied_set = curr_set.copy()
-            copied_set.append('C')
+            copied_set.append("C")
             dfs(a, b, c - 1, copied_set, target)
             copied_set = curr_set.copy()
-            copied_set.append('AB')
+            copied_set.append("AB")
             dfs(a - 1, b - 1, c, copied_set, target)
             copied_set = curr_set.copy()
-            copied_set.append('BC')
+            copied_set.append("BC")
             dfs(a, b - 1, c - 1, copied_set, target)
             copied_set = curr_set.copy()
-            copied_set.append('AC')
+            copied_set.append("AC")
             dfs(a - 1, b, c - 1, copied_set, target)
             copied_set = curr_set.copy()
-            copied_set.append('ABC')
+            copied_set.append("ABC")
             dfs(a - 1, b - 1, c - 1, copied_set, target)
 
     p_set = set()
@@ -34,6 +34,8 @@ def solution():
 
     print(p_set)
     print(len(p_set))
+
+
 solution()
 
 # 3 1 1 1

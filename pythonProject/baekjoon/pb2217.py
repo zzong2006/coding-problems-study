@@ -14,5 +14,5 @@ def solution():
         best = max(board[i - 1] * i, best)
     return best
 
-print(solution())
 
+print(solution())

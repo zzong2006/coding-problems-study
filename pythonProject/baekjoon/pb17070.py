@@ -1,4 +1,5 @@
 """파이프 옮기기"""
+
 import sys
 from collections import deque
 
@@ -28,8 +29,9 @@ def solution():
                 dp[k][i][0] = dp[k][i - 1][0] + dp[k][i - 1][2]
 
             if board[k - 1][i] == 0 and board[k][i] == 0 and board[k][i - 1] == 0:
-                dp[k][i][2] = dp[k - 1][i - 1][0] + dp[k - 1][i - 1][1] + dp[k - 1][i - 1][2]
-
+                dp[k][i][2] = (
+                    dp[k - 1][i - 1][0] + dp[k - 1][i - 1][1] + dp[k - 1][i - 1][2]
+                )
 
     # for i in range(3):
     #     for j in range(n):

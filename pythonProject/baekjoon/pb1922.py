@@ -41,4 +41,5 @@ def solution():
 
     return resource
 
+
 print(solution())

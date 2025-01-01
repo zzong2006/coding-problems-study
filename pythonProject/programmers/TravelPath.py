@@ -30,8 +30,11 @@ def solution(tickets):
 
     print(sorted(results))
 
-
     return results
 
 
-print(solution(	[["ICN", "SFO"], ["ICN", "ATL"], ["SFO", "ATL"], ["ATL", "ICN"], ["ATL", "SFO"]]))
+print(
+    solution(
+        [["ICN", "SFO"], ["ICN", "ATL"], ["SFO", "ATL"], ["ATL", "ICN"], ["ATL", "SFO"]]
+    )
+)

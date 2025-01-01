@@ -2,6 +2,7 @@
 
 from math import log
 
+
 def solution(a):
     answer = 0
     remains = sorted(a)

@@ -16,7 +16,6 @@ def solution():
         if idx + t <= n:
             dp[idx + t] = max(dp[idx + t], p + answer)
 
-
     print(max(dp[-1], answer))
 
 

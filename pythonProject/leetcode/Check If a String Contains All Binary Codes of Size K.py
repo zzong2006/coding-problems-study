@@ -27,15 +27,16 @@ class Solution:
         root = Trie()
 
         for i in range(len(s) - k + 1):
-            root.insert_val(s[i:i + k])
+            root.insert_val(s[i : i + k])
 
         result = True
-        for w in range(2 ** k):
+        for w in range(2**k):
             result &= root.check_is_in(bin(w)[2:].zfill(k))
             if not result:
                 break
 
         return result
+
 
 a = Solution()
 a.hasAllCodes("00110", 2)

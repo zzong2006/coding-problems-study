@@ -14,7 +14,7 @@ def solution():
         mb = board[0]
         total = 0
         for j in range(1, n):
-            total += ((k - board[j]) // mb)
+            total += (k - board[j]) // mb
 
         print(total)
 

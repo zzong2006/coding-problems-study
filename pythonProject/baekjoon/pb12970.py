@@ -1,4 +1,5 @@
 import time
+
 start = time.time()  # 시작 시간 저장
 
 N, K = list(map(int, input().split()))

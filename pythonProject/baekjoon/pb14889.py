@@ -7,8 +7,9 @@ def solution():
     def get_score(cb):
         output = 0
         for x, y in combinations(cb, 2):
-            output += (board[x][y] + board[y][x])
+            output += board[x][y] + board[y][x]
         return output
+
     answer = sys.maxsize
     get_input = sys.stdin.readline
     n = int(get_input().strip())

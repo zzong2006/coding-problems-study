@@ -6,7 +6,10 @@ get_input = sys.stdin.readline
 """
 아래 코드는 다른 사람의 것 (Accepted, 약 100ms)
 """
-len_s, s = int(sys.stdin.readline()), sorted([int(x) for x in sys.stdin.readline().split(' ')])
+len_s, s = (
+    int(sys.stdin.readline()),
+    sorted([int(x) for x in sys.stdin.readline().split(" ")]),
+)
 for i in range(len_s):
     if i == 0:
         if s[i] == 1:

@@ -24,7 +24,7 @@ def solution():
                 new_x = add_x + x
 
                 if 0 <= new_y < r and 0 <= new_x < c:
-                    if input_board[new_y][new_x] == 'X':
+                    if input_board[new_y][new_x] == "X":
                         new_que.append((new_y, new_x))
                         input_board[new_y][new_x] = input_board[y][x] + 1
                         max_val = input_board[new_y][new_x]
@@ -44,8 +44,12 @@ def solution():
 
                 if (new_y, new_x) == end_l:
                     return True
-                if 0 <= new_y < r and 0 <= new_x < c and (
-                new_y, new_x) not in visited and input_board[new_y][new_x] <= max_val:
+                if (
+                    0 <= new_y < r
+                    and 0 <= new_x < c
+                    and (new_y, new_x) not in visited
+                    and input_board[new_y][new_x] <= max_val
+                ):
                     visited.add((new_y, new_x))
                     new_que.append((new_y, new_x))
 
@@ -61,13 +65,13 @@ def solution():
     for i in range(r):
         board.append(list(get_input().strip()))
         for j in range(len(board[i])):
-            if board[i][j] == 'L':
-                board[i][j] = '.'
+            if board[i][j] == "L":
+                board[i][j] = "."
                 if start is None:
                     start = (i, j)
                 else:
                     end = (i, j)
-            if board[i][j] == '.':
+            if board[i][j] == ".":
                 ice_queue.append((i, j))
                 board[i][j] = 0
 

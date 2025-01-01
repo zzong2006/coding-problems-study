@@ -9,7 +9,7 @@ def solution():
     for i in range(n):
         assign.append(list(map(int, get_input().strip().split())))
 
-    assign.sort(key=lambda x:(x[0], x[1]), reverse=True)
+    assign.sort(key=lambda x: (x[0], x[1]), reverse=True)
     max_day = assign[0][0]
     ls = []
     hap = 0
@@ -26,5 +26,6 @@ def solution():
             # print(ls)
             hap += -heapq.heappop(ls)
     return hap
+
 
 print(solution())

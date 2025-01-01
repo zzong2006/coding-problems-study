@@ -15,9 +15,9 @@ for i in a:
 
 answer = ""
 
-if target[0] > 0 and total % 3 == 0 :
+if target[0] > 0 and total % 3 == 0:
     curr = 9
-    while curr >= 0 :
+    while curr >= 0:
         if target[curr] > 0:
             answer += str(curr)
             target[curr] -= 1

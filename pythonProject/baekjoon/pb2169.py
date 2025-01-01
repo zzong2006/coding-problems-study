@@ -5,7 +5,7 @@
 import sys
 from typing import List
 
-sys.setrecursionlimit(10 ** 7)
+sys.setrecursionlimit(10**7)
 get_input = sys.stdin.readline
 
 
@@ -48,14 +48,18 @@ def solution():
             if k == 0:
                 right[i + 1][k] = right[i][k] + board[i + 1][k]
             else:
-                right[i + 1][k] = max(right[i][k], right[i + 1][k - 1]) + board[i + 1][k]
+                right[i + 1][k] = (
+                    max(right[i][k], right[i + 1][k - 1]) + board[i + 1][k]
+                )
 
         # dp
         for k in range(m):
             if k == 0 or k == m - 1:
                 dp[i + 1][k] = max(right[i + 1][k], left[i + 1][k])
             else:
-                dp[i + 1][k] = max(dp[i][k] + board[i + 1][k], right[i + 1][k], left[i + 1][k])
+                dp[i + 1][k] = max(
+                    dp[i][k] + board[i + 1][k], right[i + 1][k], left[i + 1][k]
+                )
     # pretty_2d_printing(dp)
 
     answer = dp[n - 1][m - 1]

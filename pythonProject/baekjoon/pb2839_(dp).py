@@ -18,7 +18,7 @@ for i in range(6, n + 1):
         dp[i] = min(three, five)
     elif three:
         dp[i] = three
-    elif five :
+    elif five:
         dp[i] = five
 
 # print(dp)

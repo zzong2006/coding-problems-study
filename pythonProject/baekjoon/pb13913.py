@@ -38,7 +38,7 @@ def solution():
     while dd[st] != -1:
         ans.append(dd[st])
         st = dd[st]
-    print(' '.join(list(map(str, ans[::-1]))))
+    print(" ".join(list(map(str, ans[::-1]))))
 
     # print(routes)
 

@@ -11,7 +11,7 @@ def solution():
         a, b, t = list(map(int, get_input().strip().split()))
         graph[a].append((b, t))
     start, end = list(map(int, get_input().strip().split()))
-    dist = [float('inf')] * (n + 1)
+    dist = [float("inf")] * (n + 1)
     que = []
     dist[start] = 0
     heapq.heappush(que, (0, start))

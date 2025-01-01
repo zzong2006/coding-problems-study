@@ -20,14 +20,22 @@ def solution():
                 new_y = y + add_y
                 new_x = x + add_x
 
-                if 0 <= new_y < n and 0 <= new_x < n and board[new_y][new_x] <= baby_size and \
-                        visited[new_y][new_x] > d + 1:
+                if (
+                    0 <= new_y < n
+                    and 0 <= new_x < n
+                    and board[new_y][new_x] <= baby_size
+                    and visited[new_y][new_x] > d + 1
+                ):
                     visited[new_y][new_x] = d + 1
                     que.append([(new_y, new_x), d + 1])
 
         for ii in range(n):
             for jj in range(n):
-                if board[ii][jj] < baby_size and board[ii][jj] != 0 and visited[ii][jj] != sys.maxsize:
+                if (
+                    board[ii][jj] < baby_size
+                    and board[ii][jj] != 0
+                    and visited[ii][jj] != sys.maxsize
+                ):
                     fs.append((visited[ii][jj], ii, jj))
         fs.sort(key=lambda x: (x[0], x[1], x[2]))
         # print(fs)

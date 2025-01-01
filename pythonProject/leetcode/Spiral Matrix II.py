@@ -7,7 +7,7 @@ class Solution:
 
         matrix[0][0] = 1
 
-        direction = 'r'
+        direction = "r"
         curr = 2
         pos = [0, 0]
 
@@ -20,13 +20,13 @@ class Solution:
                 visited.add(direction)
             # move
             i, j = pos
-            if direction == 'r':
+            if direction == "r":
                 add_i = 0
                 add_j = 1
-            elif direction == 'l':
+            elif direction == "l":
                 add_i = 0
                 add_j = -1
-            elif direction == 's':
+            elif direction == "s":
                 add_i = 1
                 add_j = 0
             else:  # direction == 'n':
@@ -41,14 +41,14 @@ class Solution:
                 pos = [new_i, new_j]
                 visited.clear()
             else:  # change direction
-                if direction == 'r':
-                    direction = 's'
-                elif direction == 's':
-                    direction = 'l'
-                elif direction == 'l':
-                    direction = 'n'
+                if direction == "r":
+                    direction = "s"
+                elif direction == "s":
+                    direction = "l"
+                elif direction == "l":
+                    direction = "n"
                 else:
-                    direction = 'r'
+                    direction = "r"
         return matrix
 
 

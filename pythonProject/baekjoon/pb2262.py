@@ -30,4 +30,5 @@ def solution():
 
     return result
 
+
 print(solution())

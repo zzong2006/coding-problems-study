@@ -8,7 +8,9 @@ def build_segment(tree, arr, left, right, curr, func):
     else:
         mid = int((left + right) / 2)
         tree[curr * 2] = build_segment(tree, arr, left, mid, curr * 2, func)
-        tree[curr * 2 + 1] = build_segment(tree, arr, mid + 1, right, curr * 2 + 1, func)
+        tree[curr * 2 + 1] = build_segment(
+            tree, arr, mid + 1, right, curr * 2 + 1, func
+        )
         tree[curr] = func(tree[curr * 2], tree[curr * 2 + 1])
 
     return tree[curr]

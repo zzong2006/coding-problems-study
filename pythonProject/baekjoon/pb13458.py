@@ -17,7 +17,7 @@ def solution():
             if board[i] < c:
                 count += 1
             else:
-                count += (board[i] // c)
+                count += board[i] // c
                 if board[i] % c > 0:
                     count += 1
     return count

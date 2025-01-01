@@ -2,6 +2,7 @@ import sys
 import heapq
 # import matplotlib.pyplot as plt
 
+
 def solution():
     get_input = sys.stdin.readline
     t = int(get_input())
@@ -24,5 +25,6 @@ def solution():
                 count += 1
             last = min(last, b)
         print(count)
+
 
 solution()

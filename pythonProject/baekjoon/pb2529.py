@@ -5,16 +5,16 @@ from collections import deque
 def solution():
     def backtrack(idx, curr):
         if idx == len(board):
-            answer[0] = min(answer[0], int(''.join(list(map(str, curr)))))
-            answer[1] = max(answer[1], int(''.join(list(map(str, curr)))))
+            answer[0] = min(answer[0], int("".join(list(map(str, curr)))))
+            answer[1] = max(answer[1], int("".join(list(map(str, curr)))))
         else:
             for ii in range(10):
                 if ii not in visited:
-                    if board[idx] == '<' and curr[-1] < ii:
+                    if board[idx] == "<" and curr[-1] < ii:
                         visited.add(ii)
                         backtrack(idx + 1, curr + [ii])
                         visited.remove(ii)
-                    if board[idx] == '>' and curr[-1] > ii:
+                    if board[idx] == ">" and curr[-1] > ii:
                         visited.add(ii)
                         backtrack(idx + 1, curr + [ii])
                         visited.remove(ii)

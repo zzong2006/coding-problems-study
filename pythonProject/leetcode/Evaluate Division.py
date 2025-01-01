@@ -21,7 +21,9 @@ def recur(graph, adj, to, goal, visit):
 
 
 class Solution:
-    def calcEquation(self, equations: List[List[str]], values: List[float], queries: List[List[str]]) -> List[float]:
+    def calcEquation(
+        self, equations: List[List[str]], values: List[float], queries: List[List[str]]
+    ) -> List[float]:
         result = []
         graph = dict()
         adj = dict()
@@ -44,11 +46,14 @@ class Solution:
 
 a = Solution()
 
-print(a.calcEquation([["a", "b"], ["b", "c"]],
-                     [2.0, 3.0],
-                     [["a", "c"], ["b", "a"], ["a", "e"], ["a", "a"], ["x", "x"]]))
+print(
+    a.calcEquation(
+        [["a", "b"], ["b", "c"]],
+        [2.0, 3.0],
+        [["a", "c"], ["b", "a"], ["a", "e"], ["a", "a"], ["x", "x"]],
+    )
+)
 
 b = defaultdict(dict)
 b["test"]["test"] = 2
 print(b)
-

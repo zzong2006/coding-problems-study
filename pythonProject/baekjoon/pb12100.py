@@ -4,7 +4,7 @@ from collections import deque
 
 def move(bd, direction, n):
     already = set()
-    if direction == 'u':
+    if direction == "u":
         for i in range(1, n):
             for k in range(n):
                 if bd[i][k] != 0:
@@ -23,7 +23,7 @@ def move(bd, direction, n):
                     else:
                         bd[j][k] += bd[i][k]
                         bd[i][k] = 0
-    elif direction == 'd':
+    elif direction == "d":
         for i in reversed(range(n - 1)):
             for k in range(n):
                 if bd[i][k] != 0:
@@ -42,7 +42,7 @@ def move(bd, direction, n):
                     else:
                         bd[j][k] += bd[i][k]
                         bd[i][k] = 0
-    elif direction == 'r':
+    elif direction == "r":
         for i in reversed(range(n - 1)):
             for k in range(n):
                 if bd[k][i] != 0:
@@ -61,7 +61,7 @@ def move(bd, direction, n):
                     else:
                         bd[k][j] += bd[k][i]
                         bd[k][i] = 0
-    elif direction == 'l':
+    elif direction == "l":
         for i in range(1, n):
             for k in range(n):
                 if bd[k][i] != 0:
@@ -103,7 +103,7 @@ def solution():
         if count == 5:
             max_val = max(max_val, get_maximum_cell(pan, n))
         else:
-            for d in ['r', 'l', 'd', 'u']:
+            for d in ["r", "l", "d", "u"]:
                 new_board = [pan[i][:] for i in range(n)]
                 move(new_board, d, n)
                 que.append([new_board, count + 1])

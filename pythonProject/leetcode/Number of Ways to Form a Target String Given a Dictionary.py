@@ -19,9 +19,9 @@ class Solution:
                 if i > 0:
                     dp[i][j] *= dp[i - 1][j - 1]
                 dp[i][j] += dp[i][j - 1]
-                dp[i][j] %= (10 ** 9 + 7)
+                dp[i][j] %= 10**9 + 7
 
-        return dp[m - 1][n - 1] % (10 ** 9 + 7)
+        return dp[m - 1][n - 1] % (10**9 + 7)
 
 
 a = Solution()

@@ -11,19 +11,19 @@ def solution():
     else:
         total = 0
         if x < y:
-            total += (2 * c * x)
+            total += 2 * c * x
             if 2 * c < b:
-                total += (2 * c * (y - x))
+                total += 2 * c * (y - x)
             else:
-                total += (b * (y - x))
+                total += b * (y - x)
         elif x > y:
-            total += (2 * c * y)
+            total += 2 * c * y
             if 2 * c < a:
-                total += (2 * c * (x - y))
+                total += 2 * c * (x - y)
             else:
-                total += (a * (x - y))
+                total += a * (x - y)
         else:
-            total += (2 * c * x)
+            total += 2 * c * x
         print(total)
 
 

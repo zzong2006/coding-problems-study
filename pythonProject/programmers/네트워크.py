@@ -3,7 +3,12 @@ def solution(n, computers):
         if curr not in visited:
             visited.add(curr)
             for i in range(n):
-                if i != curr and computers[i][curr] or computers[curr][i] and i not in visited:
+                if (
+                    i != curr
+                    and computers[i][curr]
+                    or computers[curr][i]
+                    and i not in visited
+                ):
                     dfs(i)
 
     visited = set()
@@ -16,4 +21,4 @@ def solution(n, computers):
     return answer
 
 
-print(solution(	3, [[1, 1, 0], [1, 1, 1], [0, 1, 1]]))
+print(solution(3, [[1, 1, 0], [1, 1, 1], [0, 1, 1]]))

@@ -8,15 +8,15 @@ class Solution:
             number = ""
             i = idx
             while i < len(s):
-                if ord('0') <= ord(s[i]) <= ord('9'):
+                if ord("0") <= ord(s[i]) <= ord("9"):
                     number += s[i]
-                elif s[i] == '[':
+                elif s[i] == "[":
                     num = int(number)
                     number = ""
                     output, idx = dfs(i + 1)
                     i = idx
-                    result += (num * output)
-                elif s[i] == ']':
+                    result += num * output
+                elif s[i] == "]":
                     return result, i
                 else:
                     number = ""
@@ -59,6 +59,7 @@ class Solution:
                 current_string += char
 
         return current_string
+
 
 a = Solution()
 # jkjk

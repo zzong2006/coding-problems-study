@@ -8,11 +8,12 @@ def solution():
     answer = 1
     other = 1
     for i in range(m + 1):
-        if i != m :
-            answer *= (n - i)
+        if i != m:
+            answer *= n - i
         if i != 0:
             other *= i
 
     return answer // other
+
 
 print(solution())

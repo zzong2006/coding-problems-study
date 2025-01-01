@@ -18,7 +18,7 @@ def solution(n):
 
     while start < end:
         mid = (start + end) // 2
-        if arr[mid] <= looking_for:      # 같아도 오른쪽
+        if arr[mid] <= looking_for:  # 같아도 오른쪽
             start = mid + 1
         else:
             end = mid
@@ -29,7 +29,7 @@ def solution(n):
     end = len(arr)
     while start < end:
         mid = (start + end) // 2
-        if arr[mid] < looking_for:      # 같지 않음면 가만히 있음
+        if arr[mid] < looking_for:  # 같지 않음면 가만히 있음
             start = mid + 1
         else:
             end = mid

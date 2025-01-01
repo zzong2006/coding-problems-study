@@ -3,7 +3,6 @@ import sortedcontainers
 
 
 class RecentCounter:
-
     def __init__(self):
         self.request = []
         self.start = 0

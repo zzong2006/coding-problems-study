@@ -14,7 +14,8 @@ def solution():
                 board[i][j] = board[i][j] | (board[i][k] & board[k][j])
     for i in range(t):
         for j in range(t):
-            print(board[i][j], end= ' ')
+            print(board[i][j], end=" ")
         print()
+
 
 solution()

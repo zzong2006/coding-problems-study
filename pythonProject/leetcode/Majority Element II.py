@@ -4,6 +4,7 @@ Given an integer array of size n, find all elements that appear more than ⌊ n/
 Note: The algorithm should run in linear time and in O(1) space.
 
 """
+
 from typing import List
 
 
@@ -48,4 +49,4 @@ class Solution:
 
 
 a = Solution()
-print(a.majorityElement([3,2,3]))
+print(a.majorityElement([3, 2, 3]))

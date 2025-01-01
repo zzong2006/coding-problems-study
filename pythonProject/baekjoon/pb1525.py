@@ -39,10 +39,14 @@ def solution():
                     new_x = x + add_x
                     if 0 <= new_y < 3 and 0 <= new_x < 3:
                         new_board = [row[:] for row in bd]
-                        new_board[new_y][new_x], new_board[y][x] = new_board[y][x], new_board[new_y][new_x]
+                        new_board[new_y][new_x], new_board[y][x] = (
+                            new_board[y][x],
+                            new_board[new_y][new_x],
+                        )
                         tp = tuple(map(tuple, new_board))
                         if tp not in visited:
                             que.append([new_board, (new_y, new_x), count + 1])
     return -1
+
 
 print(solution())

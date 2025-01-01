@@ -1,4 +1,5 @@
 import sys
+
 # 0-1 bfs problem
 from collections import deque
 
@@ -68,11 +69,11 @@ def solution():
         days += 1
         cheese.append(len(c_que))
 
-
     print(days)
     if len(cheese) > 1:
         print(cheese[-2])
     else:
         print(cheese)
+
 
 solution()

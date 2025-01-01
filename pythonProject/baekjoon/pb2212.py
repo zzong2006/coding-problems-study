@@ -26,5 +26,4 @@ def solution():
         return hap
 
 
-
 print(solution())

@@ -3,7 +3,6 @@ from typing import List
 
 class Solution:
     def firstMissingPositive(self, nums: List[int]) -> int:
-
         if not nums:
             return 1
         else:

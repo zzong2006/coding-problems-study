@@ -24,7 +24,7 @@ class Tron:
             self.dfs(name, self.stem[name], 0)
 
     def dfs(self, name, curr, lvl):
-        print(('--' * lvl + name))
+        print(("--" * lvl + name))
         for name in sorted(curr.stem.keys()):
             self.dfs(name, curr.stem[name], lvl + 1)
 

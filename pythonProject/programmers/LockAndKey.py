@@ -128,11 +128,16 @@ def solution(key, lock):
 
             if angle < 270:
                 tp = rotate(kk)
-                if tp.__repr__ not in check :
+                if tp.__repr__ not in check:
                     check.add(tp.__repr__)
                     que.append((tp, angle + 90, s_of_one - rmv))
 
     return answer
 
 
-print(solution([[0, 0, 0], [1, 0, 0], [0, 1, 1]], [[1, 1, 1, 1], [1, 1, 0, 1], [1, 0, 1, 1], [1, 0, 1, 1]]))
+print(
+    solution(
+        [[0, 0, 0], [1, 0, 0], [0, 1, 1]],
+        [[1, 1, 1, 1], [1, 1, 0, 1], [1, 0, 1, 1], [1, 0, 1, 1]],
+    )
+)

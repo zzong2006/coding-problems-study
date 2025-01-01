@@ -19,7 +19,7 @@ for i in range(t_c):
         adj[b].append(a)
 
     for k in range(1, v + 1):
-        vert[k] = 'b'
+        vert[k] = "b"
         que.append([k, (1 << k)])
 
     while len(que) >= 1:
@@ -27,13 +27,12 @@ for i in range(t_c):
 
         for k in adj[a]:
             if (1 << k) & visited <= 0 and real_done[k] is False:
-                if vert[a] == 'b':
-                    vert[k] = 'r'
+                if vert[a] == "b":
+                    vert[k] = "r"
                 else:
-                    vert[k] = 'b'
+                    vert[k] = "b"
                 real_done[k] = True
                 que.append([k, visited + (1 << k)])
-
 
     no = False
     for z in range(1, v + 1):

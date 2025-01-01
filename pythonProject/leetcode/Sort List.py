@@ -63,7 +63,7 @@ class Solution:
                 sorted_left = _merge_sort(curr)
                 sorted_right = _merge_sort(right)
 
-                print('sorted', sorted_left, sorted_right)
+                print("sorted", sorted_left, sorted_right)
                 sorted_link = _merge(sorted_left, sorted_right)
                 return sorted_link
 

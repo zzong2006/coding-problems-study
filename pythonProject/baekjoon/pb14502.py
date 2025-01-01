@@ -22,7 +22,7 @@ look = [(1, 0), (-1, 0), (0, -1), (0, 1)]
 for i in range(len(notZero)):
     for j in range(i + 1, len(notZero)):
         for k in range(j + 1, len(notZero)):
-            for (y, x) in [notZero[i], notZero[j], notZero[k]]:
+            for y, x in [notZero[i], notZero[j], notZero[k]]:
                 a[y][x] = 1
 
             fakeQueue = queue.copy()
@@ -31,7 +31,11 @@ for i in range(len(notZero)):
                 (y, x) = fakeQueue.pop()
                 for z in range(len(look)):
                     addY, addX = look[z]
-                    if m > y + addY >= 0 and n > x + addX >= 0 and a[y + addY][x + addX] == 0:
+                    if (
+                        m > y + addY >= 0
+                        and n > x + addX >= 0
+                        and a[y + addY][x + addX] == 0
+                    ):
                         a[y + addY][x + addX] = 2
                         fakeQueue.append((y + addY, x + addX))
 

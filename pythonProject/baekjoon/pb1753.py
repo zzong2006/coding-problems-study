@@ -10,7 +10,7 @@ def solution():
     for i in range(edge):
         u, v, w = list(map(int, get_input().strip().split()))
         graph[u].append((v, w))
-    dist = [float('inf')] * (vertex + 1)
+    dist = [float("inf")] * (vertex + 1)
 
     hq = []
     dist[start] = 0
@@ -27,8 +27,8 @@ def solution():
                 heapq.heappush(hq, (dist[target], target))
 
     for i in range(1, len(dist)):
-        if dist[i] == float('inf'):
-            print('INF')
+        if dist[i] == float("inf"):
+            print("INF")
         else:
             print(dist[i])
 

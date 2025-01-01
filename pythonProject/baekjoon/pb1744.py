@@ -51,15 +51,15 @@ def solution():
     while idx < len(arr):
         if (arr[idx] < 0 and arr[idx + 1] < 0) or (arr[idx] > 0 and arr[idx + 1] > 0):
             if arr[idx] * arr[idx + 1] > arr[idx] + arr[idx + 1]:
-                result += (arr[idx] * arr[idx + 1])
+                result += arr[idx] * arr[idx + 1]
             else:
-                result += (arr[idx] + arr[idx + 1])
+                result += arr[idx] + arr[idx + 1]
         elif (arr[idx] < 0 < arr[idx + 1]) or (arr[idx] == 0 and arr[idx + 1] > 0):
-            result += (arr[idx] + arr[idx + 1])
+            result += arr[idx] + arr[idx + 1]
         elif arr[idx] < 0 and arr[idx + 1] == 0:
-            result += (arr[idx] * arr[idx + 1])
+            result += arr[idx] * arr[idx + 1]
         else:
-            result += (arr[idx] * arr[idx + 1])
+            result += arr[idx] * arr[idx + 1]
         idx += 2
     print(result)
 

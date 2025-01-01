@@ -30,4 +30,4 @@ def solution(stones, k):
     return answer
 
 
-print(solution([10, 4, 0, 0, 99, 0, 20, 11, 0 ,0, 11], 4))
+print(solution([10, 4, 0, 0, 99, 0, 20, 11, 0, 0, 11], 4))

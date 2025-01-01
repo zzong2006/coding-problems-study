@@ -3,6 +3,7 @@ import sys
 
 # find local minima and maxima
 
+
 def solution():
     get_input = sys.stdin.readline
 

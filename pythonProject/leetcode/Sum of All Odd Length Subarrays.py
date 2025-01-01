@@ -11,7 +11,7 @@ class Solution:
         for i in range(1, len(arr) + 1):
             if i % 2 != 0:
                 for x in range(len(arr) - i + 1):
-                    summation += sum(arr[x:x+i])
+                    summation += sum(arr[x : x + i])
 
         return summation
 

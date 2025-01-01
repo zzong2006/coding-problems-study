@@ -24,5 +24,7 @@ def solution():
         answer.append(second[b_idx])
         b_idx += 1
 
-    print(' '.join(list(map(str, answer))))
+    print(" ".join(list(map(str, answer))))
+
+
 solution()

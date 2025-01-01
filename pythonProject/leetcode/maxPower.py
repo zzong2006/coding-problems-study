@@ -1,6 +1,6 @@
 class Solution:
     def maxPower(self, s: str) -> int:
-        graphs = [[0] * (2 * (10 ** 4)) for _ in range(2 * (10 ** 4))]
+        graphs = [[0] * (2 * (10**4)) for _ in range(2 * (10**4))]
         print(len(graphs[0]))
         start = 0
         end = 0
@@ -20,4 +20,4 @@ class Solution:
         return answer
 
 
-print(Solution().maxPower('leetcode'))
+print(Solution().maxPower("leetcode"))

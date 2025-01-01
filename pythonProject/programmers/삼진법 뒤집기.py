@@ -7,4 +7,5 @@ def solution(n):
     answer = int(three, 3)
     return answer
 
+
 print(solution(125))

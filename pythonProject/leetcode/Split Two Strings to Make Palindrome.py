@@ -24,7 +24,7 @@ class Solution:
                 else:
                     if check_pal(a[:front] + b[front:]):
                         return True
-                    if check_pal(a[:back + 1] + b[back + 1:]):
+                    if check_pal(a[: back + 1] + b[back + 1 :]):
                         return True
                 break
             front += 1
@@ -43,7 +43,7 @@ class Solution:
                 else:
                     if check_pal(b[:front] + a[front:]):
                         return True
-                    if check_pal(b[:back + 1] + a[back + 1 :]):
+                    if check_pal(b[: back + 1] + a[back + 1 :]):
                         return True
                 break
             front += 1
@@ -56,6 +56,11 @@ class Solution:
 
 
 a = Solution()
-print(a.checkPalindromeFormation("aejbaalflrmkswrydwdkdwdyrwskmrlfqizjezd", "uvebspqckawkhbrtlqwblfwzfptanhiglaabjea"))
+print(
+    a.checkPalindromeFormation(
+        "aejbaalflrmkswrydwdkdwdyrwskmrlfqizjezd",
+        "uvebspqckawkhbrtlqwblfwzfptanhiglaabjea",
+    )
+)
 print(a.checkPalindromeFormation("abdef", "fecab"))
 print(a.checkPalindromeFormation("x", "y"))

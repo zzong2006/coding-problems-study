@@ -7,12 +7,12 @@ def palindromeIndex(s):
             if s[i] != s[n - i - 1]:
                 k = n - i - 1
                 # remove s[i]
-                new_s = s[i + 1: k + 1]
+                new_s = s[i + 1 : k + 1]
                 if new_s == new_s[::-1]:
                     return i
 
                 # remove s[k]
-                new_s = s[i: k]
+                new_s = s[i:k]
                 if new_s == new_s[::-1]:
                     return k
 
@@ -21,4 +21,4 @@ def palindromeIndex(s):
     return -1
 
 
-print(palindromeIndex('aaab'))
+print(palindromeIndex("aaab"))

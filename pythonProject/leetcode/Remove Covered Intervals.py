@@ -12,9 +12,9 @@ class Solution:
 
         def comp(a, b):
             if a[0] != b[0]:
-                return - b[0] + a[0]
+                return -b[0] + a[0]
             else:
-                return - a[1] + b[1]
+                return -a[1] + b[1]
 
         intervals.sort(key=cmp_to_key(comp))
         print(intervals)

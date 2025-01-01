@@ -4,8 +4,16 @@ from typing import List
 get_input = sys.stdin.readline
 
 
-def move_coin(first_coin: tuple, second_coin: tuple, n: int, m: int, count: int, board: list,
-              answer: List[int], dp: dict) -> None:
+def move_coin(
+    first_coin: tuple,
+    second_coin: tuple,
+    n: int,
+    m: int,
+    count: int,
+    board: list,
+    answer: List[int],
+    dp: dict,
+) -> None:
     f_y, f_x = first_coin
     s_y, s_x = second_coin
     first_coin_dead = False
@@ -30,19 +38,23 @@ def move_coin(first_coin: tuple, second_coin: tuple, n: int, m: int, count: int,
                 new_y = coin_y + add_y
                 new_x = coin_x + add_x
                 if 0 <= new_y < n and 0 <= new_x < m:
-                    if board[new_y][new_x] == '.' or board[new_y][new_x] == 'o':
+                    if board[new_y][new_x] == "." or board[new_y][new_x] == "o":
                         coin_list.append((new_y, new_x))
-                    elif board[new_y][new_x] == '#':
+                    elif board[new_y][new_x] == "#":
                         coin_list.append((coin_y, coin_x))
                 else:
                     coin_list.append((new_y, new_x))
             if (coin_list[0], coin_list[1]) in dp:
                 if dp[(coin_list[0], coin_list[1])] > count + 1:
                     dp[(coin_list[0], coin_list[1])] = count + 1
-                    move_coin(coin_list[0], coin_list[1], n, m, count + 1, board, answer, dp)
+                    move_coin(
+                        coin_list[0], coin_list[1], n, m, count + 1, board, answer, dp
+                    )
             else:
                 dp[(coin_list[0], coin_list[1])] = count + 1
-                move_coin(coin_list[0], coin_list[1], n, m, count + 1, board, answer, dp)
+                move_coin(
+                    coin_list[0], coin_list[1], n, m, count + 1, board, answer, dp
+                )
 
 
 n, m = list(map(int, get_input().strip().split()))
@@ -55,7 +67,7 @@ for i in range(n):
     ls = []
     for j in range(len(b)):
         ls.append(b[j])
-        if b[j] == 'o':
+        if b[j] == "o":
             if first_coin is None:
                 first_coin = (i, j)
             else:

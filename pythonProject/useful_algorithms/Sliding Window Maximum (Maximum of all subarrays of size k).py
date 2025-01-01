@@ -9,7 +9,7 @@ from collections import deque
 # method for printing maximum element
 # of all subarrays of size k
 def printMax(arr, n, k):
-    """ Create a Double Ended Queue, Qi that
+    """Create a Double Ended Queue, Qi that
     will store indexes of array elements.
     The queue will store indexes of useful
     elements in every window and it will
@@ -22,7 +22,6 @@ def printMax(arr, n, k):
     # Process first k (or first window)
     # elements of array
     for i in range(k):
-
         # For every element, the previous
         # smaller elements are useless
         # so remove them from Qi
@@ -30,12 +29,11 @@ def printMax(arr, n, k):
             Qi.pop()
 
             # Add new element at rear of queue
-        Qi.append(i);
+        Qi.append(i)
 
-        # Process rest of the elements, i.e.
+    # Process rest of the elements, i.e.
     # from arr[k] to arr[n-1]
     for i in range(k, n):
-
         # The element at the front of the
         # queue is the largest element of
         # previous window, so print it
@@ -66,4 +64,4 @@ if __name__ == "__main__":
     k = 3
     printMax(arr, len(arr), k)
 
-    # This code is contributed by Shiv Shankar  
+    # This code is contributed by Shiv Shankar

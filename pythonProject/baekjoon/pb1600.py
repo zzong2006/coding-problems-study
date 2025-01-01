@@ -24,14 +24,27 @@ def solution():
     while stack:
         count, pos, k = heapq.heappop(stack)
         y, x = pos
-        if not(x == m - 1 and y == n - 1):
+        if not (x == m - 1 and y == n - 1):
             if k > 0:
-                for add_y, add_x in [(-1, -2), (-2, -1), (1, 2), (2, 1), (-1, 2), (2, -1), (-2, 1), (1, -2)]:
+                for add_y, add_x in [
+                    (-1, -2),
+                    (-2, -1),
+                    (1, 2),
+                    (2, 1),
+                    (-1, 2),
+                    (2, -1),
+                    (-2, 1),
+                    (1, -2),
+                ]:
                     new_y = y + add_y
                     new_x = x + add_x
                     new_pos = (new_y, new_x)
-                    if 0 <= new_y < n and 0 <= new_x < m and board[new_y][new_x] == 0 \
-                            and memoization[new_y][new_x][k - 1] > count + 1:
+                    if (
+                        0 <= new_y < n
+                        and 0 <= new_x < m
+                        and board[new_y][new_x] == 0
+                        and memoization[new_y][new_x][k - 1] > count + 1
+                    ):
                         memoization[new_y][new_x][k - 1] = count + 1
                         heapq.heappush(stack, [count + 1, new_pos, k - 1])
 
@@ -39,22 +52,25 @@ def solution():
                 new_y = y + add_y
                 new_x = x + add_x
                 new_pos = (new_y, new_x)
-                if 0 <= new_y < n and 0 <= new_x < m and board[new_y][new_x] == 0 \
-                        and memoization[new_y][new_x][k] > count + 1:
+                if (
+                    0 <= new_y < n
+                    and 0 <= new_x < m
+                    and board[new_y][new_x] == 0
+                    and memoization[new_y][new_x][k] > count + 1
+                ):
                     memoization[new_y][new_x][k] = count + 1
                     heapq.heappush(stack, [count + 1, new_pos, k])
         else:
             return memoization[n - 1][m - 1][k]
-    if min(memoization[n - 1][m - 1]) == sys.maxsize :
+    if min(memoization[n - 1][m - 1]) == sys.maxsize:
         return -1
     else:
         return min(memoization[n - 1][m - 1])
-
 
 
 print(solution())
 
 from itertools import count
 
-for i in count(10, step = 2):
+for i in count(10, step=2):
     print(i)

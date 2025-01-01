@@ -9,7 +9,7 @@ def solution():
     sqrt_n = int(math.sqrt(n))
     squares = [0] * (sqrt_n + 1)
     for i in range(sqrt_n + 1):
-        squares[i] = i ** 2
+        squares[i] = i**2
     dp = [sys.maxsize] * (n + 1)
     dp[0] = 0
     dp[1] = 1

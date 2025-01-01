@@ -1,7 +1,7 @@
 from collections import defaultdict
 import sys
 
-sys.setrecursionlimit(10 ** 7)
+sys.setrecursionlimit(10**7)
 
 
 class Tr:
@@ -24,7 +24,7 @@ def solution(words, queries):
     def search(idx, query, curr):
         if idx < len(query):
             result = 0
-            if query[idx] == '?':
+            if query[idx] == "?":
                 if curr.length is None:
                     for k in curr.book.keys():
                         result += search(idx + 1, query, curr.book[k])
@@ -49,7 +49,7 @@ def solution(words, queries):
         main_reverse_trie[len(w)].insert(w[::-1])
 
     for q in queries:
-        if q[0] == '?':
+        if q[0] == "?":
             output = search(0, q[::-1], main_reverse_trie[len(q)])
         else:
             output = search(0, q, main_trie[len(q)])
@@ -57,5 +57,9 @@ def solution(words, queries):
     return answer
 
 
-print(solution(["frodo", "front", "frost", "frozen", "frame", "kakao"],
-               ["?????", "?f", "fro??", "????o", "??????", "fr???", "fro???", "pro?"]))
+print(
+    solution(
+        ["frodo", "front", "frost", "frozen", "frame", "kakao"],
+        ["?????", "?f", "fro??", "????o", "??????", "fr???", "fro???", "pro?"],
+    )
+)

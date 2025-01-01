@@ -24,5 +24,6 @@ class Solution:
 
         return sum(depth for node, depth in trie.ends if len(node.children) == 0)
 
+
 a = Solution()
 print(a.minimumLengthEncoding(["time", "me", "bell"]))

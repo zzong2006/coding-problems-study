@@ -12,8 +12,8 @@ class Solution:
             self.test.append(len(words))
         else:
             for i in range(0, len(string) - idx + 1):
-                word = string[idx:idx + i]
-                if word == '':
+                word = string[idx : idx + i]
+                if word == "":
                     continue
                 if word in words:
                     continue
@@ -22,7 +22,7 @@ class Solution:
                     new_words.add(word)
                     self.recur(new_words, idx + i, string)
 
+
 a = Solution()
 print(a.maxUniqueSplit("hmadataa"))
 print(a.maxUniqueSplit("aa"))
-

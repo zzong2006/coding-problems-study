@@ -23,5 +23,6 @@ class Solution:
         answer.append([prev_x, prev_y])
         return answer
 
+
 a = Solution()
 print(a.merge([[1, 4], [0, 4]]))

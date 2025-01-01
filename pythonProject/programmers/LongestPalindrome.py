@@ -3,7 +3,7 @@ def solution(s):
     max_val = 0
     for i in range(0, len(s)):
         for j in range(1, len(s) - i + 1):
-            new_s = s[i:i + j]
+            new_s = s[i : i + j]
             pal = new_s[::-1]
             if new_s == pal:
                 # print(new_s)

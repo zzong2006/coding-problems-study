@@ -3,6 +3,7 @@ import sys
 
 sys.setrecursionlimit(10**7)
 
+
 def solution():
     def half_search(prev, curr, found):
         mid = (prev + curr) // 2
@@ -11,7 +12,7 @@ def solution():
         total = 0
 
         for j in board:
-            total += (j // mid)
+            total += j // mid
         # print('prev : {}, curr : {}, total : {}'.format(prev, curr, total))
         if total >= k:
             # found = True

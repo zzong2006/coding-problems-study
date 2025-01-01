@@ -1,5 +1,7 @@
 import sys
-sys.setrecursionlimit(10 ** 7)
+
+sys.setrecursionlimit(10**7)
+
 
 def solution(nodeinfo):
     def prefix_search(curr_pt, ls):
@@ -60,4 +62,4 @@ class Node:
         self.y = y
 
 
-print(solution([[5, 3],[11, 5]]))
+print(solution([[5, 3], [11, 5]]))

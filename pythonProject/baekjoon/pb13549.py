@@ -28,7 +28,7 @@ while len(que) > 0:
             heapq.heappush(que, [sec, new_curr])
     else:
         break
-if k == n :
+if k == n:
     print(0)
 else:
     print(dp[k])

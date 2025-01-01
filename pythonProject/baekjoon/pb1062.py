@@ -10,16 +10,16 @@ for i in range(n):
     word = get_input().strip()
     for j in word:
         unique_alpha.add(j)
-        if j != 'a' and j != 'n' and j != 't' and j != 'i' and j != 'c':
+        if j != "a" and j != "n" and j != "t" and j != "i" and j != "c":
             words[i].add(j)
-
 
 
 if k < 5:
     print(0)
 else:
     remains_k = k - 5  # a, n, t, i, c
-    for w in ['a', 'n', 't', 'i', 'c']: unique_alpha.remove(w)
+    for w in ["a", "n", "t", "i", "c"]:
+        unique_alpha.remove(w)
     max_words = 0
     # print(unique_alpha)
     if len(unique_alpha) <= remains_k:

@@ -59,12 +59,16 @@ for i in range(N):
                     max_count = 0
                     max_count = search_longest_color(board, i, j, 0)
                     max_count = max(max_count, search_longest_color(board, i, j, 1))
-                    max_count = max(max_count, search_longest_color(board, new_i, new_j, 1))
+                    max_count = max(
+                        max_count, search_longest_color(board, new_i, new_j, 1)
+                    )
                 else:  # 세로로 치환 일땐  =ㅑ= 이런식
                     max_count = 0
                     max_count = search_longest_color(board, i, j, 1)
                     max_count = max(max_count, search_longest_color(board, i, j, 0))
-                    max_count = max(max_count, search_longest_color(board, new_i, new_j, 0))
+                    max_count = max(
+                        max_count, search_longest_color(board, new_i, new_j, 0)
+                    )
                 answer = max(max_count, answer)
 
                 # 다시 돌려놔야함

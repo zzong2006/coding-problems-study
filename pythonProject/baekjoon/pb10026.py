@@ -19,11 +19,14 @@ def solution():
                         for add_y, add_x in [(-1, 0), (0, 1), (1, 0), (0, -1)]:
                             new_y = add_y + y
                             new_x = add_x + x
-                            if 0 <= new_x < len(bd) and 0 <= new_y < len(bd) and bd[new_y][new_x] == color:
+                            if (
+                                0 <= new_x < len(bd)
+                                and 0 <= new_y < len(bd)
+                                and bd[new_y][new_x] == color
+                            ):
                                 bd[new_y][new_x] = 2
                                 que.append([(new_y, new_x), color])
         return count
-
 
     get_input = sys.stdin.readline
     n = int(get_input().strip())
@@ -37,9 +40,10 @@ def solution():
     copied_board = [board[i][:] for i in range(n)]
     for i in range(n):
         for j in range(n):
-            if copied_board[i][j] == 'R':
-                copied_board[i][j] = 'G'
+            if copied_board[i][j] == "R":
+                copied_board[i][j] = "G"
 
     print(get_board(board), get_board(copied_board))
+
 
 solution()

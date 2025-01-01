@@ -19,7 +19,7 @@ class Solution:
                     n = len(sub_str)
                     total_cnt = 0
                     for k in range(len(t) - n + 1):
-                        cnt = check_diff(sub_str, t[k:k + n])
+                        cnt = check_diff(sub_str, t[k : k + n])
                         if cnt == 1:
                             # print(sub_str, t[k:k+n])
                             total_cnt += 1

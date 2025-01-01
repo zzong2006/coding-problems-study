@@ -13,7 +13,7 @@ def solution(n):
     idxs = []
     total = 0
     for i in range(n):
-        total += (i + 1)
+        total += i + 1
     answer = [None] * total
 
     curr = 0
@@ -24,14 +24,13 @@ def solution(n):
     print(level_curve)
     inc = curr_level(lvl + 1)
     while curr < total:
-
         # go down
         prev_lvl = lvl
         while 0 <= lvl < len(answer) and answer[lvl] is None:
             curr += 1
             answer[lvl] = curr
             prev_lvl = lvl
-            lvl += (inc + 1)
+            lvl += inc + 1
             inc += 1
         if curr >= total:
             break
@@ -50,7 +49,7 @@ def solution(n):
 
         lvl -= 1
         dec = curr_level(lvl + 1)
-        lvl -= (dec + 1)
+        lvl -= dec + 1
         dec -= 1
         # go up
         prev_lvl = lvl
@@ -58,11 +57,11 @@ def solution(n):
             curr += 1
             answer[lvl] = curr
             prev_lvl = lvl
-            lvl -= (dec + 1)
+            lvl -= dec + 1
             dec -= 1
         lvl = prev_lvl
         inc = curr_level(lvl + 1)
-        lvl += (inc + 1)
+        lvl += inc + 1
         inc += 1
         if curr >= total:
             break

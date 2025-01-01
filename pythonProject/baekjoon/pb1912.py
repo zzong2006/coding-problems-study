@@ -15,4 +15,5 @@ def solution():
         max_val = max(dp[i], max_val)
     return max_val
 
+
 print(solution())

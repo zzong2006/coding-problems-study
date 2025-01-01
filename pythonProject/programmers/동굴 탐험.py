@@ -1,7 +1,8 @@
 from collections import deque
 import sys
 
-sys.setrecursionlimit(10 ** 7)
+sys.setrecursionlimit(10**7)
+
 
 def solution(n, path, order):
     def find_circular(i_a, i_b, i_c, curr_k):
@@ -60,6 +61,12 @@ def solution(n, path, order):
     return answer
 
 
-print(solution(9, [[0, 1], [0, 3], [0, 7], [8, 1], [3, 6], [1, 2], [4, 7], [7, 5]], [[8, 5], [6, 7], [4, 1]]))
+print(
+    solution(
+        9,
+        [[0, 1], [0, 3], [0, 7], [8, 1], [3, 6], [1, 2], [4, 7], [7, 5]],
+        [[8, 5], [6, 7], [4, 1]],
+    )
+)
 # print(solution(9, [[0, 1], [0, 3], [0, 7], [8, 1], [3, 6], [1, 2], [4, 7], [7, 5]], [[4, 1], [8, 7], [6, 5]]))
 # print(solution(5, [[0, 1], [1, 2], [2, 3], [3, 4]], [[2, 1]]))

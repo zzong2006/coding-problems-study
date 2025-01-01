@@ -6,7 +6,7 @@ def solution(m, n, puddles):
 
     if (1, 0) in puds:
         dp[0][1] = 0
-    else :
+    else:
         dp[0][1] = 1
 
     if (0, 1) in puds:
@@ -19,7 +19,7 @@ def solution(m, n, puddles):
             for j in range(2, m):
                 if (j, i) in puds:
                     dp[i][j] = 0
-                else :
+                else:
                     dp[i][j] = dp[i][j - 1]
         elif i == 1:
             for j in range(1, m):
@@ -32,9 +32,9 @@ def solution(m, n, puddles):
                 if j == 0:
                     if (j, i) in puds:
                         dp[i][j] = 0
-                    else :
+                    else:
                         dp[i][j] = dp[i - 1][j]
-                else :
+                else:
                     if (j, i) in puds:
                         dp[i][j] = 0
                     else:

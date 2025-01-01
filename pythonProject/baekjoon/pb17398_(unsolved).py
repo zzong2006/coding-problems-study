@@ -49,7 +49,7 @@ def solution():
         p_a = find(a)
         p_b = find(b)
         if p_a != p_b:
-            answer += (how_many[p_b] * how_many[p_b])
+            answer += how_many[p_b] * how_many[p_b]
             how_many[p_b] += how_many[p_a]
             union(a, b)
 

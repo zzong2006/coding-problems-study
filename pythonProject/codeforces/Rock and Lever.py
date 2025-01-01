@@ -11,7 +11,7 @@ for i in range(t):
 
     sorted_arr = sorted(arr)
     count = 0
-    for k in range(n- 1):
+    for k in range(n - 1):
         num = sorted_arr[k]
         th = 1 << (len(bin(num)) - 2)
         idx = bisect.bisect_left(sorted_arr, th, lo=k)
@@ -19,9 +19,9 @@ for i in range(t):
         if idx >= n:
             idx -= 1
         if sorted_arr[idx] < th:
-            count += (idx - k)
+            count += idx - k
         else:
-            count += (idx - k - 1)
+            count += idx - k - 1
 
     print(count)
     # print(bisect.bisect_right(sorted_arr, 8, lo=0))

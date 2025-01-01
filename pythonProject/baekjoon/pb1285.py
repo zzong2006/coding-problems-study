@@ -14,7 +14,7 @@ board = [[0] * n for _ in range(n)]
 for w in range(n):
     a = get_input().strip()
     for j in range(n):
-        if a[j] == 'H':
+        if a[j] == "H":
             board[w][j] = 0
         else:
             board[w][j] = 1
@@ -25,7 +25,7 @@ answer = sys.maxsize
 for w in range(0, 1 << n):
     visited = [False] * (n + 1)
     for i in range(n):
-        if (1 << i) & w :
+        if (1 << i) & w:
             visited[i] = True
 
     count = 0

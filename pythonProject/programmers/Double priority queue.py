@@ -1,13 +1,14 @@
 from collections import deque
 import heapq
 
+
 def solution(operations):
     test = deque()
 
     answer = []
     for i in range(len(operations)):
         cmd = operations[i]
-        if cmd[0] == 'I':
+        if cmd[0] == "I":
             num = int(cmd[2:])
             test.append(num)
         else:
@@ -28,5 +29,4 @@ def solution(operations):
     return answer
 
 
-print(solution(	["D 1", "D -1", "I -45", "I 45", "I 45", "D -1", "D 1"]))
-
+print(solution(["D 1", "D -1", "I -45", "I 45", "I 45", "D -1", "D 1"]))

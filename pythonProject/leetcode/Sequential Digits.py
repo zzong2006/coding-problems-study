@@ -10,7 +10,7 @@ class Solution:
         output = []
         for a in range(a, b + 1):
             for i in range(len(ls) - a + 1):
-                z = int(ls[i:i + a])
+                z = int(ls[i : i + a])
                 if low <= z <= high:
                     output.append(z)
         return output

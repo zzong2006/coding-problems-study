@@ -1,6 +1,7 @@
 import sys
 import heapq
 
+
 def solution():
     def dfs(curr):
         if curr not in visited:
@@ -24,7 +25,6 @@ def solution():
         else:
             if i not in visited:
                 stack.append(i)
-
 
     while stack:
         i = stack.pop()

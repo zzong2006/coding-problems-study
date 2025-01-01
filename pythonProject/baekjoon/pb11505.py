@@ -34,14 +34,15 @@ def solution():
             if start <= idx <= end:
                 mid = (start + end) // 2
                 l = change_value_of_c(seg, start, mid, idx, old_val, new_val, curr * 2)
-                r = change_value_of_c(seg, mid + 1, end, idx, old_val, new_val, curr * 2 + 1)
+                r = change_value_of_c(
+                    seg, mid + 1, end, idx, old_val, new_val, curr * 2 + 1
+                )
 
                 seg[curr] = l * r
                 seg[curr] %= 1000000007
                 return seg[curr]
             else:
                 return seg[curr]
-
 
     get_input = sys.stdin.readline
     n, m, k = list(map(int, get_input().strip().split()))
@@ -60,5 +61,6 @@ def solution():
             change_value_of_c(seg_tree, 0, n - 1, b - 1, old, c, 1)
         else:
             print(get_from_b_to_c(seg_tree, 0, n - 1, b - 1, c - 1, 1))
+
 
 solution()

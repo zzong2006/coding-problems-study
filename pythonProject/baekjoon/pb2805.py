@@ -15,7 +15,7 @@ def solution():
         total = 0
         for i in trunks:
             if mid < i:
-                total += (i - mid)
+                total += i - mid
         # print('start {} end {} mid {} total {}'.format(start, end, mid, total))
         if total < m:
             end = mid - 1

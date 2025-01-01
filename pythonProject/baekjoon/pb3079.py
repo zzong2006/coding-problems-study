@@ -5,7 +5,7 @@ def solution():
     def total_num(t):
         total = 0
         for j in range(len(ls)):
-            total += (t // ls[j])
+            total += t // ls[j]
         return total
 
     n, m = list(map(int, sys.stdin.readline().split()))

@@ -27,5 +27,6 @@ class Solution:
                 return True
         return False
 
+
 a = Solution()
 print(a.buddyStrings("abcba", "abcab"))

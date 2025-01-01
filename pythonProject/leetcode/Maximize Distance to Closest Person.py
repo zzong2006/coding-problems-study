@@ -42,8 +42,8 @@ class Solution:
                 while future is not None and future < i:
                     future = next(people, None)
 
-                left = float('inf') if prev is None else i - prev
-                right = float('inf') if future is None else future - i
+                left = float("inf") if prev is None else i - prev
+                right = float("inf") if future is None else future - i
                 ans = max(ans, min(left, right))
                 print(left, right, ans)
         return ans

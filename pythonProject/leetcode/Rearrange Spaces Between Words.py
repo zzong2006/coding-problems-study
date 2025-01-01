@@ -8,7 +8,7 @@ class Solution:
 
         words = text.strip().split()
         len_words = len(words)
-        if len_words > 1 :
+        if len_words > 1:
             spaces = count // (len_words - 1)
             remains = count % (len_words - 1)
         else:

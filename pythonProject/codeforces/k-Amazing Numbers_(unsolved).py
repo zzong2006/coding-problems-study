@@ -51,4 +51,5 @@ def solution():
             print(result[j], end=" ")
         print()
 
+
 solution()

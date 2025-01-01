@@ -9,10 +9,10 @@ def solution():
     ops = get_input().strip()
     que = deque()
 
-    if ops[0] == '-':
+    if ops[0] == "-":
         for i in range(-10, 0, 1):
             que.append([i])
-    elif ops[0] == '0':
+    elif ops[0] == "0":
         que.append([0])
     else:
         for i in range(1, 11):
@@ -28,10 +28,10 @@ def solution():
                 n -= 1
             # 숫자 고르고 체크
             pick = None
-            if ops[start] == '-':
+            if ops[start] == "-":
                 for i in range(-10, 0, 1):
                     pick = i
-            elif ops[start] == '0':
+            elif ops[start] == "0":
                 pick = 0
             else:
                 for i in range(1, 11):

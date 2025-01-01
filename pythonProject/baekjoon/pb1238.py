@@ -6,11 +6,10 @@ import sys
 
 def solution():
     def get_distance_from_a(a):
-        distance = [float('inf')] * (n + 1)
+        distance = [float("inf")] * (n + 1)
         que = []
         distance[a] = 0
         heapq.heappush(que, (distance[a], a))
-
 
         while que:
             _, c = heapq.heappop(que)

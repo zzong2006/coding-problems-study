@@ -13,6 +13,7 @@ def solution():
             for ke in a.keys():
                 st = min(st, backtrack(vv + str(ke), st))
         return st
+
     get_input = sys.stdin.readline
     n = get_input().strip()
     m = int(get_input().strip())

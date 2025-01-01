@@ -12,7 +12,9 @@ class Snake:
         if 1 <= x + addX <= N and 1 <= y + addY <= N:
             if board[y + addY][x + addX] == 2:
                 return False
-            elif board[y + addY][x + addX] == 1:  # 만약 이동한 칸에 사과가 있다면, 그 칸에 있던 사과가 없어지고 꼬리는 움직이지 않는다.
+            elif (
+                board[y + addY][x + addX] == 1
+            ):  # 만약 이동한 칸에 사과가 있다면, 그 칸에 있던 사과가 없어지고 꼬리는 움직이지 않는다.
                 self.lists.append((x + addX, y + addY))
                 (a, b) = self.lists[-1]
                 board[b][a] = 2
@@ -60,7 +62,7 @@ sk = Snake(1, 1)
 
 # 0: 빈 공간, 1: 사과, 2: 뱀
 board = [[0] * (N + 1) for _ in range(N + 1)]
-for (y, x) in apples:
+for y, x in apples:
     board[y][x] = 1
 board[1][1] = 2
 

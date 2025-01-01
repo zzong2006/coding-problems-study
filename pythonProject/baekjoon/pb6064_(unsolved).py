@@ -24,7 +24,7 @@ def solution():
                 else:
                     y = 1
                 count += 1
-            print(x, y, x-y, abs(y-x), count)
+            print(x, y, x - y, abs(y - x), count)
         else:
             print(count)
 

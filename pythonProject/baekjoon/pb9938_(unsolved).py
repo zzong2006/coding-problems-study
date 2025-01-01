@@ -39,14 +39,14 @@ def solution():
         # print('   tong', remained)
         if remained[pa] > 0:
             union(aa, bb)
-            print('LADICA')
+            print("LADICA")
             continue
         if remained[pb] > 0:
             union(aa, bb)
-            print('LADICA')
+            print("LADICA")
             continue
 
-        print('SMECE')
+        print("SMECE")
 
 
 solution()

@@ -27,10 +27,10 @@ def check(angles, target):
                 if new_curr not in angle_check:
                     angle_check.add(new_curr)
                     que.append(new_curr)
-                new_curr = (curr - angles[i])
+                new_curr = curr - angles[i]
                 if new_curr < 0:
                     new_curr = 360 + new_curr
-                if new_curr not in angle_check :
+                if new_curr not in angle_check:
                     angle_check.add(new_curr)
                     que.append(new_curr)
     return False

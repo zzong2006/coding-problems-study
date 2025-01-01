@@ -7,7 +7,7 @@ def solution():
     t: int = int(get_input().strip())
     for i in range(t):
         n: int = int(get_input().strip())
-        graph = [[float('inf')] * (n + 2) for _ in range(n + 2)]
+        graph = [[float("inf")] * (n + 2) for _ in range(n + 2)]
         dist = []
         for j in range(n + 2):
             dist.append(tuple(map(int, get_input().strip().split())))
@@ -25,9 +25,9 @@ def solution():
                     graph[w][e] = max(graph[w][e], graph[w][q] & graph[q][e])
 
         if graph[0][n + 1] is True:
-            print('happy')
+            print("happy")
         else:
-            print('sad')
+            print("sad")
 
 
 solution()

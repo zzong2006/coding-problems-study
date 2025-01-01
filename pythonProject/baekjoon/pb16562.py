@@ -41,5 +41,6 @@ def solution():
         print("Oh no")
     # print(ls)
 
+
 solution()
 # print(solution())

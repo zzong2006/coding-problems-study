@@ -18,10 +18,12 @@ def solution(lines):
     date_times = []
     span_times = []
     for i in range(len(lines)):
-        ts = lines[i].split(' ')
-        curr_t = ts[1].split(':')
-        date_times.append(int(curr_t[0]) * 3600 + int(curr_t[1]) * 60 + float(curr_t[2]))
-        span_times.append(float((ts[2].split('s'))[0]))
+        ts = lines[i].split(" ")
+        curr_t = ts[1].split(":")
+        date_times.append(
+            int(curr_t[0]) * 3600 + int(curr_t[1]) * 60 + float(curr_t[2])
+        )
+        span_times.append(float((ts[2].split("s"))[0]))
         date_times[i] -= span_times[i]
         date_times[i] += 0.001
         date_times[i] = round(date_times[i], 4)

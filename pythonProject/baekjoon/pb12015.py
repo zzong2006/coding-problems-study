@@ -3,6 +3,7 @@ import heapq
 from collections import deque
 import bisect
 
+
 def solution():
     get_input = sys.stdin.readline
     n = int(get_input().strip())

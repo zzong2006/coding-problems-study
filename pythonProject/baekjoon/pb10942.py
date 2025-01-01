@@ -11,6 +11,7 @@ def solution():
             start += 1
             end -= 1
         return True
+
     get_input = sys.stdin.readline
     n = int(get_input().strip())
     board = list(map(int, get_input().strip().split()))

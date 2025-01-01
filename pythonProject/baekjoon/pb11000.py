@@ -1,6 +1,7 @@
 import sys
 import heapq
 
+
 def solution():
     get_input = sys.stdin.readline
     n = int(get_input().strip())

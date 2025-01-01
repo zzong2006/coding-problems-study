@@ -1,8 +1,10 @@
 import sys
 
+
 def solution():
     def sum_tuple(a, b):
         return a[0] + b[0], a[1] + b[1]
+
     get_input = sys.stdin.readline
     dp = [(0, 0)] * 41
     dp[0] = (1, 0)
@@ -13,6 +15,7 @@ def solution():
 
     for i in range(n):
         k = int(get_input().strip())
-        print('{} {}'.format(dp[k][0], dp[k][1]))
+        print("{} {}".format(dp[k][0], dp[k][1]))
+
 
 solution()

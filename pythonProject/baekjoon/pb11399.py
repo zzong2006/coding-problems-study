@@ -1,6 +1,7 @@
 import heapq
 import sys
 
+
 def solution():
     get_input = sys.stdin.readline
 
@@ -14,9 +15,10 @@ def solution():
         heapq.heappush(hp, board[i])
 
     ls = [0]
-    while hp :
+    while hp:
         t = heapq.heappop(hp)
         ls.append(ls[-1] + t)
     print(sum(ls))
+
 
 solution()

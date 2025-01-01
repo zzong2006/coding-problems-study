@@ -11,9 +11,9 @@ def solution():
     k = 0
     for i in range(v + 1):
         if i != v:
-            k += ((i + 1) * (9 * (10 ** i)))
+            k += (i + 1) * (9 * (10**i))
         else:
-            k += ((i + 1) * (a - ((10 ** i) - 1)))
+            k += (i + 1) * (a - ((10**i) - 1))
     return k
 
 

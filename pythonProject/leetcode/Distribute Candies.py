@@ -8,7 +8,7 @@ class Solution:
             return len(candy_set)
         else:
             ordered_candy = sorted(candy_set, reverse=True)
-            return len(ordered_candy[:len(candyType) // 2])
+            return len(ordered_candy[: len(candyType) // 2])
 
 
 solution = Solution()

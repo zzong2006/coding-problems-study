@@ -19,12 +19,12 @@ def solution():
         a = que.popleft()
         ls.append(a)
         # print(que)
-    print('<', end="")
+    print("<", end="")
     for i in range(n):
         if i != n - 1:
-            print('{}, '.format(ls[i]), end="")
+            print("{}, ".format(ls[i]), end="")
         else:
-            print('{}>'.format(ls[i]), end="")
+            print("{}>".format(ls[i]), end="")
 
 
 solution()

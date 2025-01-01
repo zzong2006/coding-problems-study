@@ -3,6 +3,7 @@ from collections import Counter
 
 import heapq
 
+
 def solution():
     get_input = sys.stdin.readline
 

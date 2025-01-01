@@ -4,18 +4,18 @@ from itertools import combinations, permutations
 
 def solution(expression):
     def do_cal(aa, bb, opp):
-        if opp == '*':
+        if opp == "*":
             return aa * bb
-        if opp == '-':
+        if opp == "-":
             return aa - bb
-        if opp == '+':
+        if opp == "+":
             return aa + bb
 
     answer = 0
     que = deque()
     num = ""
     for i in expression:
-        if '0' <= i <= '9':
+        if "0" <= i <= "9":
             num += i
         else:
             que.append(int(num))
@@ -23,7 +23,7 @@ def solution(expression):
             num = ""
     que.append(int(num))
 
-    for perm in permutations(['*', '-', '+']):
+    for perm in permutations(["*", "-", "+"]):
         new_que = que.copy()
         for target_op in perm:
             temp_que = deque()

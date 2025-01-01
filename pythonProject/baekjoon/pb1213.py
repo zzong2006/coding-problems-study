@@ -24,19 +24,19 @@ def solution():
         ans = ""
         if odd == 0:
             for w in ls:
-                ans += (w * (cnt[w] // 2))
+                ans += w * (cnt[w] // 2)
             ans = ans + ans[::-1]
             return ans
         else:
             for w in ls:
-                ans += (w * (cnt[w] // 2))
+                ans += w * (cnt[w] // 2)
 
             ans = ans + odd_key + ans[::-1]
             return ans
     else:
-        return 'I\'m Sorry Hansoo'
+        return "I'm Sorry Hansoo"
 
 
 print(solution())
-print('ABABA' < 'BAAAB')
-print('')
+print("ABABA" < "BAAAB")
+print("")

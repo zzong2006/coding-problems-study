@@ -1,5 +1,8 @@
 import sys
-sys.setrecursionlimit(10 ** 7)
+
+sys.setrecursionlimit(10**7)
+
+
 def solution(k, room_number):
     def find(i):
         if i not in parents:
@@ -25,4 +28,4 @@ def solution(k, room_number):
     return answer
 
 
-print(solution(	10, [1, 3, 4, 1, 3, 1]))
+print(solution(10, [1, 3, 4, 1, 3, 1]))

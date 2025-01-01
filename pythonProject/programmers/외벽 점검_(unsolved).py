@@ -1,6 +1,6 @@
 def solution(n, weak, dist):
     def dfs(curr_weak, curr_dist, count):
-        cnt = float('inf')
+        cnt = float("inf")
         if curr_weak and curr_dist:
             for i in range(len(curr_weak)):
                 new_dist = curr_dist.copy()
@@ -18,7 +18,7 @@ def solution(n, weak, dist):
         elif not curr_weak and (not curr_dist or curr_dist):
             return count
         else:
-            return float('inf')
+            return float("inf")
 
     def walk(pos, walk_dist, curr_weaks, direction):
         """
@@ -64,14 +64,14 @@ def solution(n, weak, dist):
 
     dist.sort()
     for i in range(len(dist)):
-        sliced_dist = dist[len(dist) - i - 1: len(dist)]
+        sliced_dist = dist[len(dist) - i - 1 : len(dist)]
         answer = dfs(weak, sliced_dist, 0)
-        if answer != float('inf'):
+        if answer != float("inf"):
             return answer
-    if answer == float('inf'):
+    if answer == float("inf"):
         return -1
     return answer
 
 
 # print(solution(12, [1, 5, 6, 10], [1, 2, 3, 4]))
-print(solution(12, [1, 3, 4, 9, 10]	, [3, 5, 7]))
+print(solution(12, [1, 3, 4, 9, 10], [3, 5, 7]))

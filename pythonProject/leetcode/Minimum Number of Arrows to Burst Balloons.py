@@ -9,7 +9,7 @@ class Solution:
             count = 1
             for i in range(1, len(points)):
                 a, b = points[i]
-                if end < a or b < start :
+                if end < a or b < start:
                     count += 1
                     start = a
                     end = b
@@ -19,6 +19,7 @@ class Solution:
         else:
             count = 0
         return count
+
 
 a = Solution()
 print(a.findMinArrowShots([[1, 2], [2, 3], [3, 4], [4, 5]]))

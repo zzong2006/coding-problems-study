@@ -14,8 +14,9 @@ def solution():
         else:
             answer = min(v % p, l)
             answer += (v // p) * l
-            print('Case {}: {}'.format(case, answer))
+            print("Case {}: {}".format(case, answer))
 
         case += 1
+
 
 solution()

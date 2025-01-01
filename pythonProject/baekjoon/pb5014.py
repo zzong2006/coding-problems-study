@@ -1,6 +1,7 @@
 import sys
 from collections import deque
 
+
 def recur(dyna, curr, goal, upper, up, down):
     que = deque()
     que.append([curr, 0])
@@ -31,4 +32,4 @@ else:
     if dp[G] != sys.maxsize:
         print(dp[G])
     else:
-        print('use the stairs')
+        print("use the stairs")

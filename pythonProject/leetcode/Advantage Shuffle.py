@@ -25,6 +25,8 @@ import bisect
 """
 lee215의 코드
 """
+
+
 class Solution:
     def advantageCount(self, A, B):
         A = sorted(A)
@@ -34,5 +36,6 @@ class Solution:
                 take[b].append(A.pop())
         return [(take[b] or A).pop() for b in B]
 
+
 a = Solution()
-print(a.advantageCount([12,24,8,32], [13,25,32,11]))
+print(a.advantageCount([12, 24, 8, 32], [13, 25, 32, 11]))

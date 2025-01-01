@@ -6,12 +6,13 @@ arr = []
 
 
 def build_seg_tree(start, end, curr):
-
     if start == end:
         seg_tree[curr] = arr[start]
     else:
         mid = int((start + end) / 2)
-        seg_tree[curr] = build_seg_tree(start, mid, curr * 2) + build_seg_tree(mid + 1, end, curr * 2 + 1)
+        seg_tree[curr] = build_seg_tree(start, mid, curr * 2) + build_seg_tree(
+            mid + 1, end, curr * 2 + 1
+        )
     return seg_tree[curr]
 
 
@@ -22,19 +23,22 @@ def get_range_sum(start, end, left, right, curr):
         return 0
     else:
         mid = int((start + end) / 2)
-        return get_range_sum(start, mid, left, right, curr * 2) + get_range_sum(mid + 1, end, left, right, curr * 2 + 1)
+        return get_range_sum(start, mid, left, right, curr * 2) + get_range_sum(
+            mid + 1, end, left, right, curr * 2 + 1
+        )
 
 
 def modify_seg_tree(start, end, idx, val, curr):
     if start <= idx <= end:
         seg_tree[curr] += val
-        if start == end :
+        if start == end:
             return
         mid = int((start + end) / 2)
         modify_seg_tree(start, mid, idx, val, curr * 2)
         modify_seg_tree(mid + 1, end, idx, val, curr * 2 + 1)
     else:
         return
+
 
 N, M, K = list(map(int, stdin.readline().split()))
 seg_tree = [0] * (N * 4)

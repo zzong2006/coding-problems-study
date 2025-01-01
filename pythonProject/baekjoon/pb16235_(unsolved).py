@@ -1,4 +1,4 @@
- # 나무 제테크
+# 나무 제테크
 
 import sys
 
@@ -14,4 +14,3 @@ for i in range(n):
     board.append(list(map(int, get_input().split())))
 
 # 하나의 칸에 여러 개의 나무가 있다면, 나이가 어린 나무부터 양분을 먹는다.
-

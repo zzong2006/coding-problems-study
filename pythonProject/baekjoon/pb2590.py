@@ -6,8 +6,12 @@ def solution():
     def place_rectangle(n_b, l, remained):
         for i in range(6 - l + 1):
             for j in range(6 - l + 1):
-                if n_b[i][j] is False and n_b[i][j + l - 1] is False \
-                        and n_b[i + l - 1][j + l - 1] is False and n_b[i + l - 1][j] is False:
+                if (
+                    n_b[i][j] is False
+                    and n_b[i][j + l - 1] is False
+                    and n_b[i + l - 1][j + l - 1] is False
+                    and n_b[i + l - 1][j] is False
+                ):
                     remained -= 1
                     for k in range(i, i + l):
                         for z in range(j, j + l):

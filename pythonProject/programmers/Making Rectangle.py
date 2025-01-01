@@ -1,5 +1,6 @@
 from itertools import combinations
 
+
 def solution(v):
     min_y = min([r[0] for r in v])
     max_y = max([r[0] for r in v])
@@ -17,5 +18,6 @@ def solution(v):
         answer = [max_y, min_x]
 
     return answer
+
 
 print(solution([[1, 4], [3, 4], [3, 10]]))

@@ -41,4 +41,5 @@ def solution():
     print(max_val)
     print(min_val)
 
+
 solution()

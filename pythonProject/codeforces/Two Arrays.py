@@ -29,4 +29,6 @@ def solution():
         for j in range(n):
             print(sorted_result[j], end=" ")
         print()
+
+
 solution()

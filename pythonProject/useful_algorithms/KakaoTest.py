@@ -16,7 +16,7 @@ class Solution:
                 number += ch
             else:
                 left_num = None
-                while index < len(s) and (ch == '*' or ch == '/'):
+                while index < len(s) and (ch == "*" or ch == "/"):
                     if left_num is None:
                         left_num = int(number)
 
@@ -30,7 +30,7 @@ class Solution:
                             break
                         index += 1
                     right_num = int(right_num)
-                    if ch == '*':
+                    if ch == "*":
                         result = left_num * right_num
                     else:
                         result = left_num // right_num
@@ -40,7 +40,7 @@ class Solution:
                 if left_num is not None:
                     new_s += str(left_num)
                     number = ""
-                if ch == '+' or ch == '-':
+                if ch == "+" or ch == "-":
                     new_s += number
                     new_s += ch
                     number = ""
@@ -74,7 +74,7 @@ class Solution:
                             break
                         index += 1
                     right_num = int(right_num)
-                    if ch == '+':
+                    if ch == "+":
                         result = left_num + right_num
                     else:
                         result = left_num - right_num
@@ -89,5 +89,7 @@ class Solution:
             new_s += number
         s = new_s
         return s
+
+
 a = Solution()
 print(a.calculate("3+2/4*2-7*4/2+2"))

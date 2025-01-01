@@ -44,14 +44,14 @@ def solution():
     while True:
         trie = Tr()
         h = get_input().strip()
-        if h != '':
+        if h != "":
             n = int(h)
             names = []
             for i in range(n):
                 names.append(get_input().strip())
                 trie.insert(names[-1])
             total = trie.count_all()
-            print('{:.2f}'.format(total / len(names)))
+            print("{:.2f}".format(total / len(names)))
         else:
             break
 

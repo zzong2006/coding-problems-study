@@ -37,7 +37,6 @@ if not done:
         s.add(1)
     switch = 1
 
-
     for i in range(1, n):
         if start[i - 1] != target[i - 1]:
             if i == n - 1:

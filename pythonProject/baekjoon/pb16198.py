@@ -6,7 +6,7 @@ def recur(wes, val, output):
         output.append(val)
         return
     for i in range(1, len(wes) - 1):
-        new_wes = wes[:i] + wes[i + 1:]
+        new_wes = wes[:i] + wes[i + 1 :]
         recur(new_wes, val + (wes[i - 1] * wes[i + 1]), output)
 
 

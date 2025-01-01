@@ -16,7 +16,8 @@ def solution():
     ls = list(tree_list.keys())
     ls.sort()
     for name in ls:
-        print('{} {:.4f}'.format(name, tree_list[name]/total * 100.0))
+        print("{} {:.4f}".format(name, tree_list[name] / total * 100.0))
     # print(tree_list)
+
 
 solution()

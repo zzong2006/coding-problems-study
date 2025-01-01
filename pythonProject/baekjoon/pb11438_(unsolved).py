@@ -1,6 +1,6 @@
 import sys
 
-sys.setrecursionlimit(10 ** 7)
+sys.setrecursionlimit(10**7)
 
 
 def solution():

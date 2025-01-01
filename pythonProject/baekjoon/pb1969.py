@@ -3,7 +3,7 @@ import heapq
 
 
 def solution():
-    def distance(s : str, b : str):
+    def distance(s: str, b: str):
         z = 0
         for k in range(m):
             if s[k] != b[k]:
@@ -23,13 +23,13 @@ def solution():
     for i in range(m):
         dna = [0] * 4
         for j in range(n):
-            if board[j][i] == 'T':
+            if board[j][i] == "T":
                 dna[3] += 1
-            if board[j][i] == 'A':
+            if board[j][i] == "A":
                 dna[0] += 1
-            if board[j][i] == 'C':
+            if board[j][i] == "C":
                 dna[1] += 1
-            if board[j][i] == 'G':
+            if board[j][i] == "G":
                 dna[2] += 1
         idx = dna.index(max(dna))
         if idx == 0:
@@ -46,5 +46,7 @@ def solution():
     print(answer)
     print(hap)
     return None
+
+
 solution()
 # print()

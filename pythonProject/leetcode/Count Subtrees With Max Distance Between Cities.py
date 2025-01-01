@@ -4,7 +4,9 @@ from typing import List
 
 
 class Solution:
-    def countSubgraphsForEachDiameter(self, n: int, edges: List[List[int]]) -> List[int]:
+    def countSubgraphsForEachDiameter(
+        self, n: int, edges: List[List[int]]
+    ) -> List[int]:
         def get_maximum_distance(tong):
             def dfs(start, curr, vis, count):
                 for e_in_dfs in graph[curr]:

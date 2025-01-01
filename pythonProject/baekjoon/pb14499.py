@@ -55,7 +55,9 @@ for od in order:
         x += moveX
         y += moveY
         dice = roll(dice, od)
-        if board[y][x] == 0:  # 이동한 칸에 쓰여 있는 수가 0이면, 주사위의 바닥면에 쓰여 있는 수가 칸에 복사된다
+        if (
+            board[y][x] == 0
+        ):  # 이동한 칸에 쓰여 있는 수가 0이면, 주사위의 바닥면에 쓰여 있는 수가 칸에 복사된다
             board[y][x] = dice["down"]
         else:  # 0이 아닌 경우에는 칸에 쓰여 있는 수가 주사위의 바닥면으로 복사되며, 칸에 쓰여 있는 수는 0이 된다
             dice["down"] = board[y][x]
@@ -64,4 +66,3 @@ for od in order:
 
 for i in range(len(answer)):
     print(answer[i])
-

@@ -5,7 +5,7 @@ def solution(n, times):
     def get_count(t):
         count = 0
         for i in range(len(times)):
-            count += (t // times[i])
+            count += t // times[i]
         return count
 
     b = n * max(times)

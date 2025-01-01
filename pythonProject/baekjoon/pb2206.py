@@ -1,6 +1,6 @@
 import sys
 
-sys.setrecursionlimit(10 ** 7)
+sys.setrecursionlimit(10**7)
 
 
 def solution(board, n, m):
@@ -27,7 +27,12 @@ def dfs(bd, pos, count, can_break, n, m, dp, visit):
             new_x = x + add_x
             new_pos = (new_y, new_x)
 
-            if 0 <= new_y < n and 0 <= new_x < m and new_pos not in visit and dp[new_y][new_x] > count + 1:
+            if (
+                0 <= new_y < n
+                and 0 <= new_x < m
+                and new_pos not in visit
+                and dp[new_y][new_x] > count + 1
+            ):
                 if can_break:
                     if bd[new_y][new_x] == 1:
                         visit.add(new_pos)

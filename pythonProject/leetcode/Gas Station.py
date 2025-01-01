@@ -9,7 +9,7 @@ class Solution:
             tank = 0
             start_idx = 0
             for i in range(len(gas)):
-                tank += (gas[i] - cost[i])
+                tank += gas[i] - cost[i]
 
                 if tank < 0:
                     start_idx = i + 1
@@ -18,5 +18,6 @@ class Solution:
 
             return start_idx
 
+
 s = Solution()
-print(s.canCompleteCircuit([5,1,2,3,4], [4,4,1,5,1]))
+print(s.canCompleteCircuit([5, 1, 2, 3, 4], [4, 4, 1, 5, 1]))

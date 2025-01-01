@@ -1,6 +1,7 @@
 """
 대회 or 인턴
 """
+
 import sys
 from collections import deque
 
@@ -8,7 +9,7 @@ from collections import deque
 def solution():
     get_input = sys.stdin.readline
     std = get_input().strip()
-    if std[-1] == 's':
+    if std[-1] == "s":
         return std + "es"
     else:
         return std + "s"

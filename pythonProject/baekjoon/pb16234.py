@@ -31,9 +31,12 @@ def solution():
                         for add_y, add_x in [(0, 1), (0, -1), (1, 0), (-1, 0)]:
                             new_y = y + add_y
                             new_x = x + add_x
-                            if 0 <= new_y < n and 0 <= new_x < n \
-                                    and (new_y, new_x) not in visited \
-                                    and l <= abs(board[y][x] - board[new_y][new_x]) <= r:
+                            if (
+                                0 <= new_y < n
+                                and 0 <= new_x < n
+                                and (new_y, new_x) not in visited
+                                and l <= abs(board[y][x] - board[new_y][new_x]) <= r
+                            ):
                                 que.append((new_y, new_x))
                                 visited.add((new_y, new_x))
                                 temp_set.add((new_y, new_x))

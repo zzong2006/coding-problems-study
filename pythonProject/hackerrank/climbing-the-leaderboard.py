@@ -17,6 +17,7 @@ import sys
 import bisect
 from collections import Counter
 
+
 def climbingLeaderboard(ranked, player):
     answer = []
     st = []
@@ -40,7 +41,7 @@ def climbingLeaderboard(ranked, player):
     return answer
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ranked_count = int(input().strip())
 
     ranked = list(map(int, input().rstrip().split()))

@@ -19,8 +19,8 @@ class Solution:
         nums.sort()
         vals.sort()
         for a, b in zip(nums, vals):
-            total += (a * b)
-            total %= (10 ** 9 + 7)
+            total += a * b
+            total %= 10**9 + 7
 
         return total
 

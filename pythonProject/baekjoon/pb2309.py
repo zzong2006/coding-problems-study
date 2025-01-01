@@ -7,7 +7,7 @@ for i in range(9):
         sum = 0
         for k in range(9):
             if k != i and k != j:
-               sum += a[k]
+                sum += a[k]
         if sum == 100:
             a.remove(a[j])
             a.remove(a[i])

@@ -24,11 +24,12 @@ class Solution:
             graphs[a].append(b)
             graphs[b].append(a)
         dist, route = dfs(0, [0], 0, {0})
-        dist, route = dfs(route[-1],[route[-1]], 0, {route[-1]})
+        dist, route = dfs(route[-1], [route[-1]], 0, {route[-1]})
         n = len(route)
         if n % 2 == 0:
             return [route[n // 2], route[n // 2 - 1]]
         else:
             return [route[n // 2]]
+
 
 print(Solution().findMinHeightTrees(6, [[3, 0], [3, 1], [3, 2], [3, 4], [5, 4]]))

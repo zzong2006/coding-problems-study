@@ -22,4 +22,5 @@ def solution():
                 zum[j] = 0
     return count
 
+
 print(solution())
