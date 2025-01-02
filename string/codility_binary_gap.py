@@ -1,6 +1,7 @@
-# you can write to stdout for debugging purposes, e.g.
-# print("this is a debug message")
+"""
+https://app.codility.com/programmers/lessons/1-iterations/binary_gap/
 
+"""
 
 def solution(N):
     # write your code in Python 3.6
@@ -19,7 +20,7 @@ def solution(N):
         else:
             max_length = max(max_length, curr)
             curr = 0
-    max_length = max(max_length, curr)
+
     return max_length
 
 
