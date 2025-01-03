@@ -10,7 +10,6 @@ def main(sentences):
         words = sentence.lower().split()
         global_counter.update(words)
 
-    vec_len = len(sentences)
     word2idx = {word: i for i, word in enumerate(global_counter.keys())}
     document_frequency = {word: 0 for word in global_counter.keys()}
     vector_per_doc = {}
